@@ -4,4 +4,5 @@ This document is a placeholder for the Game Design Document to be developed in t
 
 ## Contributors
 RC
+BW
 JR
