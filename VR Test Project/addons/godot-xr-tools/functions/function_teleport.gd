@@ -138,8 +138,9 @@ func _physics_process(delta):
 	if controller and controller.get_is_active() and controller.is_button_pressed(teleport_button):
 		if !is_teleporting:
 			is_teleporting = true
-			$Teleport.visible = true
+			$Teleport.visible = false
 			$Target.visible = true
+			$Target/Player_figure.visible = false
 			teleport_rotation = 0.0
 
 		# get our physics engine state
