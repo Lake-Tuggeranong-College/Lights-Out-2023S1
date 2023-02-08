@@ -1,4 +1,4 @@
-extends Node
+extends Area
 
 onready var controller := ARVRHelpers.get_arvr_controller(self)
 var teleport_button : int = XRTools.Buttons.VR_TRIGGER
@@ -23,6 +23,7 @@ func _physics_process(delta):
 		grabbing = true
 	if grabbing:
 		print("Is grabbing")
+		print(get_overlapping_bodies())
 		if !controller.is_button_pressed(teleport_button):
 			print("let go")
 			grabbing = false

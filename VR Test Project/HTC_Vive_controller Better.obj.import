@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/HTC_Vive_controller Better.obj-078cdbeef543eca978c24e2a62dffdf4.mesh"
+
+[deps]
+
+files=[ "res://.import/HTC_Vive_controller Better.obj-078cdbeef543eca978c24e2a62dffdf4.mesh" ]
+
+source_file="res://HTC_Vive_controller Better.obj"
+dest_files=[ "res://.import/HTC_Vive_controller Better.obj-078cdbeef543eca978c24e2a62dffdf4.mesh", "res://.import/HTC_Vive_controller Better.obj-078cdbeef543eca978c24e2a62dffdf4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
