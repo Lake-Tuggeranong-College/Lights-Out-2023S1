@@ -1,8 +1,8 @@
-extends Area
+extends SpotLight
 
 onready var controller := ARVRHelpers.get_arvr_controller(self)
-var teleport_button : int = XRTools.Buttons.VR_TRIGGER
-var grabbing = false
+export (XRTools.Buttons) var button : int = XRTools.Buttons.VR_TRIGGER
+var pressed = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -18,12 +18,12 @@ func _ready():
 #	pass
 
 func _physics_process(delta):
-	if controller and controller.get_is_active() and controller.is_button_pressed(teleport_button) and !grabbing:
-		print("Pickup time")
-		grabbing = true
-	if grabbing:
-		print("Is grabbing")
-		print(get_overlapping_bodies())
-		if !controller.is_button_pressed(teleport_button):
+	self.visible = pressed
+	if controller and controller.get_is_active() and controller.is_button_pressed(button) and !pressed:
+		print("Button Pressed")
+		pressed = true
+	if pressed:
+		print("Is Held")
+		if !controller.is_button_pressed(button):
 			print("let go")
-			grabbing = false
+			pressed = false
