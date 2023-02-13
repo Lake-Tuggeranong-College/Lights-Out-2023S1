@@ -13,22 +13,30 @@ anchor_bottom = 1.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 454.0
-margin_right = 569.0
+margin_left = 447.0
+margin_right = 577.0
 margin_bottom = 600.0
 alignment = 1
 
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_top = 260.0
+margin_right = 130.0
+margin_bottom = 291.0
+text = "Lights Out
+Launcher"
+align = 1
+
 [node name="VR" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 278.0
-margin_right = 115.0
-margin_bottom = 298.0
-text = "Load in VR"
+margin_top = 295.0
+margin_right = 130.0
+margin_bottom = 315.0
+text = "Launch in VR"
 
 [node name="Desktop" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 302.0
-margin_right = 115.0
-margin_bottom = 322.0
-text = "Load in Desktop"
+margin_top = 319.0
+margin_right = 130.0
+margin_bottom = 339.0
+text = "Launch in Desktop"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VR" to="." method="_on_VR_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Desktop" to="." method="_on_Desktop_pressed"]

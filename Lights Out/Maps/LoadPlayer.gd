@@ -14,7 +14,7 @@ func _ready():
 		add_child(player)
 	if Global.desktop:
 		print("loading desktop")
-		var player = load("Desktop Player goes here!").instance()
+		var player = load("res://Assets/Desktop/Player/Player.tscn").instance()
 		add_child(player)
 
 

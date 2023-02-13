@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 11.7421
+height = 5.04368
+depth = 14.2104
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
+operation = 2
+width = 11.6654
+height = 5.03516
+depth = 13.0915
