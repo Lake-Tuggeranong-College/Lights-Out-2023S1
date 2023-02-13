@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform sampler2D water_layer1;
+
+void vertex() {
+	float z = sqrt(VERTEX.x * VERTEX.x + VERTEX.z * VERTEX.z);
+	float sombrero = sin(z - TIME) / z;
+	VERTEX.y = sombrero;
+}
+
+void fragment(){
+	vec4 water = texture(water_layer1, UV);
+	ALBEDO = vec3(water.rgb);
+}"
+
+[sub_resource type="Gradient" id=4]
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+fill = 1
+fill_from = Vector2( 0.5, 0.5 )
+fill_to = Vector2( 0, 0 )
+
+[resource]
+shader = SubResource( 1 )
+shader_param/water_layer1 = SubResource( 5 )
