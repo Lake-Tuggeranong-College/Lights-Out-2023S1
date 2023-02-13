@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Launcher.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 454.0
+margin_right = 569.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="VR" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 278.0
+margin_right = 115.0
+margin_bottom = 298.0
+text = "Load in VR"
+
+[node name="Desktop" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 302.0
+margin_right = 115.0
+margin_bottom = 322.0
+text = "Load in Desktop"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VR" to="." method="_on_VR_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Desktop" to="." method="_on_Desktop_pressed"]

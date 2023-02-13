@@ -357,7 +357,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Lights Out"
+run/main_scene="res://Launcher.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [gdnative]
 
