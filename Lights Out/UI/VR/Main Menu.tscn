@@ -20,7 +20,7 @@ albedo_texture = SubResource( 5 )
 resource_local_to_scene = true
 extents = Vector3( 1.5, 1, 0.01 )
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
 
