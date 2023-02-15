@@ -6,12 +6,52 @@
 script = ExtResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
-width = 11.7421
-height = 5.04368
-depth = 14.2104
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191928, 6.46374, -0.0189265 )
+use_collision = true
+width = 30.0
+height = 15.0
+depth = 30.0
 
 [node name="CSGBox2" type="CSGBox" parent="CSGBox"]
 operation = 2
-width = 11.6654
-height = 5.03516
-depth = 13.0915
+use_collision = true
+width = 29.0999
+height = 14.69
+depth = 29.1761
+
+[node name="Safe" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7217, -0.353377, 7.34532 )
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="Table" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9463, 0, 7.34532 )
+width = 1.0
+height = 1.5
+
+[node name="BookCase" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1763, 3.04211, 13.8327 )
+width = 4.0
+height = 8.0
+
+[node name="BookCase2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74421, 3.04211, 13.8327 )
+width = 4.0
+height = 8.0
+
+[node name="Stairs" type="CSGBox" parent="."]
+transform = Transform( 0.8784, -0.477925, 0, 0.477925, 0.8784, 0, 0, 0, 1, 10.808, 0.641931, -13.6753 )
+width = 10.0
+
+[node name="Books" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.838, 0.855842, 7.05223 )
+width = 0.5
+height = 0.2
+depth = 0.5
+
+[node name="Books2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.838, 0.855842, 7.64243 )
+width = 0.5
+height = 0.2
+depth = 0.5
