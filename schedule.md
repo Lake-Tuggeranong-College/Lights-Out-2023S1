@@ -1,8 +1,8 @@
-# Project Planning - DRAFT
+# Project Planning
+v1 (15-02-23):
 
 ## Approval 
-
-v1 (insert Date):
+S.A
 
 
 ## Plan
@@ -17,23 +17,23 @@ gantt
     Convert GDD to Github :13-02-23, 3d
 
     section Grey Box
-    Environment             :a1, 13-02-23, 10d
-    Puzzles                 :puzzle, 13-02-23, 10d
-    2D Assets               :13-02-23, 10d
-    3D Assets               :13-02-23, 10-03-23
-    Main Menu               :13-02-23, 10d
-    Win/Lose Scene          :13-02-23, 10d
-    Playtesting             :13-02-23, 10-03-23
-    Quality Assurance       :14-02-23, 10-03-23
+    Environment             :a1, 13-02-23, 23d
+    Puzzles                 :puzzle, 13-02-23, 27d
+    3D Assets               :13-02-23, 17-02-23
+    Main Menu               :13-02-23, 13d
+    Gameplay                :13-02-23, 12-03-23
+    Playtesting             :13-02-23, 12-03-23
+    Quality Assurance       :14-02-23, 12-03-23
     Grey Box Finalisation   :14-03-23, 3d
     
 
     section Final Version
 
-    Ripple Effect           :15-02-23  , 12d
-    Puzzles                 :15-02-23
+    Ripple Effect           :06-03-23  , 09-04-23
+    Puzzles                 :12-03-23  , 09-04-23
     Playtesting             :17-03-23, 26-05-23
     Complete Game           :22-05-23, 26-05-23
+    Gameplay                :13-02-23, 01-04-23
 
     section Presentation
     Prepare presenation : 30-05-23, 2d
