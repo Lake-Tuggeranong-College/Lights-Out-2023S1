@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/virtual_keyboard_2d.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/virtual_key.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Textures/Backspace.png" type="Texture" id=3]
+[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/Go.gd" type="Script" id=4]
+
+[node name="VirtualKeyboard2D" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 116.0
+margin_bottom = 145.0
+color = Color( 0.12549, 0.12549, 0.12549, 0.752941 )
+
+[node name="Standard" type="Control" parent="Background"]
+margin_right = 390.0
+margin_bottom = 145.0
+
+[node name="VirtualKey1" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_top = 25.0
+margin_bottom = 50.0
+text = "1"
+scan_code_text = "1"
+unicode = 49
+
+[node name="VirtualKey2" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 40.0
+margin_top = 25.0
+margin_right = 70.0
+margin_bottom = 50.0
+text = "2"
+scan_code_text = "2"
+unicode = 50
+
+[node name="VirtualKey3" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 80.0
+margin_top = 25.0
+margin_right = 110.0
+margin_bottom = 50.0
+text = "3"
+scan_code_text = "3"
+unicode = 51
+
+[node name="VirtualKey4" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 1.0
+margin_top = 55.0
+margin_right = 31.0
+margin_bottom = 80.0
+text = "4"
+scan_code_text = "4"
+unicode = 52
+
+[node name="VirtualKey5" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 40.0
+margin_top = 55.0
+margin_right = 70.0
+margin_bottom = 80.0
+text = "5"
+scan_code_text = "5"
+unicode = 53
+
+[node name="VirtualKey6" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 81.0
+margin_top = 55.0
+margin_right = 111.0
+margin_bottom = 80.0
+text = "6"
+scan_code_text = "6"
+unicode = 54
+
+[node name="VirtualKey7" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 2.0
+margin_top = 86.0
+margin_right = 32.0
+margin_bottom = 111.0
+text = "7"
+scan_code_text = "7"
+unicode = 55
+
+[node name="VirtualKey8" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 40.0
+margin_top = 87.0
+margin_right = 70.0
+margin_bottom = 112.0
+text = "8"
+scan_code_text = "8"
+unicode = 56
+
+[node name="VirtualKey9" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 81.0
+margin_top = 87.0
+margin_right = 111.0
+margin_bottom = 112.0
+text = "9"
+scan_code_text = "9"
+unicode = 57
+
+[node name="VirtualKey0" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 42.0
+margin_top = 117.0
+margin_right = 72.0
+margin_bottom = 142.0
+text = "0"
+scan_code_text = "0"
+unicode = 48
+
+[node name="VirtualKeyBackspace" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 82.0
+margin_top = 117.0
+margin_right = 307.0
+margin_bottom = 314.0
+rect_scale = Vector2( 0.119998, 0.119998 )
+text = "←"
+icon = ExtResource( 3 )
+scan_code_text = "BackSpace"
+
+[node name="VirtualKeyEnter" parent="Background/Standard" instance=ExtResource( 2 )]
+margin_left = 4.0
+margin_top = 117.0
+margin_right = 34.0
+margin_bottom = 142.0
+text = "Go"
+script = ExtResource( 4 )
+
+[node name="TextEdit" type="TextEdit" parent="Background/Standard/VirtualKeyEnter"]
+margin_left = -4.0
+margin_top = -117.0
+margin_right = 105.13
+margin_bottom = -93.859
+
+[connection signal="pressed" from="Background/Standard/VirtualKeyEnter" to="Background/Standard/VirtualKeyEnter" method="_on_VirtualKeyEnter_pressed"]

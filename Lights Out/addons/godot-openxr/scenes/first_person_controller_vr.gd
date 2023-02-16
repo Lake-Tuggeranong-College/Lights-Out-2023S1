@@ -207,3 +207,4 @@ func _get_configuration_warning():
 		return "You must call initialise() manually for VR to start"
 
 	return ""
+

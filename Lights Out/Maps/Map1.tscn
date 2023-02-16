@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=2]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -55,3 +56,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.838, 0.855842, 7.64243 )
 width = 0.5
 height = 0.2
 depth = 0.5
+
+[node name="Safe2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6811, -0.251875, -9.49909 )
+password = "8008"
