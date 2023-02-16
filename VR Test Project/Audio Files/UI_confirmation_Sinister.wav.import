@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/UI_confirmation_Sinister.wav-479de3cafaea8ca9ae782d57e07562aa.sample"
+
+[deps]
+
+source_file="res://Audio Files/UI_confirmation_Sinister.wav"
+dest_files=[ "res://.import/UI_confirmation_Sinister.wav-479de3cafaea8ca9ae782d57e07562aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
