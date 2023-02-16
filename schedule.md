@@ -4,7 +4,8 @@ v1 (15-02-23):
 ## Approval 
 S.A
 C.B
-
+B.W
+B.V
 
 ## Plan
 ```mermaid
