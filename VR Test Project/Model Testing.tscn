@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Test Input.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Controller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://3D Models/KeySafe_Level1/keypadSafeV1.fbx" type="PackedScene" id=6]
+[ext_resource path="res://3D Models/Door_Key/Door_Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://3D Models/Bookshelf3D/Bookshelf3D.tscn" type="PackedScene" id=8]
 
 [node name="Spatial" type="Spatial"]
 
@@ -46,7 +48,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0132923, -0.0846311, -0.118
 script = ExtResource( 1 )
 button = 2
 
-[node name="keypadSafeV1" parent="." instance=ExtResource( 6 )]
+[node name="Keypad_Safe" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328418, 0.73728, -4.93654 )
+
+[node name="Door_Key" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48767, 0.487092, -5.21091 )
+
+[node name="Bookshelf3D" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85504, 0.47324, -5.0819 )
 
 [editable path="FPController"]
