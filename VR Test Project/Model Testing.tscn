@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Test Input.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=2]
@@ -8,13 +8,24 @@
 [ext_resource path="res://3D Models/KeySafe_Level1/keypadSafeV1.fbx" type="PackedScene" id=6]
 [ext_resource path="res://3D Models/Door_Key/Door_Key.tscn" type="PackedScene" id=7]
 [ext_resource path="res://3D Models/Bookshelf3D/Bookshelf3D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Environment Textures/Beige_tan_sand_faced_finish_clean_seamless_building_wall_texture.jpg" type="Texture" id=9]
+[ext_resource path="res://3D Models/White_Door/White_Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://3D Models/Clicker_Controller/clicker_controller.tscn" type="PackedScene" id=11]
+[ext_resource path="res://3D Models/Wooden_Makeshift_Table/Wooden_Makeshift_Table.tscn" type="PackedScene" id=12]
+[ext_resource path="res://3D Models/Simple_Chair/Simple_Chair.tscn" type="PackedScene" id=13]
+[ext_resource path="res://3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=14]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.278431, 0.211765, 0.196078, 1 )
+albedo_texture = ExtResource( 9 )
 
 [node name="Spatial" type="Spatial"]
 
-[node name="CSGBox" type="CSGBox" parent="."]
+[node name="Floor_CSGBox" type="CSGBox" parent="."]
 width = 13.1844
 height = 0.25
 depth = 13.1503
+material = SubResource( 1 )
 
 [node name="FPController" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.257678, 2.09355 )
@@ -56,5 +67,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48767, 0.487092, -5.21091 )
 
 [node name="Bookshelf3D" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85504, 0.47324, -5.0819 )
+
+[node name="White_Door" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 3.45696, 1.215, -5.03344 )
+
+[node name="clicker_controller" parent="." instance=ExtResource( 11 )]
+transform = Transform( -5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 5.19186, 0.793367, -5.00985 )
+
+[node name="Wooden_Makeshift_Table" parent="." instance=ExtResource( 12 )]
+transform = Transform( -1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, -5.20195, 0.551298, -5.2146 )
+
+[node name="Simple_Chair" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.25983, 0, -0.965654, 0, 1, 0, 0.965654, 0, 0.25983, 4.92309, -0.144225, -1.76877 )
+
+[node name="AttackOnTitan_Key" parent="." instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.26591, 0.481727, -5.19026 )
 
 [editable path="FPController"]
