@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/StairsClimbing_SFX.wav-7f46516dcd8de2633accbb97450c86fc.sample"
+
+[deps]
+
+source_file="res://Assets/Audio Files/StairsClimbing_SFX.wav"
+dest_files=[ "res://.import/StairsClimbing_SFX.wav-7f46516dcd8de2633accbb97450c86fc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

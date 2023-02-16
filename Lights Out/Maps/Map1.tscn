@@ -1,6 +1,8 @@
+
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -76,6 +78,11 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -13.838, 3.895, 8.37994 )
 width = 0.5
 height = 0.2
 depth = 0.5
+
+[node name="Safe2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6811, -0.251875, -9.49909 )
+password = "8008"
+
 material = SubResource( 5 )
 
 [node name="Bookcases" type="Spatial" parent="."]
