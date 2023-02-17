@@ -1,9 +1,8 @@
-
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=2]
-[ext_resource path="res://bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0.729412, 0, 1 )
@@ -83,18 +82,18 @@ depth = 0.5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6811, -0.251875, -9.49909 )
 password = "8008"
 
-material = SubResource( 5 )
+
 
 [node name="Bookcases" type="Spatial" parent="."]
 
 [node name="SM_Bookshelf" type="MeshInstance" parent="Bookcases"]
 transform = Transform( -0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 11.562, -0.886196, 9.81786 )
-mesh = ExtResource( 2 )
+mesh = ExtResource( 3 )
 skeleton = NodePath("")
 material/0 = SubResource( 6 )
 
 [node name="SM_Bookshelf2" type="MeshInstance" parent="Bookcases"]
 transform = Transform( -0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 5.06963, -0.886196, 9.81786 )
-mesh = ExtResource( 2 )
+mesh = ExtResource( 3 )
 skeleton = NodePath("")
 material/0 = SubResource( 6 )
