@@ -38,3 +38,9 @@ func _physics_process(delta):
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
+
+
+func _on_Area_area_entered(area):
+	if area.name == "Safe":
+		var safe = load("res://addons/godot-xr-tools/objects/keyboard/Numpad_2D.tscn").instance()
+		add_child(safe)

@@ -24,7 +24,7 @@ func open(enteredCode):
 		$RootNode/Safe_MainBody/Safe_Door.queue_free()
 		$VirtualKeyboard.queue_free()
 		opened = true
-		$Area.queue_free()
+		$Safe.queue_free()
 
 
 func _on_Area_area_entered(area):
