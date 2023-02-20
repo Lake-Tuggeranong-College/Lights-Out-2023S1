@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Maps/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Desktop/Player/Player.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape" id=7]
 height = 3.18716
@@ -18,3 +18,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5866, -0.397558 )
 
 [node name="Camera" type="Camera" parent="Pivot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00615168, -0.398 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.85887, 0 )
+shape = SubResource( 7 )
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
