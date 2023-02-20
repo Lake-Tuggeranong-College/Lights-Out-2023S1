@@ -1,57 +1,99 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0.729412, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0.74902, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0, 0.576471, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0, 1, 0.486275, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0, 0, 1 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="CSGBox" type="CSGBox" parent="."]
+[node name="Main Room" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191928, 6.46374, -0.0189265 )
 use_collision = true
 width = 30.0
 height = 15.0
 depth = 30.0
 
-[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
+[node name="Walls" type="CSGBox" parent="Main Room"]
 operation = 2
 use_collision = true
 width = 29.0999
 height = 14.69
 depth = 29.1761
 
+[node name="Doorway" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0227, -2.68784, -7.83557 )
+operation = 2
+height = 9.57653
+depth = 5.79277
+
 [node name="Safe" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7217, -0.353377, 7.34532 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -9.62489, 0.110596, 7.34532 )
 width = 1.0
 height = 1.0
 depth = 1.0
+material = SubResource( 1 )
 
 [node name="Table" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9463, 0, 7.34532 )
-width = 1.0
-height = 1.5
-
-[node name="BookCase" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1763, 3.04211, 13.8327 )
-width = 4.0
-height = 8.0
-
-[node name="BookCase2" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74421, 3.04211, 13.8327 )
-width = 4.0
-height = 8.0
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -12.1523, 1.28201, 7.34532 )
+width = 2.082
+height = 2.165
+material = SubResource( 2 )
 
 [node name="Stairs" type="CSGBox" parent="."]
-transform = Transform( 0.8784, -0.477925, 0, 0.477925, 0.8784, 0, 0, 0, 1, 10.808, 0.641931, -13.6753 )
-width = 10.0
+transform = Transform( -0.878382, 0.477915, -0.00637043, 0.477925, 0.8784, 0, 0.00559581, -0.0030446, -0.99998, -12.3713, 4.1699, -11.8319 )
+width = 30.05
+height = 4.707
+depth = 6.01
+material = SubResource( 4 )
 
-[node name="Books" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.838, 0.855842, 7.05223 )
+[node name="Books" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28074, -0.255288, 0 )
+
+[node name="Book" type="CSGBox" parent="Books"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -13.838, 3.89516, 7.05223 )
+width = 0.5
+height = 0.2
+depth = 0.5
+material = SubResource( 5 )
+
+[node name="Book2" type="CSGBox" parent="Books"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -13.838, 3.895, 8.37994 )
 width = 0.5
 height = 0.2
 depth = 0.5
 
-[node name="Books2" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.838, 0.855842, 7.64243 )
-width = 0.5
-height = 0.2
-depth = 0.5
+[node name="Safe2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6811, -0.251875, -9.49909 )
+password = "8008"
+
+
+
+[node name="Bookcases" type="Spatial" parent="."]
+
+[node name="SM_Bookshelf" type="MeshInstance" parent="Bookcases"]
+transform = Transform( -0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 11.562, -0.886196, 9.81786 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("")
+material/0 = SubResource( 6 )
+
+[node name="SM_Bookshelf2" type="MeshInstance" parent="Bookcases"]
+transform = Transform( -0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 5.06963, -0.886196, 9.81786 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("")
+material/0 = SubResource( 6 )
