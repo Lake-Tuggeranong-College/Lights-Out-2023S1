@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SM_Bookshelf.obj-64d09424f2abf85014587e582d43fe5a.mesh"
+
+[deps]
+
+files=[ "res://.import/SM_Bookshelf.obj-64d09424f2abf85014587e582d43fe5a.mesh" ]
+
+source_file="res://Assets/bookshelf/source/SM_Bookshelf.obj"
+dest_files=[ "res://.import/SM_Bookshelf.obj-64d09424f2abf85014587e582d43fe5a.mesh", "res://.import/SM_Bookshelf.obj-64d09424f2abf85014587e582d43fe5a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
