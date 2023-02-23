@@ -43,6 +43,6 @@ func _physics_process(delta):
 
 
 func _on_Area_area_entered(area):
-	if area.name == "Safe":
+	if area.name == "SafeArea":
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$CanvasLayer/Numpad.visible = true

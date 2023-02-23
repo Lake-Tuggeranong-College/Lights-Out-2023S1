@@ -181,11 +181,11 @@ skeleton = NodePath("../..")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70712, 0.136617, 0.501106 )
 visible = false
 
-[node name="Safe" type="Area" parent="."]
+[node name="SafeArea" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Safe"]
+[node name="CollisionShape" type="CollisionShape" parent="SafeArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.831358 )
 shape = SubResource( 4 )
 
-[connection signal="area_entered" from="Safe" to="." method="_on_Area_area_entered"]
-[connection signal="area_exited" from="Safe" to="." method="_on_Area_area_exited"]
+[connection signal="area_entered" from="SafeArea" to="." method="_on_Area_area_entered"]
+[connection signal="area_exited" from="SafeArea" to="." method="_on_Area_area_exited"]
