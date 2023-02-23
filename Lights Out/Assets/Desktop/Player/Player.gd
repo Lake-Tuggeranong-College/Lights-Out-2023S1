@@ -32,12 +32,14 @@ func _unhandled_input(event):
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
-	var desired_velocity = get_input() *max_speed
-	
-	velocity.x = desired_velocity.x
-	velocity.z = desired_velocity.z
-	velocity = move_and_slide(velocity, Vector3.UP, true)
+	if Input.is_action_just_pressed("left_click") and $CanvasLayer/Numpad.visible == false:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		velocity.y += gravity * delta
+		var desired_velocity = get_input() *max_speed
+		velocity.x = desired_velocity.x
+		velocity.z = desired_velocity.z
+		velocity = move_and_slide(velocity, Vector3.UP, true)
 
 
 func _on_Area_area_entered(area):
