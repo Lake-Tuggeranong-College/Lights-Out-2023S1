@@ -1,132 +1,156 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/virtual_keyboard_2d.gd" type="Script" id=1]
-[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/virtual_key.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Textures/Backspace.png" type="Texture" id=3]
-[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/Go.gd" type="Script" id=4]
+[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/Numpad_2D.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/ButtonScript.gd" type="Script" id=2]
 
 [node name="VirtualKeyboard2D" type="CanvasLayer"]
 script = ExtResource( 1 )
+buttonPath = NodePath("Background/Standard/GridContainer")
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 116.0
-margin_bottom = 145.0
+margin_bottom = 121.0
 color = Color( 0.12549, 0.12549, 0.12549, 0.752941 )
 
 [node name="Standard" type="Control" parent="Background"]
-margin_right = 390.0
-margin_bottom = 145.0
+margin_right = 115.0
+margin_bottom = 121.0
 
-[node name="VirtualKey1" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_top = 25.0
-margin_bottom = 50.0
-text = "1"
-scan_code_text = "1"
-unicode = 49
+[node name="ExitButton" type="Button" parent="Background/Standard"]
+visible = false
+margin_left = 116.0
+margin_top = 1.0
+margin_right = 151.0
+margin_bottom = 21.0
+text = "Exit"
 
-[node name="VirtualKey2" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 40.0
-margin_top = 25.0
-margin_right = 70.0
-margin_bottom = 50.0
-text = "2"
-scan_code_text = "2"
-unicode = 50
-
-[node name="VirtualKey3" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 80.0
-margin_top = 25.0
-margin_right = 110.0
-margin_bottom = 50.0
-text = "3"
-scan_code_text = "3"
-unicode = 51
-
-[node name="VirtualKey4" parent="Background/Standard" instance=ExtResource( 2 )]
+[node name="GridContainer" type="GridContainer" parent="Background/Standard"]
+anchor_bottom = 0.089
 margin_left = 1.0
-margin_top = 55.0
-margin_right = 31.0
-margin_bottom = 80.0
+margin_top = 26.0
+margin_right = 116.0
+margin_bottom = 107.231
+columns = 3
+
+[node name="Button" type="Button" parent="Background/Standard/GridContainer"]
+margin_right = 35.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 35, 0 )
+text = "1"
+script = ExtResource( 2 )
+button_function = "1"
+
+[node name="Button2" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 39.0
+margin_right = 74.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 35, 0 )
+text = "2"
+script = ExtResource( 2 )
+button_function = "2"
+
+[node name="Button3" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 78.0
+margin_right = 113.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 35, 0 )
+text = "3"
+script = ExtResource( 2 )
+button_function = "3"
+
+[node name="Button4" type="Button" parent="Background/Standard/GridContainer"]
+margin_top = 24.0
+margin_right = 35.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 35, 0 )
 text = "4"
-scan_code_text = "4"
-unicode = 52
+script = ExtResource( 2 )
+button_function = "4"
 
-[node name="VirtualKey5" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 40.0
-margin_top = 55.0
-margin_right = 70.0
-margin_bottom = 80.0
+[node name="Button5" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 39.0
+margin_top = 24.0
+margin_right = 74.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 35, 0 )
 text = "5"
-scan_code_text = "5"
-unicode = 53
+script = ExtResource( 2 )
+button_function = "5"
 
-[node name="VirtualKey6" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 81.0
-margin_top = 55.0
-margin_right = 111.0
-margin_bottom = 80.0
+[node name="Button6" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 78.0
+margin_top = 24.0
+margin_right = 113.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 35, 0 )
 text = "6"
-scan_code_text = "6"
-unicode = 54
+script = ExtResource( 2 )
+button_function = "6"
 
-[node name="VirtualKey7" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 2.0
-margin_top = 86.0
-margin_right = 32.0
-margin_bottom = 111.0
+[node name="Button7" type="Button" parent="Background/Standard/GridContainer"]
+margin_top = 48.0
+margin_right = 35.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 35, 0 )
 text = "7"
-scan_code_text = "7"
-unicode = 55
+script = ExtResource( 2 )
+button_function = "7"
 
-[node name="VirtualKey8" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 40.0
-margin_top = 87.0
-margin_right = 70.0
-margin_bottom = 112.0
+[node name="Button8" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 39.0
+margin_top = 48.0
+margin_right = 74.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 35, 0 )
 text = "8"
-scan_code_text = "8"
-unicode = 56
+script = ExtResource( 2 )
+button_function = "8"
 
-[node name="VirtualKey9" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 81.0
-margin_top = 87.0
-margin_right = 111.0
-margin_bottom = 112.0
+[node name="Button9" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 78.0
+margin_top = 48.0
+margin_right = 113.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 35, 0 )
 text = "9"
-scan_code_text = "9"
-unicode = 57
+script = ExtResource( 2 )
+button_function = "9"
 
-[node name="VirtualKey0" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 42.0
-margin_top = 117.0
-margin_right = 72.0
-margin_bottom = 142.0
-text = "0"
-scan_code_text = "0"
-unicode = 48
-
-[node name="VirtualKeyBackspace" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 82.0
-margin_top = 117.0
-margin_right = 307.0
-margin_bottom = 314.0
-rect_scale = Vector2( 0.119998, 0.119998 )
-text = "←"
-icon = ExtResource( 3 )
-scan_code_text = "BackSpace"
-
-[node name="VirtualKeyEnter" parent="Background/Standard" instance=ExtResource( 2 )]
-margin_left = 4.0
-margin_top = 117.0
-margin_right = 34.0
-margin_bottom = 142.0
+[node name="ButtonGo" type="Button" parent="Background/Standard/GridContainer"]
+margin_top = 72.0
+margin_right = 35.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 35, 0 )
 text = "Go"
-script = ExtResource( 4 )
+script = ExtResource( 2 )
+button_function = "Go"
 
-[node name="TextEdit" type="TextEdit" parent="Background/Standard/VirtualKeyEnter"]
-margin_left = -4.0
-margin_top = -117.0
-margin_right = 105.13
-margin_bottom = -93.859
+[node name="Button0" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 39.0
+margin_top = 72.0
+margin_right = 74.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 35, 0 )
+text = "0"
+script = ExtResource( 2 )
+button_function = "0"
 
-[connection signal="pressed" from="Background/Standard/VirtualKeyEnter" to="Background/Standard/VirtualKeyEnter" method="_on_VirtualKeyEnter_pressed"]
+[node name="ButtonBack" type="Button" parent="Background/Standard/GridContainer"]
+margin_left = 78.0
+margin_top = 72.0
+margin_right = 113.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 35, 0 )
+script = ExtResource( 2 )
+button_function = "Backspace"
+
+[node name="LineEdit" type="LineEdit" parent="Background/Standard"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 115.0
+margin_bottom = 25.0
+editable = false
+placeholder_text = "ENTER CODE"
+placeholder_alpha = 1.0
+
+[connection signal="pressed" from="Background/Standard/ExitButton" to="." method="_on_ExitButton_pressed"]

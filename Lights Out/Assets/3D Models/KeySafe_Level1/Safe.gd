@@ -25,6 +25,9 @@ func open(enteredCode):
 		$VirtualKeyboard.queue_free()
 		opened = true
 		$Safe.queue_free()
+		return(true)
+	else:
+		return(false)
 
 
 func _on_Area_area_entered(area):

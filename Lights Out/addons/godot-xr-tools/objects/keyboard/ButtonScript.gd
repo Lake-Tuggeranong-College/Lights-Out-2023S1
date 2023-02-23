@@ -1,6 +1,6 @@
 extends Button
 
-
+export(String) var button_function
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,8 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_VirtualKeyEnter_pressed():
-	print(get_tree().get_root().get_node("Spatial/Safe2").open($LineEdit.text))
-
