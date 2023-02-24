@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Desktop/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-xr-tools/objects/keyboard/Numpad_2D.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=7]
 height = 3.18716
@@ -24,5 +25,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00615168, -0.398 )
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.85887, 0 )
 shape = SubResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="Numpad" parent="CanvasLayer" instance=ExtResource( 2 )]
+visible = false
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]

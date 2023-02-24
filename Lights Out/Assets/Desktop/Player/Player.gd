@@ -32,15 +32,17 @@ func _unhandled_input(event):
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -1.2, 1.2)
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
-	var desired_velocity = get_input() *max_speed
-	
-	velocity.x = desired_velocity.x
-	velocity.z = desired_velocity.z
-	velocity = move_and_slide(velocity, Vector3.UP, true)
+	if Input.is_action_just_pressed("left_click") and $CanvasLayer/Numpad.visible == false:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		velocity.y += gravity * delta
+		var desired_velocity = get_input() *max_speed
+		velocity.x = desired_velocity.x
+		velocity.z = desired_velocity.z
+		velocity = move_and_slide(velocity, Vector3.UP, true)
 
 
 func _on_Area_area_entered(area):
-	if area.name == "Safe":
-		var safe = load("res://addons/godot-xr-tools/objects/keyboard/Numpad_2D.tscn").instance()
-		add_child(safe)
+	if area.name == "SafeArea":
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$CanvasLayer/Numpad.visible = true

@@ -10,7 +10,8 @@ var opened = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if Global.desktop == true:
+		$RootNode/Keypad.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,14 +25,20 @@ func open(enteredCode):
 		$RootNode/Safe_MainBody/Safe_Door.queue_free()
 		$VirtualKeyboard.queue_free()
 		opened = true
-		$Safe.queue_free()
+		$SafeArea.queue_free()
+		$RootNode/Keypad.queue_free()
+		return(true)
+	else:
+		return(false)
 
 
 func _on_Area_area_entered(area):
-	if area.name == "Player":
+	if area.name == "Player" and Global.vr:
 		$VirtualKeyboard.visible = true
+		$RootNode/Keypad.visible = false
 
 
 func _on_Area_area_exited(area):
-	if !opened:
+	if !opened and area.name == "Player" and Global.vr:
 		$VirtualKeyboard.visible = false
+		$RootNode/Keypad.visible = true
