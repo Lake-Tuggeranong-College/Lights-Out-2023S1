@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="Closet" type="Spatial"]
+
+[node name="Closet" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69789, 0 )
+use_collision = true
+height = 5.0
+
+[node name="Inside" type="CSGBox" parent="Closet"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.262737 )
+operation = 2
+width = 1.5
+height = 4.5
+depth = 1.5
