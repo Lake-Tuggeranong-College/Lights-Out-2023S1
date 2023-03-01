@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_VirtualKeyEnter_pressed():
-	print(get_tree().get_root().get_node("Spatial/Safe2").open($TextEdit.text))
+	print(get_tree().get_root().get_node("Spatial/Safe2").open($LineEdit.text))
 

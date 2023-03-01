@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stairs_1.obj-c4b12fe3359c9f1b31abe359d6f749ad.mesh"
+
+[deps]
+
+files=[ "res://.import/stairs_1.obj-c4b12fe3359c9f1b31abe359d6f749ad.mesh" ]
+
+source_file="res://Assets/3D Models/Old_Stairs/source/stairs_1.obj"
+dest_files=[ "res://.import/stairs_1.obj-c4b12fe3359c9f1b31abe359d6f749ad.mesh", "res://.import/stairs_1.obj-c4b12fe3359c9f1b31abe359d6f749ad.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
