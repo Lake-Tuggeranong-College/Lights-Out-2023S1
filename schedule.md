@@ -25,7 +25,7 @@ gantt
     Environment             :a1, 13-02-23, 23d
     Puzzles                 :puzzle, 13-02-23, 27d
     3D Assets               :13-02-23, 17-02-23
-    Main Menu               :13-02-23, 13d
+    Main Menu               :13-02-23, 27d
     Gameplay                :13-02-23, 12-03-23
     Playtesting             :13-02-23, 12-03-23
     Quality Assurance       :14-02-23, 12-03-23
