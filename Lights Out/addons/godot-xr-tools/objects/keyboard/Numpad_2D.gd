@@ -52,4 +52,5 @@ func updateCode():
 
 
 func _on_ExitButton_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	self.visible = false
