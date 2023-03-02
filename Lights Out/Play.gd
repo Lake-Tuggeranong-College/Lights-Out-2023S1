@@ -18,3 +18,7 @@ func _ready():
 
 func _on_Play_pressed():
 	get_tree().change_scene("res://Maps/Map1.tscn")
+
+
+func _on_return_pressed():
+	get_tree().change_scene("res://Launcher.tscn")
