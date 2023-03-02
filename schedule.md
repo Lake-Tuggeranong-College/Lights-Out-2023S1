@@ -29,7 +29,7 @@ gantt
     Gameplay                :13-02-23, 12-03-23
     Playtesting             :13-02-23, 12-03-23
     Quality Assurance       :14-02-23, 12-03-23
-    Grey Box Finalisation   :14-03-23, 3d
+    Grey Box Finalisation   :14-03-23, 4d
     
 
     section Final Version
