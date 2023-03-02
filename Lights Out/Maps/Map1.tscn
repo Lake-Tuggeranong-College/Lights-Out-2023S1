@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=2]
@@ -19,6 +19,11 @@ albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0.054902, 0, 1, 1 )
+
+[sub_resource type="PhysicsMaterial" id=11]
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 0.235918, 0.152594, 5.20098 )
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17111, 0, -6.63111 )
@@ -105,9 +110,16 @@ transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -
 
 [node name="CSGMesh" type="CSGMesh" parent="Stairs2"]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 12.0376, 1.3157, -7.01798 )
-use_collision = true
 mesh = ExtResource( 4 )
 material = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Stairs2"]
+transform = Transform( 10, -5.54711e-08, -5.73094e-08, 6.28897e-07, 2.03846, -1.43875, -5.73094e-07, 1.26903, 2.31108, 11.655, 0.366663, -3.56777 )
+physics_material_override = SubResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Stairs2/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 0.998426, -0.0560829, 0, 0.0560829, 0.998426, -0.000671744, -0.0234431, -4.34601 )
+shape = SubResource( 12 )
 
 [node name="Spawn" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78605, 0.22848, 4.72601 )
