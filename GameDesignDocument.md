@@ -209,7 +209,7 @@ The next implementation that we added to our game is the ability to pick up and 
 
 Once we got some of the basic mechanics implemented we made the player ‘blind’. To create the illusion of being blind we changed the colour of the environment and the background to black which made the player ‘blind’.
 
-![](images/image38.png)
+![](GameDesignDocument/image38.png)
 
 After the player was ‘blinded’ we started to implement a way for the player to progress through the puzzles, the first step of this was to allow the player to snap two objects together which will allow for a code to remove a door/ path blocker and let the player progress to either a new level or a new area of that level.
 
