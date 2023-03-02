@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Assets/3D Models/Old_Stairs/source/stairs_1.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Maps/Stairs2.gd" type="Script" id=5]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 1, 0.74902, 0, 1 )
@@ -107,6 +108,7 @@ material = SubResource( 8 )
 
 [node name="Stairs2" type="Spatial" parent="."]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -4.89966, 0.219169, 7.07915 )
+script = ExtResource( 5 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Stairs2"]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 12.0376, 1.3157, -7.01798 )
@@ -118,7 +120,7 @@ transform = Transform( 10, -5.54711e-08, -5.73094e-08, 6.28897e-07, 2.03846, -1.
 physics_material_override = SubResource( 11 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Stairs2/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 0.998426, -0.0560829, 0, 0.0560829, 0.998426, -0.000671744, -0.0234431, -4.34601 )
+transform = Transform( 1, 5.55112e-17, 0, -6.82169e-15, 0.998426, -0.0560829, 0, 0.0560829, 0.998426, -0.000671744, -0.0234427, -4.34601 )
 shape = SubResource( 12 )
 
 [node name="Spawn" type="Spatial" parent="."]
