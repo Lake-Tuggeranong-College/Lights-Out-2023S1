@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Test Input.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/function_pickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://3D Models/KeySafe_Level1/keypadSafeV1.fbx" type="PackedScene" id=6]
 [ext_resource path="res://3D Models/Door_Key/Door_Key.tscn" type="PackedScene" id=7]
-[ext_resource path="res://3D Models/Bookshelf/Bookshelf3D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://3D Models/Bookshelf3D/Bookshelf3D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Environment Textures/Beige_tan_sand_faced_finish_clean_seamless_building_wall_texture.jpg" type="Texture" id=9]
 [ext_resource path="res://3D Models/White_Door/White_Door.tscn" type="PackedScene" id=10]
 [ext_resource path="res://3D Models/Clicker_Controller/clicker_controller.tscn" type="PackedScene" id=11]
@@ -17,6 +17,10 @@
 [ext_resource path="res://3D Models/Old_Stairs/Old_Stairs.tscn" type="PackedScene" id=15]
 [ext_resource path="res://3D Models/Picture_Frame/Picture_Frame.tscn" type="PackedScene" id=16]
 [ext_resource path="res://3D Models/Poker_Table/Poker_Table.tscn" type="PackedScene" id=17]
+[ext_resource path="res://3D Models/MafiaStanding_Model/MafiaStanding_Model.tscn" type="PackedScene" id=18]
+[ext_resource path="res://3D Models/Mossy_Stairs/Mossy_Stairs.tscn" type="PackedScene" id=19]
+[ext_resource path="res://3D Models/MafiaHat_Models/DarkGreenHat.tscn" type="PackedScene" id=20]
+[ext_resource path="res://3D Models/MafiaHat_Models/RedHat.tscn" type="PackedScene" id=21]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.278431, 0.211765, 0.196078, 1 )
@@ -25,6 +29,13 @@ albedo_texture = ExtResource( 9 )
 [node name="Spatial" type="Spatial"]
 
 [node name="Floor_CSGBox" type="CSGBox" parent="."]
+width = 13.1844
+height = 0.25
+depth = 13.1503
+material = SubResource( 1 )
+
+[node name="UpperFloor_CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.09895, 13.4438 )
 width = 13.1844
 height = 0.25
 depth = 13.1503
@@ -114,13 +125,25 @@ transform = Transform( 0.25983, 0, -0.965654, 0, 1, 0, 0.965654, 0, 0.25983, 5.2
 [node name="AttackOnTitan_Key" parent="." instance=ExtResource( 14 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.26591, 0.481727, -5.19026 )
 
-[node name="Old_Stairs" parent="." instance=ExtResource( 15 )]
-transform = Transform( 1.657, 0, 0, 0, 1, 0, 0, 0, 1, 4.17383, 0.0722672, 2.81664 )
-
 [node name="Picture_Frame" parent="." instance=ExtResource( 16 )]
 transform = Transform( -2.18557e-06, 0, -50, 0, 50, 0, 50, 0, -2.18557e-06, -6.09703, 1.82515, -1.00477 )
 
 [node name="Poker_Table" parent="." instance=ExtResource( 17 )]
 transform = Transform( 2.4, 0, 0, 0, 1.428, 0, 0, 0, 2.4, -3.57368, 1.26279, 3.91905 )
+
+[node name="Old_Stairs" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17992, -0.165246, 2.94183 )
+
+[node name="MafiaStanding_Model" parent="." instance=ExtResource( 18 )]
+transform = Transform( -1.4, 0, -1.22392e-07, 0, 1.4, 0, 1.22392e-07, 0, -1.4, 2.62296, -1.48926, 5.75192 )
+
+[node name="Mossy_Stairs" parent="." instance=ExtResource( 19 )]
+transform = Transform( -1.31134e-06, 0, 30, 0, 30, 0, -30, 0, -1.31134e-06, -4.8024, 5.27462, 9.13677 )
+
+[node name="DarkGreenHat" parent="." instance=ExtResource( 20 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.64687, 3.27493, 5.573 )
+
+[node name="RedHat" parent="." instance=ExtResource( 21 )]
+transform = Transform( 0.39038, 0, 0.087196, 0, 0.4, 0, -0.087196, 0, 0.39038, -3.13292, 1.24756, 3.31821 )
 
 [editable path="FPController"]
