@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=1]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.256965, 0.207897, 0.242511 )
 
 [node name="Closet" type="Spatial"]
 
@@ -24,8 +29,11 @@ operation = 2
 radius = 0.266215
 
 [node name="AttackOnTitan_Key" parent="Closet" instance=ExtResource( 1 )]
-transform = Transform( 9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, 2.20817, -1.20549, 0.639783 )
+transform = Transform( 9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, 2.20817, -1.17332, 0.639783 )
 
-[node name="Area" type="Area" parent="Closet/AttackOnTitan_Key"]
+[node name="StaticBody" type="StaticBody" parent="Closet/AttackOnTitan_Key"]
+transform = Transform( 0.463519, 6.29246e-08, -2.75052e-15, 6.29246e-08, 1.90307, -6.29246e-08, -2.75052e-15, -6.29246e-08, 0.463519, 0, 0.235458, 0 )
+physics_material_override = SubResource( 1 )
 
-[node name="CollisionPolygon" type="CollisionPolygon" parent="Closet/AttackOnTitan_Key/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Closet/AttackOnTitan_Key/StaticBody"]
+shape = SubResource( 2 )

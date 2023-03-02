@@ -6,11 +6,17 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 447.0
@@ -37,6 +43,5 @@ margin_top = 319.0
 margin_right = 130.0
 margin_bottom = 339.0
 text = "Launch in Desktop"
-
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VR" to="." method="_on_VR_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Desktop" to="." method="_on_Desktop_pressed"]
