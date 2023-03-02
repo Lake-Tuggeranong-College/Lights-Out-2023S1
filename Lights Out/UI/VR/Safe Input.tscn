@@ -6,6 +6,11 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
+auto_initialise = true
+enable_passthrough = false
+viewport = NodePath("")
+near_z = 0.1
+far_z = 1000.0
 
 [node name="VirtualKeyboard" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5144, -3.34842 )
