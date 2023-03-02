@@ -1,15 +1,31 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=1]
 
 [node name="Closet" type="Spatial"]
 
 [node name="Closet" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69789, 0 )
 use_collision = true
+width = 4.74112
 height = 5.0
+depth = 3.63666
 
 [node name="Inside" type="CSGBox" parent="Closet"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.262737 )
 operation = 2
-width = 1.5
-height = 4.5
-depth = 1.5
+width = 4.29608
+height = 4.86732
+depth = 3.12742
+
+[node name="CSGSphere" type="CSGSphere" parent="Closet"]
+transform = Transform( 1, 0, 0, 0, 0.501, 0, 0, 0, 1, 2.101, -1.144, 0.748 )
+operation = 2
+radius = 0.266215
+
+[node name="AttackOnTitan_Key" parent="Closet" instance=ExtResource( 1 )]
+transform = Transform( 9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, 2.20817, -1.20549, 0.639783 )
+
+[node name="Area" type="Area" parent="Closet/AttackOnTitan_Key"]
+
+[node name="CollisionPolygon" type="CollisionPolygon" parent="Closet/AttackOnTitan_Key/Area"]
