@@ -178,8 +178,7 @@ mesh = SubResource( 5 )
 skeleton = NodePath("../..")
 
 [node name="VirtualKeyboard" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70712, 0.136617, 0.501106 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278906, 0.242148, 0.560749 )
 
 [node name="SafeArea" type="Area" parent="."]
 
