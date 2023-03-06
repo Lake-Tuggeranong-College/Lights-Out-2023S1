@@ -1,4 +1,4 @@
-extends Control
+extends Button
 
 
 # Declare member variables here. Examples:
@@ -14,17 +14,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_VR_pressed():
-	Global.vr = true
-	get_tree().change_scene("res://UI/VR/Main Menu.tscn")
-
-
-func _on_Desktop_pressed():
-	Global.desktop = true
-	get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
-
-
-func _on_quit_pressed():
-	get_tree().quit()
+func _on_Main_Menu_pressed():
+	get_tree().change_scene("res://Launcher.tscn")
