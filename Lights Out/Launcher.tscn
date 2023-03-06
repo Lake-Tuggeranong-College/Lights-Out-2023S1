@@ -25,23 +25,31 @@ margin_bottom = 600.0
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 260.0
+margin_top = 248.0
 margin_right = 130.0
-margin_bottom = 291.0
+margin_bottom = 279.0
 text = "Lights Out
 Launcher"
 align = 1
 
 [node name="VR" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 295.0
+margin_top = 283.0
 margin_right = 130.0
-margin_bottom = 315.0
+margin_bottom = 303.0
 text = "Launch in VR"
 
 [node name="Desktop" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 319.0
+margin_top = 307.0
 margin_right = 130.0
-margin_bottom = 339.0
+margin_bottom = 327.0
 text = "Launch in Desktop"
+
+[node name="quit" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 331.0
+margin_right = 130.0
+margin_bottom = 351.0
+text = "leave game"
+
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VR" to="." method="_on_VR_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Desktop" to="." method="_on_Desktop_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Play.gd" type="Script" id=2]
 [ext_resource path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/VR/Main Menu.gd" type="Script" id=4]
 
 [sub_resource type="QuadMesh" id=1]
 resource_local_to_scene = true
@@ -25,11 +26,6 @@ extents = Vector3( 1.5, 1, 0.01 )
 [node name="Spatial2" type="Spatial"]
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
-auto_initialise = true
-enable_passthrough = false
-viewport = NodePath("")
-near_z = 0.1
-far_z = 1000.0
 
 [node name="LeftHandController" parent="FPController" index="2"]
 visible = true
@@ -64,6 +60,12 @@ margin_bottom = 20.0
 text = "Play"
 script = ExtResource( 2 )
 
+[node name="Main Menu" type="Button" parent="Viewport2Din3D/Viewport" index="1"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "main menu"
+script = ExtResource( 4 )
+
 [node name="Screen" parent="Viewport2Din3D" index="1"]
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
@@ -72,6 +74,7 @@ material/0 = SubResource( 4 )
 [node name="CollisionShape" parent="Viewport2Din3D/StaticBody" index="0"]
 shape = SubResource( 5 )
 [connection signal="pressed" from="Viewport2Din3D/Viewport/Play" to="Viewport2Din3D/Viewport/Play" method="_on_Play_pressed"]
+[connection signal="pressed" from="Viewport2Din3D/Viewport/Main Menu" to="FPController" method="_on_Main_Menu_pressed"]
 
 [editable path="FPController"]
 
