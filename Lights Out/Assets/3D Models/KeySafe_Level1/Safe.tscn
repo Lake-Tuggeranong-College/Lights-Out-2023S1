@@ -179,12 +179,19 @@ skeleton = NodePath("../..")
 
 [node name="VirtualKeyboard" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278906, 0.242148, 0.560749 )
+visible = false
 
 [node name="SafeArea" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="SafeArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.831358 )
 shape = SubResource( 4 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278906, 0.242148, 1.28443 )
+visible = false
+spot_range = 1.04732
+spot_angle = 22.9928
 
 [connection signal="area_entered" from="SafeArea" to="." method="_on_Area_area_entered"]
 [connection signal="area_exited" from="SafeArea" to="." method="_on_Area_area_exited"]
