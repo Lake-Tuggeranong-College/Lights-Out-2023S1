@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Desktop/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/objects/keyboard/Numpad_2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=7]
 height = 3.18716
@@ -31,5 +32,8 @@ follow_viewport_enable = true
 
 [node name="Numpad" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2.5, 0, 0, 0, 2, 0, 0, 0 )
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
