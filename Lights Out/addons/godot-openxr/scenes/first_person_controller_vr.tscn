@@ -54,6 +54,7 @@ transform = Transform( -1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82
 
 [node name="SpotLight" type="SpotLight" parent="RightHandController"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0192233, -0.0375453, -0.105723 )
+visible = false
 spot_range = 4.7552
 spot_angle = 14.0625
 

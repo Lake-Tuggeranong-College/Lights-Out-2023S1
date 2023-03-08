@@ -8,7 +8,7 @@ onready var radarShader = $Sonar/SonarPart2/MeshInstance.get_active_material(0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	radarShader.set_shader_param("interval",0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
