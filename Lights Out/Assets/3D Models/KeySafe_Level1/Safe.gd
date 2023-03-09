@@ -35,11 +35,13 @@ func open(enteredCode):
 
 func _on_Area_area_entered(area):
 	if area.name == "Player" and Global.vr:
+		$SpotLight.visible = true
 		$VirtualKeyboard.visible = true
 		$RootNode/Keypad.visible = false
 
 
 func _on_Area_area_exited(area):
 	if !opened and area.name == "Player" and Global.vr:
+		$SpotLight.visible = false
 		$VirtualKeyboard.visible = false
 		$RootNode/Keypad.visible = true
