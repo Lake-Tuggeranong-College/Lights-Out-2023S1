@@ -6,12 +6,26 @@ var gravity = -50
 var max_speed = 10
 var mouse_sensitivity = 0.005
 var velocity = Vector3()
+var isHolding = false
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func get_input():
 	var input_dir = Vector3()
+	if Input.is_action_just_pressed("interact"):
+		if $Pivot/Camera/RayCast.is_colliding():
+			var raycastCollsions = $Pivot/Camera/RayCast.get_collider()
+			if raycastCollsions.is_in_group("pickup"):
+				if isHolding:
+					isHolding = false
+					reparent(raycastCollsions, get_tree().current_scene)
+					raycastCollsions.global_transform.origin = $Pivot/Camera/ObjectPlace.global_transform.origin
+				else:
+					isHolding = true
+					reparent(raycastCollsions,$Pivot/Camera/ObjectPlace)
+					raycastCollsions.global_transform.origin = $Pivot/Camera/ObjectPlace.global_transform.origin
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_pressed("ui_forward"):
@@ -46,3 +60,10 @@ func _on_Area_area_entered(area):
 	if area.name == "SafeArea":
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$CanvasLayer/Numpad.visible = true
+
+
+func reparent(child: Node, new_parent: Node):
+	var old_parent = child.get_parent()
+	old_parent.remove_child(child)
+	new_parent.add_child(child)
+	

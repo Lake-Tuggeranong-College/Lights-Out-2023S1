@@ -1,15 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Play.gd" type="Script" id=1]
-[ext_resource path="res://Assets/images/black backround.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="backround" type="Sprite" parent="."]
-position = Vector2( 430, 300 )
-texture = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -29,22 +25,23 @@ margin_bottom = 600.0
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 236.0
+margin_top = 225.0
 margin_right = 130.0
-margin_bottom = 267.0
+margin_bottom = 256.0
 text = "Lights out 
 Desktop "
 
 [node name="spacer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 271.0
+margin_top = 260.0
 margin_right = 130.0
-margin_bottom = 291.0
+margin_bottom = 280.0
 rect_min_size = Vector2( 130, 20 )
 
 [node name="Play" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 295.0
+margin_top = 284.0
 margin_right = 130.0
 margin_bottom = 315.0
+theme = ExtResource( 3 )
 text = "Play"
 script = ExtResource( 1 )
 __meta__ = {
@@ -60,7 +57,8 @@ rect_min_size = Vector2( 130, 20 )
 [node name="return" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 343.0
 margin_right = 130.0
-margin_bottom = 363.0
+margin_bottom = 374.0
+theme = ExtResource( 3 )
 text = "main menu"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Play" to="HBoxContainer/VBoxContainer/Play" method="_on_Play_pressed"]
