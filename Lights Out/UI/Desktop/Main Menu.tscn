@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Play.gd" type="Script" id=1]
+[ext_resource path="res://UI/Desktop/return.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=3]
 
 [node name="Control" type="Control"]
@@ -60,6 +61,8 @@ margin_right = 130.0
 margin_bottom = 374.0
 theme = ExtResource( 3 )
 text = "main menu"
+script = ExtResource( 2 )
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Play" to="HBoxContainer/VBoxContainer/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/return" to="HBoxContainer/VBoxContainer/Play" method="_on_return_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/return" to="HBoxContainer/VBoxContainer/return" method="_on_return_pressed"]

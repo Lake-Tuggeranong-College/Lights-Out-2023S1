@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Play.gd" type="Script" id=2]
 [ext_resource path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=4]
+[ext_resource path="res://UI/VR/quit game.gd" type="Script" id=5]
 
 [sub_resource type="QuadMesh" id=1]
 resource_local_to_scene = true
@@ -30,16 +31,32 @@ extents = Vector3( 1.5, 1, 0.01 )
 [node name="Viewport2Din3D" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46587, -3.7798 )
 
-[node name="VBox" type="VBoxContainer" parent="Viewport2Din3D/Viewport" index="0"]
+[node name="Viewport" parent="Viewport2Din3D" index="0"]
+hdr = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Viewport2Din3D/Viewport" index="0"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
 
-[node name="Play" type="Button" parent="Viewport2Din3D/Viewport/VBox"]
-margin_right = 40.0
+[node name="VBox" type="VBoxContainer" parent="Viewport2Din3D/Viewport/HBoxContainer"]
+margin_right = 69.0
+margin_bottom = 66.0
+
+[node name="Play" type="Button" parent="Viewport2Din3D/Viewport/HBoxContainer/VBox"]
+margin_right = 69.0
 margin_bottom = 31.0
 theme = ExtResource( 4 )
 text = "Play"
 script = ExtResource( 2 )
+
+[node name="quitgame" type="Button" parent="Viewport2Din3D/Viewport/HBoxContainer/VBox"]
+margin_top = 35.0
+margin_right = 69.0
+margin_bottom = 66.0
+theme = ExtResource( 4 )
+text = "quit game "
+script = ExtResource( 5 )
 
 [node name="Screen" parent="Viewport2Din3D" index="1"]
 mesh = SubResource( 1 )
@@ -49,7 +66,8 @@ material/0 = SubResource( 7 )
 [node name="CollisionShape" parent="Viewport2Din3D/StaticBody" index="0"]
 shape = SubResource( 5 )
 
-[connection signal="pressed" from="Viewport2Din3D/Viewport/VBox/Play" to="Viewport2Din3D/Viewport/VBox/Play" method="_on_Play_pressed"]
+[connection signal="pressed" from="Viewport2Din3D/Viewport/HBoxContainer/VBox/Play" to="Viewport2Din3D/Viewport/HBoxContainer/VBox/Play" method="_on_Play_pressed"]
+[connection signal="pressed" from="Viewport2Din3D/Viewport/HBoxContainer/VBox/quitgame" to="Viewport2Din3D/Viewport/HBoxContainer/VBox/quitgame" method="_on_quitgame_pressed"]
 
 [editable path="FPController"]
 [editable path="Viewport2Din3D"]
