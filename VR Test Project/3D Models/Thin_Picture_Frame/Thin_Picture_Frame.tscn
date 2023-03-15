@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://3D Models/Thin_Picture_Frame/source/Picture Frame normal.fbx" type="PackedScene" id=1]
+[ext_resource path="res://3D Models/Thin_Picture_Frame/source/Frame.material" type="Material" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[node name="Picture Frame normal" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Picture Frame" parent="RootNode" index="1"]
+material/0 = ExtResource( 2 )
+
+[node name="Picture" parent="RootNode" index="2"]
+material/0 = SubResource( 1 )
