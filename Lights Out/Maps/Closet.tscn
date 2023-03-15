@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/DoorTemp.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.588235, 0.294118, 0, 1 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.17029, 2.19252, 0.272607 )
 
 [node name="Closet" type="Spatial"]
 
@@ -18,16 +25,27 @@ width = 4.29608
 height = 4.86732
 depth = 3.12742
 
-[node name="CSGSphere" type="CSGSphere" parent="Closet"]
-transform = Transform( 1, 0, 0, 0, 0.501, 0, 0, 0, 1, 2.101, -1.144, 0.748 )
-operation = 2
-radius = 0.266215
-
 [node name="AttackOnTitan_Key" parent="Closet" groups=["pickup"] instance=ExtResource( 1 )]
-transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 2.11758e-22, 4.37114e-08, 1, -4.37114e-08, 2.22154, -1.17332, 0.639783 )
+transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 2.11758e-22, 4.37114e-08, 1, -4.37114e-08, 2.03634, -1.17332, -0.931499 )
 
 [node name="CSGBox" type="CSGBox" parent="Closet"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13009, -1.38611, 0.634238 )
-width = 0.138282
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13009, -1.38611, -0.645286 )
+width = 0.534119
 height = 0.323485
 depth = 0.845761
+
+[node name="Door" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.68322, 1.78381 )
+use_collision = true
+width = 2.80359
+height = 4.53641
+depth = 0.396887
+material = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="Door"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Door/Area"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Door/Area" to="Door" method="_on_Area_body_entered"]
