@@ -1,18 +1,20 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Maps/Stairs2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Assets/3D Models/Old_Stairs/source/stairs_1.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Maps/number_light.gd" type="Script" id=5]
+[ext_resource path="res://Maps/AreaDetection.gd" type="Script" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0.74902, 0, 1 )
 
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.346047, 0.224716, 0.29552 )
+
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0, 1, 0.486275, 1 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.0313726, 1, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 1, 0, 0, 1 )
@@ -24,6 +26,9 @@ albedo_color = Color( 0.054902, 0, 1, 1 )
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.235918, 0.152594, 5.20098 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 0.636827, 1, 0.762591 )
 
 [node name="Basement" type="Spatial"]
 
@@ -54,6 +59,203 @@ width = 3.61026
 height = 7.52383
 depth = 5.25468
 
+[node name="CSGBox" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.988335, -0.152296, 0, 0.152296, 0.988335, 14.5695, -3.94692, -11.4755 )
+operation = 2
+width = 0.136
+height = 0.221
+depth = 1.085
+
+[node name="CSGBox2" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, -0.238144, -0.97123, 0, 0.97123, -0.238144, 14.5695, -3.54305, -11.4755 )
+operation = 2
+width = 0.12
+height = 0.153
+depth = 0.96
+
+[node name="CSGBox3" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.940122, 0.340839, 0, -0.340839, 0.940122, 14.5695, -3.21442, -11.6196 )
+operation = 2
+width = 0.136
+height = 0.153
+depth = 0.665
+
+[node name="CSGBox4" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.988335, -0.152296, 0, 0.152296, 0.988335, 14.5695, -5.0521, -11.4755 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.719034
+
+[node name="CSGBox5" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.988335, -0.152296, 0, 0.152296, 0.988335, 14.5695, -5.30335, -11.5272 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.719034
+
+[node name="CSGBox6" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.19249e-08, -0.152296, -0.988335, 0, 0.988335, -0.152296, 1, 1.81611e-09, 1.17858e-08, 12.687, -7.10606, 14.5874 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox7" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.19249e-08, 0.705055, -0.709153, 0, 0.709153, 0.705055, 1, -8.4077e-09, 8.45656e-09, 12.687, -6.67845, 14.5861 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox8" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.19249e-08, -0.714753, -0.699376, 0, 0.699376, -0.714753, 1, 8.52335e-09, 8.33998e-09, 12.5435, -6.24379, 14.6081 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.548519
+
+[node name="CSGBox9" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.19249e-08, 0.446463, -0.894802, 0, 0.894802, 0.446463, 1, -5.32402e-09, 1.06704e-08, 12.9515, -6.25291, 14.5541 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.719034
+
+[node name="CSGBox10" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.18345e-08, -0.0297011, -0.999559, -1.46526e-09, 0.999559, -0.0297011, 1, 1.81611e-09, 1.17858e-08, 8.34177, -6.75611, 14.1113 )
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox11" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.1845e-08, -0.0370623, -0.999313, -1.37805e-09, 0.999313, -0.0370623, 1, 1.81611e-09, 1.17858e-08, 8.34177, -6.37789, 14.1113 )
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox12" type="CSGBox" parent="Main Room"]
+transform = Transform( 9.11337e-10, -0.997083, 0.0763188, 1.189e-08, -0.0763188, -0.997083, 1, 1.81611e-09, 1.17858e-08, 3.67769, -6.14195, 14.1113 )
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox13" type="CSGBox" parent="Main Room"]
+transform = Transform( 8.2374e-10, -0.996494, 0.0836605, 1.18964e-08, -0.0836605, -0.996494, 1, 1.81611e-09, 1.17858e-08, 3.11724, -6.1596, 14.1113 )
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox14" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.18835e-08, -0.0694605, -0.997585, -9.93077e-10, 0.997585, -0.0694605, 1, 1.81611e-09, 1.17858e-08, 3.34279, -5.6209, 14.1113 )
+width = 0.136
+height = 0.146092
+depth = 0.483154
+
+[node name="CSGBox15" type="CSGBox" parent="Main Room"]
+transform = Transform( 1.18835e-08, -0.0694605, -0.997585, -9.93077e-10, 0.997585, -0.0694605, 1, 1.81611e-09, 1.17858e-08, 3.47352, -6.67083, 14.1113 )
+width = 0.136
+height = 0.146092
+depth = 0.483154
+
+[node name="CSGBox16" type="CSGBox" parent="Main Room"]
+transform = Transform( 0.999608, -0.00426564, -0.0276821, 0, 0.988335, -0.152296, 0.0280089, 0.152236, 0.987947, 14.5482, -7.10606, -12.0685 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox17" type="CSGBox" parent="Main Room"]
+transform = Transform( 0.999608, 0.0197478, -0.0198626, 0, 0.709153, 0.705055, 0.0280089, -0.704778, 0.708874, 14.5469, -6.67845, -12.0685 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 1.05477
+
+[node name="CSGBox18" type="CSGBox" parent="Main Room"]
+transform = Transform( 0.999608, -0.0200194, -0.0195887, 0, 0.699376, -0.714753, 0.0280089, 0.714473, 0.699102, 14.5649, -6.24379, -11.9245 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.548519
+
+[node name="CSGBox19" type="CSGBox" parent="Main Room"]
+transform = Transform( 0.999608, 0.0125049, -0.0250624, 0, 0.894802, 0.446463, 0.0280089, -0.446288, 0.894451, 14.5223, -6.25291, -12.3339 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.719034
+
+[node name="CSGBox20" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.857832, -0.513931, 0, 0.513931, 0.857832, -14.5522, -6.06854, -6.94617 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.922866
+
+[node name="CSGBox21" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.93503, 0.354568, 0, -0.354568, 0.93503, -14.5522, -5.80117, -6.94617 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.684998
+
+[node name="CSGBox22" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.936855, -0.349717, 0, 0.349717, 0.936855, -14.5522, -5.57411, -6.94617 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.684998
+
+[node name="CSGBox23" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.93503, 0.354568, 0, -0.354568, 0.93503, -14.5522, -5.28152, -6.85304 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.751265
+
+[node name="CSGBox24" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.988335, -0.152296, 0, 0.152296, 0.988335, -14.556, -5.50577, -8.68192 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.719034
+
+[node name="CSGBox25" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.988335, -0.152296, 0, 0.152296, 0.988335, -14.556, -5.75703, -8.73356 )
+operation = 2
+width = 0.136
+height = 0.146092
+depth = 0.719034
+
+[node name="CSGBox26" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.857832, -0.513931, 0, 0.513931, 0.857832, -14.5522, -6.06854, -10.5371 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.922866
+
+[node name="CSGBox27" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.93503, 0.354568, 0, -0.354568, 0.93503, -14.5522, -5.80117, -10.5371 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.684998
+
+[node name="CSGBox28" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.936855, -0.349717, 0, 0.349717, 0.936855, -14.5522, -5.57411, -10.5371 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.684998
+
+[node name="CSGBox29" type="CSGBox" parent="Main Room"]
+transform = Transform( 1, 0, 0, 0, 0.93503, 0.354568, 0, -0.354568, 0.93503, -14.5522, -5.28152, -10.444 )
+operation = 2
+width = 0.145472
+height = 0.172695
+depth = 0.751265
+
 [node name="Table" type="CSGBox" parent="."]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -11.0998, 1.30826, 7.34532 )
 use_collision = true
@@ -61,28 +263,56 @@ width = 2.082
 height = 2.165
 material = SubResource( 1 )
 
-[node name="CSGBox" type="CSGBox" parent="Table"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.668264, -0.222161, 0 )
-operation = 2
-width = 1.5
-depth = 1.916
-
 [node name="Books" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.781, -1.80082, 0.152 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.897, 2.31064, 7.36357 )
 
-[node name="Book" type="CSGBox" parent="Books"]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.838, 3.89516, 7.05223 )
+[node name="RigidBody" type="RigidBody" parent="Books"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Books/RigidBody"]
+transform = Transform( 1, 0, 0, 0, 0.577, 0, 0, 0, 1, 0.145321, -0.0669267, -0.222005 )
+shape = SubResource( 8 )
+
+[node name="Book" type="CSGBox" parent="Books/RigidBody/CollisionShape"]
+transform = Transform( 0.7, 0, 0, 0, 1.21317, 0, 0, 0, 0.7, 0.011446, -0.116995, 0.00658655 )
 width = 0.5
 height = 0.2
 depth = 0.5
 material = SubResource( 2 )
 
-[node name="Book2" type="CSGBox" parent="Books"]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.838, 3.895, 7.53269 )
+[node name="RigidBody2" type="RigidBody" parent="Books"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-06, 0.492661 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Books/RigidBody2"]
+transform = Transform( 1, 0, 0, 0, 0.577, 0, 0, 0, 1, 0.145321, -0.0669267, -0.222005 )
+shape = SubResource( 8 )
+
+[node name="Book" type="CSGBox" parent="Books/RigidBody2/CollisionShape"]
+transform = Transform( 0.7, 0, 0, 0, 1.21317, 0, 0, 0, 0.7, 0.011446, -0.116995, 0.00658655 )
 width = 0.5
 height = 0.2
 depth = 0.5
-material = SubResource( 3 )
+material = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="Books/RigidBody2/CollisionShape/Book"]
+transform = Transform( 1.28997, 0, 0.613846, 0, 1.42857, 0, -0.613846, 0, 1.28997, -0.0167837, 0.0988894, 0.0153952 )
+operation = 2
+width = 0.0136725
+height = 0.0137011
+depth = 0.157826
+
+[node name="CSGBox2" type="CSGBox" parent="Books/RigidBody2/CollisionShape/Book"]
+transform = Transform( -0.724218, 0, 1.23139, 0, 1.42857, 0, -1.23139, 0, -0.724218, -0.0640554, 0.0988894, -0.0273829 )
+operation = 2
+width = 0.0169046
+height = 0.0181486
+depth = 0.211551
+
+[node name="CSGBox3" type="CSGBox" parent="Books/RigidBody2/CollisionShape/Book"]
+transform = Transform( -0.311901, 0, -1.39411, 0, 1.42857, 0, 1.39411, 0, -0.311901, -0.0749464, 0.0988894, 0.0575972 )
+operation = 2
+width = 0.0169046
+height = 0.0107309
+depth = 0.157826
 
 [node name="Safe2" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.6674, 1.14793, 7.38352 )
@@ -119,3 +349,17 @@ physics_material_override = SubResource( 6 )
 [node name="CollisionShape" type="CollisionShape" parent="Stairs2/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 0.998426, -0.0560829, 0, 0.0560829, 0.998426, -0.000671744, -0.0234431, -4.34601 )
 shape = SubResource( 7 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163161, 1.71389, 1.42359 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.320016, 0, 0 )
+shape = SubResource( 9 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691035, 1.38056, 1.4773 )
+visible = false
+light_energy = 0.1
+script = ExtResource( 5 )
