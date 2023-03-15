@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://3D Models/Large_Picture_Frame/textures/AO.jpg" type="Texture" id=1]
+[ext_resource path="res://3D Models/Large_Picture_Frame/source/Obraz01_Ready.fbx" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.235294, 0.192157, 0.137255, 1 )
+albedo_texture = ExtResource( 1 )
+
+[node name="Obraz01_Ready" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Obraz01_ready" parent="RootNode" index="0"]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
