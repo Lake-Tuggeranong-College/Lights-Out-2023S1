@@ -2,6 +2,7 @@ extends Node
 
 var vr = false
 var desktop = false
+var in_area = false
 
 # Declare member variables here. Examples:
 # var a = 2

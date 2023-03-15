@@ -31,8 +31,8 @@ void fragment( )
 shader = SubResource( 1 )
 shader_param/color = Color( 1, 1, 1, 1 )
 shader_param/shift_dist = 0.0
-shader_param/speed = 20.0
-shader_param/interval = 70.0
+shader_param/speed = 10.0
+shader_param/interval = 20.0
 shader_param/residual = 2.0
 
 [sub_resource type="PlaneMesh" id=3]
