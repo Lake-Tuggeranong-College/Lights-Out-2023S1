@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Test Input.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://3D Models/Rubber_Duck/Rubber_Duck.tscn" type="PackedScene" id=25]
 [ext_resource path="res://3D Models/Thin_Picture_Frame/Thin_Picture_Frame.tscn" type="PackedScene" id=26]
 [ext_resource path="res://3D Models/textures for 3d objects/the boi interview.jpg" type="Texture" id=27]
+[ext_resource path="res://3D Models/WaterDrip_Model/WaterDrip_Model.tscn" type="PackedScene" id=28]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.278431, 0.211765, 0.196078, 1 )
@@ -193,5 +194,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 3, 3.09548, 2.98495, -6.37952 )
 transform = Transform( 1.282, 0, 0, 0, 0.704, 0, 0, 0, 1, 3.09506, 3.33404, -6.35576 )
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
+
+[node name="WaterDrip_Model" parent="." instance=ExtResource( 28 )]
+transform = Transform( 0.191, 0, 0, 0, 0.191, 0, 0, 0, 0.191, -5.49888, 1.20962, -0.58148 )
+
+[node name="WaterDrip_Model2" parent="." instance=ExtResource( 28 )]
+transform = Transform( 0.191, 0, 0, 0, 0.191, 0, 0, 0, 0.191, -5.49888, 1.71151, -0.111293 )
+
+[node name="WaterDrip_Model3" parent="." instance=ExtResource( 28 )]
+transform = Transform( 0.191, 0, 0, 0, 0.191, 0, 0, 0, 0.191, -5.49888, 2.26833, -0.455947 )
+
+[node name="WaterDrip_Model4" parent="." instance=ExtResource( 28 )]
+transform = Transform( 0.191, 0, 0, 0, 0.191, 0, 0, 0, 0.191, -5.49888, 2.77997, -0.800403 )
+
+[node name="WaterDrip_Model5" parent="." instance=ExtResource( 28 )]
+transform = Transform( 0.191, 0, 0, 0, 0.191, 0, 0, 0, 0.191, -5.49888, 3.02473, -0.223754 )
 
 [editable path="FPController"]
