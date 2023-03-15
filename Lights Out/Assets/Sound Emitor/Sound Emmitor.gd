@@ -16,7 +16,7 @@ func _ready():
 #	emmit_sound("res://Assets/Audio Files/DoorLockUnlocking_SFX.wav")
 
 func emmit_sound(sound_file):
-	radarShader.set_shader_param("interval",70)
+	radarShader.set_shader_param("interval",35)
 	var sfx = load(sound_file)
 	$".".stream = sfx
 	$".".play()

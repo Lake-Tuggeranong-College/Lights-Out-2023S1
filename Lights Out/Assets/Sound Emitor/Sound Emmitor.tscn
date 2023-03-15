@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.gd" type="Script" id=3]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D"]
-autoplay = true
 script = ExtResource( 3 )
 
 [node name="Sonar" parent="." instance=ExtResource( 1 )]
