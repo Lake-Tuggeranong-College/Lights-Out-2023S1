@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/controller.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_pointer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_pickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/godot-openxr/scenes/Clicker.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -46,7 +48,13 @@ spot_range = 4.75455
 spot_angle = 14.0625
 
 [node name="FunctionPickup" parent="LeftHandController" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1, 0.5 )
+pickup_axis_id = 2
+
+[node name="Clicker" type="Spatial" parent="LeftHandController"]
+script = ExtResource( 8 )
+click_button = 2
+
+[node name="AudioStreamPlayer3D" parent="LeftHandController/Clicker" instance=ExtResource( 9 )]
 
 [node name="RightHandController" type="ARVRController" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5 )
@@ -62,6 +70,7 @@ spot_range = 4.7552
 spot_angle = 14.0625
 
 [node name="FunctionPickup" parent="RightHandController" instance=ExtResource( 7 )]
+pickup_axis_id = 2
 
 [node name="Player" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.047739, 0 )

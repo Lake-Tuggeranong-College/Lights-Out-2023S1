@@ -1,4 +1,4 @@
-extends CSGBox
+extends Spatial
 
 
 # Declare member variables here. Examples:
@@ -8,16 +8,15 @@ extends CSGBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+#	droplet()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-
-func _on_Area_body_entered(body):
-	if body.name == "AttackOnTitan_Key" or body.name == "Pickable":
-		self.queue_free()
-		body.queue_free()
-		Global.hasClicker = true
+func droplet():
+	$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/WaterDrip_SFX.wav")
+	yield(get_tree().create_timer(3.0), "timeout")
+	droplet()

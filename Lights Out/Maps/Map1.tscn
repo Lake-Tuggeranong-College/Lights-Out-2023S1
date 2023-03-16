@@ -12,15 +12,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17111, 0, -6.63111 )
 script = ExtResource( 1 )
 
 [node name="Spawn" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78605, 0.22848, 4.72601 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1226, 0.22848, 3.15224 )
 
 [node name="Closet" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 2.07003, 0.22064, 3.1612 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
 
 [node name="Basement" parent="." instance=ExtResource( 2 )]
 
 [node name="Sonar" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92079, 0.543043, 6.33718 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
