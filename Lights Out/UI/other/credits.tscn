@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/other/credits.gd" type="Script" id=2]
+
+[node name="credits" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 984.0
+margin_bottom = 560.0
+
+[node name="Button" type="Button" parent="."]
+margin_right = 150.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+text = "back to menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

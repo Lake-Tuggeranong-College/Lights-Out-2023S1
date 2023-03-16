@@ -22,3 +22,14 @@ func _on_Play_pressed():
 
 func _on_return_pressed():
 	get_tree().change_scene("res://Launcher.tscn")
+
+
+func _on_options_pressed():
+	get_tree().change_scene("res://UI/Desktop/options.tscn")
+
+
+func _on_Button_pressed():
+		get_tree().change_scene("res://UI/other/credits.tscn")
+
+
+

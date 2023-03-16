@@ -1,4 +1,4 @@
-extends CSGBox
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -16,8 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Area_body_entered(body):
-	if body.name == "AttackOnTitan_Key" or body.name == "Pickable":
-		self.queue_free()
-		body.queue_free()
-		Global.hasClicker = true
+func _on_Button_pressed():
+	get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
