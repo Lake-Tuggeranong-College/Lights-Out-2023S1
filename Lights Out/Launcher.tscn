@@ -13,17 +13,14 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="main buttons" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 447.0
-margin_right = 577.0
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 445.0
+margin_right = 575.0
 margin_bottom = 600.0
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/main buttons"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 196.0
 margin_right = 130.0
 margin_bottom = 227.0
@@ -31,50 +28,57 @@ text = "Lights Out
 Launcher"
 align = 1
 
-[node name="spacer1" type="VBoxContainer" parent="HBoxContainer/main buttons"]
+[node name="spacer1" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 231.0
 margin_right = 130.0
 margin_bottom = 251.0
 rect_min_size = Vector2( 130, 20 )
 
-[node name="VR" type="Button" parent="HBoxContainer/main buttons"]
+[node name="VR" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 255.0
 margin_right = 130.0
 margin_bottom = 286.0
 theme = ExtResource( 4 )
 text = "Launch in VR"
 
-[node name="spacer2" type="VBoxContainer" parent="HBoxContainer/main buttons"]
+[node name="spacer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 290.0
 margin_right = 130.0
 margin_bottom = 310.0
 rect_min_size = Vector2( 130, 20 )
 
-[node name="Desktop" type="Button" parent="HBoxContainer/main buttons"]
+[node name="Desktop" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 314.0
 margin_right = 130.0
 margin_bottom = 345.0
 theme = ExtResource( 4 )
 text = "Launch in Desktop"
 
-[node name="spacer3" type="VBoxContainer" parent="HBoxContainer/main buttons"]
+[node name="spacer3" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 349.0
 margin_right = 130.0
 margin_bottom = 369.0
 rect_min_size = Vector2( 130, 20 )
 
-[node name="quit" type="Button" parent="HBoxContainer/main buttons"]
+[node name="quit" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 373.0
 margin_right = 130.0
 margin_bottom = 404.0
 theme = ExtResource( 4 )
 text = "leave game"
 
-[node name="Sprite" type="Sprite" parent="HBoxContainer"]
-position = Vector2( 800, 300 )
-scale = Vector2( 0.7, 0.7 )
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_left = 579.0
+margin_right = 579.7
+margin_bottom = 0.7
+rect_min_size = Vector2( 0.7, 0.7 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.75
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 3
 
-[connection signal="pressed" from="HBoxContainer/main buttons/VR" to="." method="_on_VR_pressed"]
-[connection signal="pressed" from="HBoxContainer/main buttons/Desktop" to="." method="_on_Desktop_pressed"]
-[connection signal="pressed" from="HBoxContainer/main buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VR" to="." method="_on_VR_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Desktop" to="." method="_on_Desktop_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
