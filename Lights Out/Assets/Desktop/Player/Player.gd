@@ -7,7 +7,7 @@ var max_speed = 10
 var mouse_sensitivity = 0.005
 var velocity = Vector3()
 var isHolding = false
-var hasClicker = true
+
 
 
 func _ready():
@@ -15,8 +15,8 @@ func _ready():
 
 func get_input():
 	var input_dir = Vector3()
-	if Input.is_action_just_pressed("left_click") and hasClicker:
-		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/WaterDrip_SFX.wav")
+	if Input.is_action_just_pressed("left_click") and Global.hasClicker:
+		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/UIconfirmationOptimistic_SFX.wav")
 	if Input.is_action_just_pressed("interact"):
 		if $Pivot/Camera/RayCast.is_colliding():
 			var raycastCollsions = $Pivot/Camera/RayCast.get_collider()
