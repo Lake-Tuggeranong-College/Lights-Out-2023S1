@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Maps/Stairs2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Assets/3D Models/Old_Stairs/source/stairs_1.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Maps/number_light.gd" type="Script" id=5]
-[ext_resource path="res://Maps/AreaDetection.gd" type="Script" id=6]
+[ext_resource path="res://Maps/Light.gd" type="Script" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0.74902, 0, 1 )
@@ -28,7 +27,16 @@ albedo_color = Color( 0.054902, 0, 1, 1 )
 extents = Vector3( 0.235918, 0.152594, 5.20098 )
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 0.636827, 1, 0.762591 )
+extents = Vector3( 0.580075, 1, 0.762591 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 3.73799, 1, 1 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 1, 1, 1.55328 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 0.622273, 1, 1 )
 
 [node name="Basement" type="Spatial"]
 
@@ -350,16 +358,50 @@ physics_material_override = SubResource( 6 )
 transform = Transform( 1, 0, 0, 0, 0.998426, -0.0560829, 0, 0.0560829, 0.998426, -0.000671744, -0.0234431, -4.34601 )
 shape = SubResource( 7 )
 
-[node name="Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163161, 1.71389, 1.42359 )
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.337795, 0, 0 )
 script = ExtResource( 6 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="Area" type="Area" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163161, 1.71389, 1.42359 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.320016, 0, 0 )
 shape = SubResource( 9 )
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691035, 1.38056, 1.4773 )
-visible = false
-light_energy = 0.1
-script = ExtResource( 5 )
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84769, 1.55762, 9.57876 )
+script = ExtResource( 6 )
+
+[node name="Area" type="Area" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/Area"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3642, 1.46358, 4.10844 )
+script = ExtResource( 6 )
+
+[node name="Area" type="Area" parent="MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/Area"]
+shape = SubResource( 11 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.01413, 1.52212, 7.27275 )
+script = ExtResource( 6 )
+
+[node name="Area" type="Area" parent="MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance4/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343565, 0.0824916, 0 )
+shape = SubResource( 12 )
+
+[connection signal="area_entered" from="MeshInstance/Area" to="MeshInstance" method="_on_Area_area_entered"]
+[connection signal="area_exited" from="MeshInstance/Area" to="MeshInstance" method="_on_Area_area_exited"]
+[connection signal="area_entered" from="MeshInstance2/Area" to="MeshInstance2" method="_on_Area_area_entered"]
+[connection signal="area_exited" from="MeshInstance2/Area" to="MeshInstance2" method="_on_Area_area_exited"]
+[connection signal="area_entered" from="MeshInstance3/Area" to="MeshInstance3" method="_on_Area_area_entered"]
+[connection signal="area_exited" from="MeshInstance3/Area" to="MeshInstance3" method="_on_Area_area_exited"]
+[connection signal="area_entered" from="MeshInstance4/Area" to="MeshInstance4" method="_on_Area_area_entered"]
+[connection signal="area_exited" from="MeshInstance4/Area" to="MeshInstance4" method="_on_Area_area_exited"]
