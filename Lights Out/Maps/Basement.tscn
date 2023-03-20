@@ -27,7 +27,7 @@ albedo_color = Color( 0.054902, 0, 1, 1 )
 extents = Vector3( 0.235918, 0.152594, 5.20098 )
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 0.580075, 1, 0.762591 )
+extents = Vector3( 0.580075, 1, 0.583129 )
 
 [sub_resource type="BoxShape" id=10]
 extents = Vector3( 3.73799, 1, 1 )
@@ -359,14 +359,14 @@ transform = Transform( 1, 0, 0, 0, 0.998426, -0.0560829, 0, 0.0560829, 0.998426,
 shape = SubResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.337795, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.337795, 0, -0.315028 )
 script = ExtResource( 6 )
 
 [node name="Area" type="Area" parent="MeshInstance"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163161, 1.71389, 1.42359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163161, 1.83065, 1.42359 )
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.320016, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.320016, 0, -0.0905244 )
 shape = SubResource( 9 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
