@@ -1,5 +1,4 @@
-extends Node2D
-
+extends Control
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,3 +17,4 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
+	pass

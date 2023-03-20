@@ -25,7 +25,7 @@ func onButton_Pressed(button_function):
 		currentInput.pop_back()
 		updateCode()
 	elif button_function == "Go":
-		if get_tree().get_root().get_node("Spatial/Safe2").open($Background/Standard/LineEdit.text):
+		if get_tree().get_root().get_node("Spatial/Basement/Safe2").open($Background/Standard/LineEdit.text):
 			$Background/Standard/LineEdit.text = "Unlocked!"
 			yield(get_tree().create_timer(1.0), "timeout")
 			self.visible = false
