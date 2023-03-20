@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/DoorTemp.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AoT Key Model.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-xr-tools/objects/snap_zone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Maps/Load Closet.gd" type="Script" id=8]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.588235, 0.294118, 0, 1 )
@@ -16,9 +17,10 @@ extents = Vector3( 1.17029, 2.19252, 0.272607 )
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.0835361
-height = 0.384145
+height = 0.510955
 
 [node name="Closet" type="Spatial"]
+script = ExtResource( 8 )
 
 [node name="Closet" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69789, 0 )
@@ -61,17 +63,18 @@ script = ExtResource( 3 )
 [node name="AudioStreamPlayer3D" parent="Water" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0974498, 0.26423, 0.0645215 )
 
-[node name="Pickable" parent="." instance=ExtResource( 5 )]
+[node name="Pickable" parent="." groups=["pickup"] instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96246, 1.64233, -0.661092 )
+visible = false
 
 [node name="RootNode" parent="Pickable" instance=ExtResource( 6 )]
 
 [node name="CollisionShape2" type="CollisionShape" parent="Pickable"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.162451, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.242658, 0 )
 shape = SubResource( 3 )
 
 [node name="AttackOnTitan_Key" parent="." groups=["pickup"] instance=ExtResource( 1 )]
-transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 2.11758e-22, 4.37114e-08, 1, -4.37114e-08, 1.96246, 1.5277, -0.921546 )
+transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 2.11758e-22, 4.37114e-08, 1, -4.37114e-08, 2.07429, 1.48158, -0.921546 )
 visible = false
 
 [node name="SnapZone" parent="." instance=ExtResource( 7 )]
