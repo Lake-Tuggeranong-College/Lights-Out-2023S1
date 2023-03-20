@@ -1,11 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Shader/sonar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Maps/Closet.tscn" type="PackedScene" id=6]
-
-[sub_resource type="Environment" id=1]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17111, 0, -6.63111 )
@@ -23,4 +21,3 @@ transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 2.07003, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92079, 0.543043, 6.33718 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
