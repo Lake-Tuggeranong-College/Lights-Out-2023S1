@@ -2,8 +2,23 @@
 
 [ext_resource path="res://you win.gd" type="Script" id=1]
 
-[node name="you win" type="Node2D"]
+[node name="you win" type="Control"]
 script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 85.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 85.0
+margin_bottom = 14.0
+text = "you win =)"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 85.0
+margin_bottom = 38.0
+text = "main menu"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -15,19 +30,4 @@ margin_top = 200.0
 margin_right = 589.0
 margin_bottom = 240.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 85.0
-margin_bottom = 40.0
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_right = 85.0
-margin_bottom = 14.0
-text = "you win =)"
-
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 85.0
-margin_bottom = 38.0
-text = "main menu"
-
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
