@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Maps/DoorTemp.gd" type="Script" id=1]
+[ext_resource path="res://Maps/EndLevel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/bookshelf/textures/SM_Bookshelf_initialShadingGroup_Roughness.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.588235, 0.294118, 0, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.03121, 1.48352, 0.226252 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.87451, 0.764706, 0.168627, 1 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.47
+roughness = 0.28
+
+[node name="Spatial" type="Spatial"]
+
+[node name="EndLevelDoor" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.310132, 0.384674, -0.0197878 )
+use_collision = true
+width = 2.10042
+height = 2.95809
+depth = 0.396887
+material = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="Area" type="Area" parent="EndLevelDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="EndLevelDoor/Area"]
+shape = SubResource( 2 )
+
+[node name="WinDoor" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.163139, 0.384674, -0.0197878 )
+use_collision = true
+width = 2.10042
+height = 2.953
+depth = 0.434665
+material = SubResource( 3 )
+script = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="WinDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WinDoor/Area"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="EndLevelDoor/Area" to="EndLevelDoor" method="_on_Area_body_entered"]
+[connection signal="body_entered" from="WinDoor/Area" to="WinDoor" method="_on_Area_body_entered"]
