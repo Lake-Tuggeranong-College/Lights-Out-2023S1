@@ -9,13 +9,13 @@ var velocity = Vector3()
 var isHolding = false
 
 
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func get_input():
 	var input_dir = Vector3()
 	if Input.is_action_just_pressed("left_click") and Global.hasClicker:
+		$OmniLight/Timer.start()
 		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/UIconfirmationOptimistic_SFX.wav")
 	if Input.is_action_just_pressed("interact"):
 		if $Pivot/Camera/RayCast.is_colliding():
