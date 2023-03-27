@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rat.obj-7599cb2ccaa679bf0851fc87348725e2.mesh"
+
+[deps]
+
+files=[ "res://.import/rat.obj-7599cb2ccaa679bf0851fc87348725e2.mesh" ]
+
+source_file="res://Assets/3D Models/lowpolyrat/rat.obj"
+dest_files=[ "res://.import/rat.obj-7599cb2ccaa679bf0851fc87348725e2.mesh", "res://.import/rat.obj-7599cb2ccaa679bf0851fc87348725e2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
