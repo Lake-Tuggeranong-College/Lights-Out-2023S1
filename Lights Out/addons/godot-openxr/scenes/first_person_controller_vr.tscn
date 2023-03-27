@@ -12,7 +12,7 @@
 
 [sub_resource type="CapsuleShape" id=1]
 
-[node name="FPController" type="ARVROrigin"]
+[node name="Player" type="ARVROrigin"]
 world_scale = 1.5
 script = ExtResource( 1 )
 
