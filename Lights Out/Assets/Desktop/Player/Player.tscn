@@ -48,12 +48,10 @@ visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691035, 1.38056, 1.4773 )
 visible = false
 light_energy = 0.1
-light_negative = true
 script = ExtResource( 4 )
 
 [node name="Timer" type="Timer" parent="OmniLight"]
-wait_time = 2.0
-one_shot = true
+wait_time = 3.0
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
 [connection signal="timeout" from="OmniLight/Timer" to="OmniLight" method="_on_Timer_timeout"]
