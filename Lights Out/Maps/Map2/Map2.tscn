@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[sub_resource type="Environment" id=1]
+[ext_resource path="res://Maps/Map2/Corridor_Map2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=2]
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+[node name="Spawn" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0763985, 2.58362, -7.10119 )
+
+[node name="Corridor_Map2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0432, 26.7744, 32.9909 )

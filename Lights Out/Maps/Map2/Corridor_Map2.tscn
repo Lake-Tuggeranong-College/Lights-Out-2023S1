@@ -62,7 +62,4 @@ width = 1.05336
 height = 0.402552
 depth = 0.0627017
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.6571, -24.4587, -34.2408 )
-
 [connection signal="body_entered" from="Door/Area" to="Door" method="_on_Area_body_entered"]
