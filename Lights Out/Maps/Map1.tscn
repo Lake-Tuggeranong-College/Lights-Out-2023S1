@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Shader/sonar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/3D Models/lowpolyrat/rat.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Maps/Closet.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=1]
@@ -20,3 +22,6 @@ transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 2.07003, 
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="rat" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.4, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.7467, 2.02978, 6.8046 )
