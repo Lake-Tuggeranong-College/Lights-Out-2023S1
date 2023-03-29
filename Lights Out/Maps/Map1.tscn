@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Maps/SectionDeleter.gd" type="Script" id=3]
+[ext_resource path="res://Assets/SectionDeleter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Maps/Map2/EndLevelDoor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Maps/Closet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/3D Models/lowpolyrat/rat.tscn" type="PackedScene" id=7]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.536461, 1, 1.37518 )
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.588235, 0.294118, 0, 1 )
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17111, 0, -6.63111 )
@@ -23,14 +23,16 @@ transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 2.07003, 
 
 [node name="Basement" parent="." instance=ExtResource( 2 )]
 
-[node name="Area" type="Area" parent="Basement"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236139, 1.05036, 1.61169 )
-script = ExtResource( 3 )
-Section_Path = NodePath("../../Closet")
+[node name="Area" parent="Basement" instance=ExtResource( 3 )]
+Blockade_Path = NodePath("CSGBox")
 
-[node name="CollisionShape" type="CollisionShape" parent="Basement/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.829972, 0.939764, 1.8754 )
-shape = SubResource( 1 )
+[node name="CSGBox" type="CSGBox" parent="Basement/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.711597, 1.80048, 1.56523 )
+visible = false
+width = 0.85349
+height = 4.61595
+depth = 2.90016
+material = SubResource( 2 )
 
 [node name="EndLevel" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.0558, 4.70829, 1.33661 )
