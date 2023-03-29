@@ -23,7 +23,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.488197 )
 operation = 2
 width = 4.29608
 height = 4.86732
-depth = 17.1467
+depth = 17.068
 
 [node name="CutoutShape1b" type="CSGBox" parent="Closet"]
 transform = Transform( 1, 0, 0, 0, 0.991892, -0.127082, 0, 0.127082, 0.991892, 2.22762, 0.222265, -0.578685 )

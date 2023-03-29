@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Lvl 3 Puzzle" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55425, 0 )
+use_collision = true
+width = 12.9743
+height = 5.40731
+depth = 8.49096
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
+operation = 2
+width = 12.8849
+height = 5.27052
+depth = 7.77059
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104484, 0, -5.53238 )
+operation = 2
+height = 3.84623
