@@ -3,9 +3,11 @@ extends MeshInstance
 
 
 func _on_Area_area_entered(area):
-	print("good")
-	Global.in_area = true
+	if area.name == "Player":
+		print("good")
+		Global.in_area = true
 
 func _on_Area_area_exited(area):
-	print ("but")
-	Global.in_area = false
+	if area.name == "Player":
+		print ("but")
+		Global.in_area = false
