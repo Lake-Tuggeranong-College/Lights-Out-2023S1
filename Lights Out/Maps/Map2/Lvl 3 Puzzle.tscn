@@ -1,4 +1,15 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Maps/Map2/Card Reader.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.0313726, 1, 0, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.765975, 0.424896, 0.599432 )
 
 [node name="Lvl 3 Puzzle" type="Spatial"]
 
@@ -19,3 +30,35 @@ depth = 7.77059
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104484, 0, -5.53238 )
 operation = 2
 height = 3.84623
+
+[node name="Table" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.164681, -1.25557 )
+use_collision = true
+radius = 1.81827
+height = 0.155016
+sides = 20
+material = SubResource( 1 )
+
+[node name="Reader Platform" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83959, -0.174977, 3.31233 )
+use_collision = true
+width = 5.20229
+height = 1.78322
+depth = 1.73666
+material = SubResource( 2 )
+
+[node name="Card Reader" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67684, 0.838801, 3.53523 )
+width = 1.06793
+height = 0.261576
+depth = 0.802325
+script = ExtResource( 1 )
+
+[node name="Area" type="Area" parent="Card Reader"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Card Reader/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333699, -0.276388 )
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_entered"]
+[connection signal="area_exited" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_exited"]
