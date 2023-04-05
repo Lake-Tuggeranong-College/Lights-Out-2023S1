@@ -14,6 +14,8 @@ func _ready():
 
 func get_input():
 	var input_dir = Vector3()
+	if Input.is_action_just_pressed("ui_]"):
+		get_tree().change_scene("res://Maps/Map2/Map2.tscn")
 	if Input.is_action_just_pressed("left_click") and Global.hasClicker:
 		$OmniLight/Timer.start()
 		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/UIconfirmationOptimistic_SFX.wav")

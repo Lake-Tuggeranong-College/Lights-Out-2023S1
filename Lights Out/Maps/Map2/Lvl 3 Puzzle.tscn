@@ -9,7 +9,7 @@ albedo_color = Color( 1, 0, 0, 1 )
 albedo_color = Color( 0.0313726, 1, 0, 1 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.765975, 0.424896, 0.599432 )
+extents = Vector3( 0.765975, 1.30749, 0.599432 )
 
 [node name="Lvl 3 Puzzle" type="Spatial"]
 
@@ -27,7 +27,7 @@ height = 5.27052
 depth = 7.77059
 
 [node name="CSGBox" type="CSGBox" parent="CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104484, 0, -5.53238 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104484, 0, -4.35147 )
 operation = 2
 height = 3.84623
 
@@ -55,9 +55,10 @@ depth = 0.802325
 script = ExtResource( 1 )
 
 [node name="Area" type="Area" parent="Card Reader"]
+transform = Transform( 1, 0, 0, 0, 1.022, 0, 0, 0, 1, -0.0469203, 0, -1.66211 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Card Reader/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333699, -0.276388 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.398083, -0.276388 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_entered"]
