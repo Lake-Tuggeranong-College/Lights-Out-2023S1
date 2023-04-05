@@ -14,6 +14,8 @@ func _ready():
 
 func get_input():
 	var input_dir = Vector3()
+	if Input.is_action_just_pressed("ui_]"):
+		get_tree().change_scene("res://Maps/Map2/Map2.tscn")
 	if Input.is_action_just_pressed("left_click") and Global.hasClicker:
 		$OmniLight/Timer.start()
 		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/UIconfirmationOptimistic_SFX.wav")
@@ -33,12 +35,17 @@ func get_input():
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_pressed("ui_forward"):
 		input_dir += -global_transform.basis.z
+		footstepSound()
+		#Cameron and Bailey put in the emmitsound files of single footsteps for desktop player movement.
 	if Input.is_action_pressed("ui_backward"):
 		input_dir += global_transform.basis.z
+		footstepSound()
 	if Input.is_action_pressed("ui_strafe_left"):
 		input_dir += -global_transform.basis.x
+		footstepSound()
 	if Input.is_action_pressed("ui_strafe_right"):
 		input_dir += global_transform.basis.x
+		footstepSound()
 	input_dir = input_dir.normalized()
 	return input_dir
 
@@ -69,4 +76,8 @@ func reparent(child: Node, new_parent: Node):
 	var old_parent = child.get_parent()
 	old_parent.remove_child(child)
 	new_parent.add_child(child)
+	
+func footstepSound():
+	if !$footsteps.playing:
+		$footsteps.play()
 	
