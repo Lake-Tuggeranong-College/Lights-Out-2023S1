@@ -8,6 +8,13 @@ var mouse_sensitivity = 0.005
 var velocity = Vector3()
 var isHolding = false
 
+func _init():
+	VisualServer.set_debug_generate_wireframes(true)	
+
+func _input(event):
+	if event is InputEventKey and Input.is_key_pressed(KEY_P):
+		var vp = get_viewport()
+		vp.debug_draw = (vp.debug_draw + 1 ) % 4
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
