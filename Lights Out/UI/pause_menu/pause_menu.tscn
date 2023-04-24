@@ -25,16 +25,19 @@ margin_bottom = 14.0
 text = "PAUSED"
 align = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="resume game" type="Button" parent="VBoxContainer"]
 margin_top = 18.0
 margin_right = 100.0
 margin_bottom = 49.0
 theme = ExtResource( 1 )
 text = "Resume Game "
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="quit game" type="Button" parent="VBoxContainer"]
 margin_top = 53.0
 margin_right = 100.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
 text = "Quit Game "
+
+[connection signal="pressed" from="VBoxContainer/resume game" to="." method="_on_resume_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit game" to="." method="_on_quit_game_pressed"]

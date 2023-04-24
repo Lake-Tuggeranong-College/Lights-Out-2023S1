@@ -55,6 +55,8 @@ func get_input():
 		footstepSound()
 	input_dir = input_dir.normalized()
 	return input_dir
+	
+	
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -71,6 +73,8 @@ func _physics_process(delta):
 		velocity.x = desired_velocity.x
 		velocity.z = desired_velocity.z
 		velocity = move_and_slide(velocity, Vector3.UP, true)
+	if Input.is_action_just_pressed("ui_menu"):
+		get_tree().change_scene("res://UI/pause_menu/pause_menu.tscn")
 
 
 func _on_Area_area_entered(area):
