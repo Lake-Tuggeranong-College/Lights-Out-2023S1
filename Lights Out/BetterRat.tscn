@@ -6,6 +6,7 @@
 extents = Vector3( 0.362223, 0.247223, 0.186568 )
 
 [node name="RigidBody" type="RigidBody"]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0893197, 0.27677, 0 )
