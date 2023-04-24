@@ -1,5 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=1]
+
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="ArrayMesh" id=2]
@@ -15,20 +17,8 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="Shader" id=3]
-code = "shader_type spatial;
-render_mode unshaded;
-
-uniform vec4 outline_color: hint_color;
-uniform float outline_strength = 1.0;
-
-void fragment() {
-    ALBEDO = outline_color.rgb;
-    ALPHA = dot(NORMAL, vec3(0,0,1)) * outline_strength;
-}"
-
 [sub_resource type="ShaderMaterial" id=4]
-shader = SubResource( 3 )
+shader = ExtResource( 1 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
 

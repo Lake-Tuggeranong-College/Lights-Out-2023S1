@@ -1,0 +1,53 @@
+[gd_scene format=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10626, 5.99827, -0.155735 )
+light_color = Color( 0.529412, 0.341176, 0.0941176, 1 )
+light_energy = 2.908
+shadow_enabled = true
+omni_range = 7.382
+
+[node name="Floor" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154556, -0.0960573, -0.0519384 )
+width = 8.5
+height = 0.25
+depth = 7.5
+
+[node name="CSGWallNorth" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58809, 3.47047, -0.0804915 )
+width = 0.25
+height = 7.0
+depth = 8.0
+
+[node name="CSGWallWest" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.213, 3.47, 3.705 )
+width = 0.25
+height = 7.0
+depth = 8.0
+
+[node name="CSGWallEast" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.213, 3.47, -3.863 )
+width = 0.25
+height = 7.0
+depth = 8.0
+
+[node name="CSGWallSouth" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.238, 3.47, -0.048 )
+width = 0.25
+height = 7.0
+depth = 8.0
+
+[node name="CutoutShape2" type="CSGBox" parent="CSGWallSouth"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0230942, -1.18885, -0.0534693 )
+operation = 2
+width = 2.804
+height = 4.536
+depth = 0.397
+
+[node name="Roof" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154556, 6.78471, -0.0519384 )
+width = 8.0
+height = 0.25
+depth = 7.5
