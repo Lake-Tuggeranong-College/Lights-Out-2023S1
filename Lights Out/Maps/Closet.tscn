@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AttackOnTitan_Key2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/DoorTemp.gd" type="Script" id=2]
 [ext_resource path="res://Maps/Water.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=4]
@@ -21,6 +21,9 @@ height = 0.510955
 
 [node name="Closet" type="Spatial"]
 script = ExtResource( 8 )
+
+[node name="AttackOnTitan_Key2" parent="." groups=["pickup"] instance=ExtResource( 1 )]
+transform = Transform( -0.116376, 0.00532174, 0.993191, -0.993205, -0.00062356, -0.116374, 0, -0.999986, 0.00535815, 1.95758, 1.58937, -0.403878 )
 
 [node name="Closet" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69789, 0 )
@@ -71,10 +74,6 @@ visible = false
 [node name="CollisionShape2" type="CollisionShape" parent="Pickable"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.242658, 0 )
 shape = SubResource( 3 )
-
-[node name="AttackOnTitan_Key" parent="." groups=["pickup"] instance=ExtResource( 1 )]
-transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 2.11758e-22, 4.37114e-08, 1, -4.37114e-08, 2.07429, 1.48158, -0.921546 )
-visible = false
 
 [node name="SnapZone" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96472, 1.71361, -0.590946 )
