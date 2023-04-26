@@ -10,10 +10,10 @@ extends Spatial
 func _ready():
 	if Global.vr:
 		$Pickable.visible = true
-		$AttackOnTitan_Key.visible = false
+		$AttackOnTitan_Key2.visible = false
 	else:
 		$Pickable.visible = false
-		$AttackOnTitan_Key.visible = true
+		$AttackOnTitan_Key2.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
