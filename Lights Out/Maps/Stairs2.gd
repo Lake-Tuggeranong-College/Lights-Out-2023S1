@@ -12,7 +12,6 @@ func _ready():
 		$CSGMesh.use_collision = true
 		$StaticBody/CollisionShape.disabled = true
 	if Global.desktop:
-		$CSGMesh.use_collision = false
 		$StaticBody/CollisionShape.disabled = false
 
 
