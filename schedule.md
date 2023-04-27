@@ -36,7 +36,7 @@ gantt
     
 
     section Final Version
-
+    Level 2 Puzzle          :09-04-23  , 07-05-23
     Ripple Effect           :06-03-23  , 09-04-23
     Puzzles                 :12-03-23  , 09-04-23
     Playtesting             :17-03-23, 26-05-23
