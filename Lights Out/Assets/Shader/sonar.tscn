@@ -29,11 +29,11 @@ void fragment( )
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
-shader_param/color = Color( 0.0392157, 0.709804, 0, 1 )
+shader_param/color = Color( 1, 0, 0, 1 )
 shader_param/shift_dist = 0.0
 shader_param/speed = 10.0
 shader_param/interval = 10.0
-shader_param/residual = 2.0
+shader_param/residual = 0.05
 
 [sub_resource type="PlaneMesh" id=3]
 material = SubResource( 2 )

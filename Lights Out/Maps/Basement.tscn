@@ -1,10 +1,10 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=40 format=2]
 
+[ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Assets/3D Models/Old_Stairs/source/stairs_1.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=5]
-[ext_resource path="res://UI/Fonts/Sego UI/SEGOEUI.TTF" type="DynamicFontData" id=6]
 
 [sub_resource type="CubeMesh" id=17]
 
@@ -27,10 +27,40 @@ shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
 
 [sub_resource type="BoxShape" id=8]
-extents = Vector3( 0.346047, 0.224716, 0.29552 )
+extents = Vector3( 0.309693, 0.224716, 0.266277 )
 
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0, 1, 0.486275, 1 )
+[sub_resource type="CubeMesh" id=35]
+
+[sub_resource type="ArrayMesh" id=36]
+surfaces/0 = {
+"aabb": AABB( -1.05773, -1.05773, -1.05773, 2.11547, 2.11548, 2.11548 ),
+"array_data": PoolByteArray( 220, 99, 135, 191, 220, 99, 135, 63, 220, 99, 135, 63, 0, 0, 127, 64, 0, 0, 0, 0, 220, 99, 135, 63, 220, 99, 135, 63, 220, 99, 135, 191, 127, 127, 129, 64, 85, 57, 0, 0, 220, 99, 135, 63, 220, 99, 135, 63, 220, 99, 135, 63, 0, 0, 127, 64, 85, 53, 0, 0, 220, 99, 135, 191, 220, 99, 135, 63, 220, 99, 135, 191, 127, 127, 129, 64, 0, 60, 0, 0, 220, 99, 135, 191, 220, 99, 135, 191, 220, 99, 135, 63, 0, 0, 127, 64, 0, 0, 0, 56, 220, 99, 135, 63, 220, 99, 135, 191, 220, 99, 135, 191, 127, 127, 129, 64, 85, 57, 0, 56, 220, 99, 135, 63, 220, 99, 135, 191, 220, 99, 135, 63, 0, 0, 127, 64, 85, 53, 0, 56, 220, 99, 135, 191, 220, 99, 135, 191, 220, 99, 135, 191, 127, 127, 129, 64, 0, 60, 0, 56, 220, 99, 135, 63, 220, 99, 135, 63, 220, 99, 135, 63, 127, 0, 127, 127, 85, 53, 0, 0, 220, 99, 135, 191, 220, 99, 135, 63, 220, 99, 135, 191, 129, 0, 0, 63, 0, 0, 0, 56, 220, 99, 135, 63, 220, 99, 135, 63, 220, 99, 135, 191, 127, 0, 127, 127, 85, 57, 0, 0, 220, 99, 135, 191, 220, 99, 135, 63, 220, 99, 135, 63, 129, 0, 0, 63, 85, 53, 0, 56, 220, 99, 135, 63, 220, 99, 135, 191, 220, 99, 135, 63, 127, 0, 127, 127, 85, 53, 0, 56, 220, 99, 135, 191, 220, 99, 135, 191, 220, 99, 135, 191, 129, 0, 0, 63, 0, 0, 0, 60, 220, 99, 135, 63, 220, 99, 135, 191, 220, 99, 135, 191, 127, 0, 127, 127, 85, 57, 0, 56, 220, 99, 135, 191, 220, 99, 135, 191, 220, 99, 135, 63, 129, 0, 0, 63, 85, 53, 0, 60, 220, 99, 135, 63, 220, 99, 135, 63, 220, 99, 135, 63, 0, 127, 129, 64, 85, 53, 0, 56, 220, 99, 135, 191, 220, 99, 135, 191, 220, 99, 135, 63, 0, 129, 127, 64, 85, 57, 0, 56, 220, 99, 135, 191, 220, 99, 135, 63, 220, 99, 135, 63, 0, 127, 129, 64, 85, 57, 0, 56, 220, 99, 135, 63, 220, 99, 135, 191, 220, 99, 135, 63, 0, 129, 127, 64, 0, 60, 0, 56, 220, 99, 135, 63, 220, 99, 135, 63, 220, 99, 135, 191, 0, 127, 129, 64, 85, 53, 0, 60, 220, 99, 135, 191, 220, 99, 135, 191, 220, 99, 135, 191, 0, 129, 127, 64, 85, 57, 0, 60, 220, 99, 135, 191, 220, 99, 135, 63, 220, 99, 135, 191, 0, 127, 129, 64, 85, 57, 0, 60, 220, 99, 135, 63, 220, 99, 135, 191, 220, 99, 135, 191, 0, 129, 127, 64, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 0, 0, 4, 0, 2, 0, 2, 0, 4, 0, 6, 0, 1, 0, 5, 0, 3, 0, 3, 0, 5, 0, 7, 0, 8, 0, 12, 0, 10, 0, 10, 0, 12, 0, 14, 0, 9, 0, 13, 0, 11, 0, 11, 0, 13, 0, 15, 0, 16, 0, 20, 0, 18, 0, 18, 0, 20, 0, 22, 0, 17, 0, 21, 0, 19, 0, 19, 0, 21, 0, 23, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 36,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ShaderMaterial" id=37]
+shader = ExtResource( 5 )
+shader_param/outline_color = Color( 1, 0, 0, 1 )
+shader_param/outline_strength = 100.0
+
+[sub_resource type="DynamicFont" id=41]
+font_data = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=42]
+shader = ExtResource( 5 )
+shader_param/outline_color = Color( 1, 0, 0, 1 )
+shader_param/outline_strength = 100.0
+
+[sub_resource type="TextMesh" id=43]
+material = SubResource( 42 )
+text = "4"
+font = SubResource( 41 )
 
 [sub_resource type="BoxShape" id=22]
 extents = Vector3( 0.7316, 0.95446, 0.872318 )
@@ -113,12 +143,12 @@ extents = Vector3( 0.235918, 0.152594, 5.20098 )
 
 [sub_resource type="DynamicFont" id=26]
 size = 34
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=27]
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
-shader_param/outline_strength = 1.0
+shader_param/outline_strength = 100.0
 
 [sub_resource type="TextMesh" id=28]
 material = SubResource( 27 )
@@ -127,12 +157,12 @@ font = SubResource( 26 )
 
 [sub_resource type="DynamicFont" id=29]
 size = 40
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=30]
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
-shader_param/outline_strength = 1.0
+shader_param/outline_strength = 100.0
 
 [sub_resource type="TextMesh" id=31]
 material = SubResource( 30 )
@@ -141,17 +171,31 @@ font = SubResource( 29 )
 
 [sub_resource type="DynamicFont" id=32]
 size = 39
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=33]
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
-shader_param/outline_strength = 1.0
+shader_param/outline_strength = 100.0
 
 [sub_resource type="TextMesh" id=34]
 material = SubResource( 33 )
 text = "= 1"
 font = SubResource( 32 )
+
+[sub_resource type="DynamicFont" id=38]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=39]
+shader = ExtResource( 5 )
+shader_param/outline_color = Color( 1, 0, 0, 1 )
+shader_param/outline_strength = 100.0
+
+[sub_resource type="TextMesh" id=40]
+material = SubResource( 39 )
+text = "1 = 7"
+font = SubResource( 38 )
 
 [node name="Basement" type="Spatial"]
 
@@ -194,31 +238,38 @@ material/0 = SubResource( 19 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.897, 2.31064, 7.36357 )
 
 [node name="RigidBody" type="RigidBody" parent="Books"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.116618 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Books/RigidBody"]
 transform = Transform( 1, 0, 0, 0, 0.577, 0, 0, 0, 1, 0.145321, -0.0669267, -0.222005 )
 shape = SubResource( 8 )
 
-[node name="Book" type="CSGBox" parent="Books/RigidBody/CollisionShape"]
-transform = Transform( 0.7, 0, 0, 0, 1.21317, 0, 0, 0, 0.7, 0.011446, -0.116995, 0.00658655 )
-width = 0.5
-height = 0.2
-depth = 0.5
-material = SubResource( 2 )
+[node name="Book" type="MeshInstance" parent="Books/RigidBody/CollisionShape"]
+transform = Transform( 0.206886, 0, 0, 0, 0.110598, 0, 0, 0, 0.168166, 0.011446, -0.116995, 0.00658655 )
+mesh = SubResource( 35 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Books/RigidBody/CollisionShape/Book"]
+mesh = SubResource( 36 )
+material/0 = SubResource( 37 )
 
 [node name="RigidBody2" type="RigidBody" parent="Books"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-06, 0.492661 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.454299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Books/RigidBody2"]
 transform = Transform( 1, 0, 0, 0, 0.577, 0, 0, 0, 1, 0.145321, -0.0669267, -0.222005 )
 shape = SubResource( 8 )
 
-[node name="Book" type="CSGBox" parent="Books/RigidBody2/CollisionShape"]
-transform = Transform( 0.7, 0, 0, 0, 1.21317, 0, 0, 0, 0.7, 0.011446, -0.116995, 0.00658655 )
-width = 0.5
-height = 0.2
-depth = 0.5
-material = SubResource( 2 )
+[node name="Book" type="MeshInstance" parent="Books/RigidBody2/CollisionShape"]
+transform = Transform( 0.206886, 0, 0, 0, 0.110598, 0, 0, 0, 0.168166, 0.011446, -0.116995, 0.00658655 )
+mesh = SubResource( 35 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Books/RigidBody2/CollisionShape/Book"]
+mesh = SubResource( 36 )
+material/0 = SubResource( 37 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Books/RigidBody2"]
+transform = Transform( -0.395086, -0.918637, 0.00366733, 0.0302581, -0.00902323, 0.999501, -0.918146, 0.395, 0.0313612, 0.215364, -0.0799127, -0.179657 )
+mesh = SubResource( 43 )
 
 [node name="Safe2" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.6674, 1.14793, 7.38352 )
@@ -293,3 +344,7 @@ mesh = SubResource( 31 )
 [node name="= 1" type="MeshInstance" parent="."]
 transform = Transform( -0.995916, 0, 0.0902851, 0, 1, 0, -0.0902851, 0, -0.995916, -1.88815, 0.845681, 11.7916 )
 mesh = SubResource( 34 )
+
+[node name="1 = 7" type="MeshInstance" parent="."]
+transform = Transform( -0.0132467, 0, 0.999912, 0.404085, 0.914706, 0.00535325, -0.914626, 0.40412, -0.0121168, -11.5835, 1.70508, 3.34077 )
+mesh = SubResource( 40 )
