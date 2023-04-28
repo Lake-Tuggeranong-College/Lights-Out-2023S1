@@ -1,10 +1,10 @@
 [gd_scene load_steps=40 format=2]
 
+[ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Assets/3D Models/Old_Stairs/source/stairs_1.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=5]
-[ext_resource path="res://UI/Fonts/Sego UI/SEGOEUI.TTF" type="DynamicFontData" id=6]
 
 [sub_resource type="CubeMesh" id=17]
 
@@ -50,7 +50,7 @@ shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
 
 [sub_resource type="DynamicFont" id=41]
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=42]
 shader = ExtResource( 5 )
@@ -143,7 +143,7 @@ extents = Vector3( 0.235918, 0.152594, 5.20098 )
 
 [sub_resource type="DynamicFont" id=26]
 size = 34
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=27]
 shader = ExtResource( 5 )
@@ -157,7 +157,7 @@ font = SubResource( 26 )
 
 [sub_resource type="DynamicFont" id=29]
 size = 40
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=30]
 shader = ExtResource( 5 )
@@ -171,7 +171,7 @@ font = SubResource( 29 )
 
 [sub_resource type="DynamicFont" id=32]
 size = 39
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=33]
 shader = ExtResource( 5 )
@@ -185,7 +185,7 @@ font = SubResource( 32 )
 
 [sub_resource type="DynamicFont" id=38]
 size = 28
-font_data = ExtResource( 6 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=39]
 shader = ExtResource( 5 )
