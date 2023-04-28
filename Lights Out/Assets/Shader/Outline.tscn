@@ -28,5 +28,6 @@ shader_param/outline_strength = 100.0
 mesh = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000145555, 0, 0.00450516 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 4 )
