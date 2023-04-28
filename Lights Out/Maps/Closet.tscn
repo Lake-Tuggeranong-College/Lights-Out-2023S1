@@ -34,7 +34,7 @@ shader_param/outline_strength = 100.0
 albedo_color = Color( 0.588235, 0.294118, 0, 1 )
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 1.17029, 2.19252, 0.272607 )
+extents = Vector3( 1.00459, 1.00788, 0.997675 )
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.0835361
