@@ -31,7 +31,7 @@ void fragment( )
 shader = SubResource( 1 )
 shader_param/color = Color( 1, 0, 0, 1 )
 shader_param/shift_dist = 0.0
-shader_param/speed = 10.0
+shader_param/speed = 5.0
 shader_param/interval = 10.0
 shader_param/residual = 0.05
 
@@ -47,3 +47,7 @@ subdivide_depth = 30
 
 [node name="MeshInstance" type="MeshInstance" parent="SonarPart2"]
 mesh = SubResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="SonarPart2/MeshInstance"]
+transform = Transform( 4.98644, 0, 0, 0, 0.154034, 0, 0, 0, 4.98644, 0, 0, 0 )
+visible = false
