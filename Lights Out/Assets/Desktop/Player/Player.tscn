@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Desktop/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/objects/keyboard/Numpad_2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Maps/number_light.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Audio Files/SingleFootstep_SFX.wav" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape" id=7]
@@ -45,17 +44,7 @@ visible = false
 
 [node name="AudioStreamPlayer3D" parent="." instance=ExtResource( 3 )]
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.691035, 1.38056, 1.4773 )
-visible = false
-light_energy = 0.1
-script = ExtResource( 4 )
-
-[node name="Timer" type="Timer" parent="OmniLight"]
-wait_time = 3.0
-
 [node name="footsteps" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 5 )
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
-[connection signal="timeout" from="OmniLight/Timer" to="OmniLight" method="_on_Timer_timeout"]
