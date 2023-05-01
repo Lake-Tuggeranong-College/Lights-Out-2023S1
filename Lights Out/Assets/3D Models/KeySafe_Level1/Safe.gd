@@ -25,13 +25,9 @@ func open(enteredCode):
 		$RootNode/Safe_MainBody/Safe_Door.queue_free()
 		$VirtualKeyboard.queue_free()
 		opened = true
-#		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/Safe_Unlock.wav")
+		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/Safe_Unlock.wav")
 		$SafeArea.queue_free()
 		$RootNode/Keypad.queue_free()
-		if Global.vr:
-			get_tree().change_scene("res://UI/ending scenes/VR Win.tscn")
-		else:
-			get_tree().change_scene("res://UI/ending scenes/you win.tscn")
 		return(true)
 	else:
 		return(false)

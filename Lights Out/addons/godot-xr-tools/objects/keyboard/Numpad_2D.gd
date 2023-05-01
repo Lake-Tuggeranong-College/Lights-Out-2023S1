@@ -30,6 +30,7 @@ func onButton_Pressed(button_function):
 			yield(get_tree().create_timer(1.0), "timeout")
 			self.visible = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 		else:
 			$Background/Standard/LineEdit.text = "Incorect"
 			yield(get_tree().create_timer(1.0), "timeout")

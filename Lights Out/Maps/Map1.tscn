@@ -16,7 +16,7 @@ albedo_color = Color( 0.588235, 0.294118, 0, 1 )
 
 [sub_resource type="Environment" id=3]
 
-[node name="Spatial2" type="Spatial"]
+[node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17111, 0, -6.63111 )
 script = ExtResource( 1 )
 
