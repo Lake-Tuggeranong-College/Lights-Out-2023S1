@@ -1,10 +1,12 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Assets/3D Models/Old_Stairs/source/stairs_1.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=5]
+[ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Maps/Outline.gd" type="Script" id=7]
 
 [sub_resource type="CubeMesh" id=17]
 
@@ -281,6 +283,8 @@ password = "8008"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.286319, -0.308094 )
 shape = SubResource( 22 )
 
+[node name="AudioStreamPlayer3D" parent="Safe2" instance=ExtResource( 6 )]
+
 [node name="Bookcases" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92067, -0.55158, 0 )
 
@@ -291,8 +295,14 @@ transform = Transform( -0.02, 0, -3.01992e-09, 0, 0.02, 0, 3.01992e-09, 0, -0.02
 mesh = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Bookcases/StaticBody/CSGMesh2"]
+visible = false
 mesh = SubResource( 14 )
 material/0 = SubResource( 16 )
+script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="Bookcases/StaticBody/CSGMesh2/MeshInstance"]
+wait_time = 3.0
+one_shot = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Bookcases/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06136, 112.418, -44.6947 )
@@ -305,8 +315,14 @@ transform = Transform( -0.02, 0, -3.01992e-09, 0, 0.02, 0, 3.01992e-09, 0, -0.02
 mesh = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Bookcases/StaticBody2/CSGMesh2"]
+visible = false
 mesh = SubResource( 20 )
 material/0 = SubResource( 21 )
+script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="Bookcases/StaticBody2/CSGMesh2/MeshInstance"]
+wait_time = 3.0
+one_shot = true
 
 [node name="CollisionShape" type="CollisionShape" parent="Bookcases/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06136, 112.418, -44.6947 )
@@ -348,3 +364,7 @@ mesh = SubResource( 34 )
 [node name="1 = 7" type="MeshInstance" parent="."]
 transform = Transform( -0.0132467, 0, 0.999912, 0.404085, 0.914706, 0.00535325, -0.914626, 0.40412, -0.0121168, -11.5835, 1.70508, 3.34077 )
 mesh = SubResource( 40 )
+
+[connection signal="timeout" from="Bookcases/StaticBody/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Bookcases/StaticBody2/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Bookcases/StaticBody2/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody2/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
