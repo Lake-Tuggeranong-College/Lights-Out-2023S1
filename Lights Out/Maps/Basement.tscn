@@ -233,8 +233,12 @@ transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -11.0998, 1.30826, 7.345
 mesh = SubResource( 17 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Table"]
+visible = false
 mesh = SubResource( 18 )
 material/0 = SubResource( 19 )
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Table/MeshInstance"]
 
 [node name="Books" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.897, 2.31064, 7.36357 )
@@ -338,8 +342,13 @@ material/0 = SubResource( 23 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Stairs2/CSGMesh"]
 transform = Transform( 0.999991, -0.00387736, 0.00148474, 0.00387534, 0.999992, 0.00138784, -0.00149011, -0.00138206, 0.999998, 0, 0, 0 )
+visible = false
 mesh = SubResource( 24 )
 material/0 = SubResource( 25 )
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Stairs2/CSGMesh/MeshInstance"]
+wait_time = 3.0
 
 [node name="StaticBody" type="StaticBody" parent="Stairs2"]
 transform = Transform( 10, -5.54711e-08, -5.73094e-08, 6.28897e-07, 2.03846, -1.43875, -5.73094e-07, 1.26903, 2.31108, 11.655, 0.366663, -3.56777 )
@@ -351,20 +360,46 @@ shape = SubResource( 7 )
 
 [node name="2 = 3" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-08, 0, -1, -0.763108, 0.64627, 3.33565e-08, 0.64627, 0.763108, -2.82494e-08, 0.0430739, 1.96568, 1.25202 )
+visible = false
 mesh = SubResource( 28 )
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="2 = 3"]
+wait_time = 3.0
 
 [node name="3" type="MeshInstance" parent="."]
 transform = Transform( -0.997449, -0.0688336, -0.0188967, -0.0687849, 0.997626, -0.00321652, 0.0190733, -0.00190853, -0.999816, -0.423915, 0.849618, 11.9797 )
+visible = false
 mesh = SubResource( 31 )
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="3"]
+wait_time = 3.0
 
 [node name="= 1" type="MeshInstance" parent="."]
 transform = Transform( -0.995916, 0, 0.0902851, 0, 1, 0, -0.0902851, 0, -0.995916, -1.88815, 0.845681, 11.7916 )
+visible = false
 mesh = SubResource( 34 )
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="= 1"]
+wait_time = 3.0
 
 [node name="1 = 7" type="MeshInstance" parent="."]
 transform = Transform( -0.0132467, 0, 0.999912, 0.404085, 0.914706, 0.00535325, -0.914626, 0.40412, -0.0121168, -11.5835, 1.70508, 3.34077 )
+visible = false
 mesh = SubResource( 40 )
+script = ExtResource( 6 )
 
+[node name="Timer" type="Timer" parent="1 = 7"]
+wait_time = 3.0
+
+[connection signal="timeout" from="Table/MeshInstance/Timer" to="Table/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bookcases/StaticBody/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bookcases/StaticBody2/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bookcases/StaticBody2/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody2/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Stairs2/CSGMesh/MeshInstance/Timer" to="Stairs2/CSGMesh/MeshInstance" method="_on_Timer_timeout"]
+[connection signal="timeout" from="2 = 3/Timer" to="2 = 3" method="_on_Timer_timeout"]
+[connection signal="timeout" from="3/Timer" to="3" method="_on_Timer_timeout"]
+[connection signal="timeout" from="= 1/Timer" to="= 1" method="_on_Timer_timeout"]
+[connection signal="timeout" from="1 = 7/Timer" to="1 = 7" method="_on_Timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/objects/Numpad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe_Legs.material" type="Material" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Keypad_ClearButton.material" type="Material" id=9]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Keypad__Body.material" type="Material" id=10]
 [ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=11]
+[ext_resource path="res://Assets/3D Models/KeySafe_Level1/Outline.gd" type="Script" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -225,12 +226,22 @@ mesh = SubResource( 1 )
 mesh = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="RootNode/Safe_MainBody/Safe_Door"]
+visible = false
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
+script = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="RootNode/Safe_MainBody/Safe_Door/MeshInstance"]
+wait_time = 3.0
 
 [node name="MeshInstance" type="MeshInstance" parent="RootNode/Safe_MainBody"]
+visible = false
 mesh = SubResource( 8 )
 material/0 = SubResource( 9 )
+script = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="RootNode/Safe_MainBody/MeshInstance"]
+wait_time = 3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RootNode"]
 "anims/Take 001" = SubResource( 3 )
@@ -266,5 +277,7 @@ visible = false
 spot_range = 1.04732
 spot_angle = 22.9928
 
+[connection signal="timeout" from="RootNode/Safe_MainBody/Safe_Door/MeshInstance/Timer" to="RootNode/Safe_MainBody/Safe_Door/MeshInstance" method="_on_Timer_timeout"]
+[connection signal="timeout" from="RootNode/Safe_MainBody/MeshInstance/Timer" to="RootNode/Safe_MainBody/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="area_entered" from="SafeArea" to="." method="_on_Area_area_entered"]
 [connection signal="area_exited" from="SafeArea" to="." method="_on_Area_area_exited"]
