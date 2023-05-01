@@ -8,6 +8,7 @@ var mouse_sensitivity = 0.005
 var velocity = Vector3()
 var isHolding = false
 
+
 func _init():
 	VisualServer.set_debug_generate_wireframes(true)	
 
@@ -91,4 +92,3 @@ func reparent(child: Node, new_parent: Node):
 func footstepSound():
 	if !$footsteps.playing:
 		$footsteps.play()
-	
