@@ -6,6 +6,5 @@ func _input(event):
 		self.visible = true;
 		print ("mumba")
 
-
 func _on_Timer_timeout():
 	self.visible = false
