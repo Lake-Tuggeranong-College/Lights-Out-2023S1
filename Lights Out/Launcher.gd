@@ -24,6 +24,9 @@ func _on_VR_pressed():
 func _on_Desktop_pressed():
 	Global.desktop = true
 	get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
+	#if Input.is_action_just_pressed("toggle_fullscreen"):
+	OS.window_fullscreen = !OS.window_fullscreen
+	
 
 
 func _on_quit_pressed():

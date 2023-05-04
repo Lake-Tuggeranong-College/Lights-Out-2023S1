@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_return_pressed():
-	get_tree().change_scene("res://Launcher.tscn")
+	#get_tree().change_scene("res://Launcher.tscn")
+	get_tree().quit()

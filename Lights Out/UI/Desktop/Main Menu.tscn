@@ -30,7 +30,7 @@ margin_top = 76.0
 margin_right = 130.0
 margin_bottom = 107.0
 text = "Lights out 
-Desktop "
+Desktop luncher"
 
 [node name="spacer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 111.0
@@ -73,7 +73,7 @@ margin_top = 253.0
 margin_right = 130.0
 margin_bottom = 284.0
 theme = ExtResource( 3 )
-text = "main menu"
+text = "quit"
 script = ExtResource( 2 )
 
 [node name="spacer4" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
