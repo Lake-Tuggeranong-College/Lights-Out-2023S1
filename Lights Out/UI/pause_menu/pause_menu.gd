@@ -21,8 +21,8 @@ func _on_resume_game_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_quit_game_pressed():
-	#get_tree().quit()
-	get_tree().change_scene("res://Launcher.tscn")
+	get_tree().quit()
+	#get_tree().change_scene("res://Launcher.tscn")
 	get_tree().paused = false
 
 func _input (event):

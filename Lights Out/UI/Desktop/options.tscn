@@ -4,14 +4,48 @@
 [ext_resource path="res://UI/Desktop/options.gd" type="Script" id=2]
 
 [node name="options" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
 script = ExtResource( 2 )
 
-[node name="to main menu" type="Button" parent="."]
-margin_right = 140.0
-margin_bottom = 31.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 38.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "full screen"
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 38.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -59.5
+margin_top = -20.0
+margin_right = 59.5
+margin_bottom = 20.0
+
+[node name="to main menu" type="Button" parent="HBoxContainer"]
+margin_right = 119.0
+margin_bottom = 40.0
 theme = ExtResource( 1 )
 text = "back to main menu"
 
-[connection signal="pressed" from="to main menu" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/to main menu" to="." method="_on_Button_pressed"]
