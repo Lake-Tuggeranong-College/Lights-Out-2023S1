@@ -21,6 +21,8 @@ surfaces/0 = {
 shader = ExtResource( 1 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [node name="Spatial" type="Spatial"]
 
