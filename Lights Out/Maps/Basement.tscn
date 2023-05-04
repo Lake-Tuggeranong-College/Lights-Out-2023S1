@@ -36,6 +36,8 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.309693, 0.224716, 0.266277 )
@@ -59,6 +61,8 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="DynamicFont" id=41]
 font_data = ExtResource( 1 )
@@ -67,6 +71,8 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=43]
 material = SubResource( 42 )
@@ -126,6 +132,8 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="ShaderMaterial" id=23]
 
@@ -146,6 +154,8 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="PhysicsMaterial" id=6]
 
@@ -160,6 +170,8 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=28]
 material = SubResource( 27 )
@@ -174,6 +186,8 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=31]
 material = SubResource( 30 )
@@ -188,6 +202,8 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=34]
 material = SubResource( 33 )
@@ -202,6 +218,8 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+shader_param/fade_offset = 0.1
+shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=40]
 material = SubResource( 39 )
