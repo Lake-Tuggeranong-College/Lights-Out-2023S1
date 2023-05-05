@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
@@ -16,28 +16,6 @@
 
 [sub_resource type="BoxShape" id=47]
 extents = Vector3( 17.0955, 9.83493, 1 )
-
-[sub_resource type="CubeMesh" id=17]
-
-[sub_resource type="ArrayMesh" id=18]
-surfaces/0 = {
-"aabb": AABB( -1.02887, -1.02887, -1.02887, 2.05773, 2.05774, 2.05774 ),
-"array_data": PoolByteArray( 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 64, 0, 0, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 127, 127, 129, 64, 85, 57, 0, 0, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 0, 127, 64, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 127, 127, 129, 64, 0, 60, 0, 0, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 64, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 127, 127, 129, 64, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 0, 127, 64, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 127, 127, 129, 64, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 127, 0, 127, 127, 85, 53, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 129, 0, 0, 63, 0, 0, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 127, 0, 127, 127, 85, 57, 0, 0, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 129, 0, 0, 63, 85, 53, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 127, 0, 127, 127, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 129, 0, 0, 63, 0, 0, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 127, 0, 127, 127, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 129, 0, 0, 63, 85, 53, 0, 60, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 129, 64, 85, 53, 0, 56, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 127, 64, 85, 57, 0, 56, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 63, 0, 127, 129, 64, 85, 57, 0, 56, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 63, 0, 129, 127, 64, 0, 60, 0, 56, 238, 177, 131, 63, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 129, 64, 85, 53, 0, 60, 238, 177, 131, 191, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 127, 64, 85, 57, 0, 60, 238, 177, 131, 191, 238, 177, 131, 63, 238, 177, 131, 191, 0, 127, 129, 64, 85, 57, 0, 60, 238, 177, 131, 63, 238, 177, 131, 191, 238, 177, 131, 191, 0, 129, 127, 64, 0, 60, 0, 60 ),
-"array_index_data": PoolByteArray( 0, 0, 4, 0, 2, 0, 2, 0, 4, 0, 6, 0, 1, 0, 5, 0, 3, 0, 3, 0, 5, 0, 7, 0, 8, 0, 12, 0, 10, 0, 10, 0, 12, 0, 14, 0, 9, 0, 13, 0, 11, 0, 11, 0, 13, 0, 15, 0, 16, 0, 20, 0, 18, 0, 18, 0, 20, 0, 22, 0, 17, 0, 21, 0, 19, 0, 19, 0, 21, 0, 23, 0 ),
-"blend_shape_data": [  ],
-"format": 2194711,
-"index_count": 36,
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 24
-}
-
-[sub_resource type="ShaderMaterial" id=19]
-shader = ExtResource( 5 )
-shader_param/outline_color = Color( 1, 0, 0, 1 )
-shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.309693, 0.224716, 0.266277 )
@@ -292,20 +270,8 @@ transform = Transform( -8.74228e-09, 0, 1, 0, 1, 0, -0.2, 0, -4.37114e-08, 16.22
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.148744 )
 shape = SubResource( 47 )
 
-[node name="Table" type="MeshInstance" parent="."]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -11.0998, 1.30826, 7.34532 )
-mesh = SubResource( 17 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Table"]
-visible = false
-mesh = SubResource( 18 )
-material/0 = SubResource( 19 )
-script = ExtResource( 6 )
-
-[node name="Timer" type="Timer" parent="Table/MeshInstance"]
-
 [node name="Books" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.897, 2.31064, 7.36357 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8948, 1.90086, 7.36766 )
 
 [node name="RigidBody" type="RigidBody" parent="Books"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.116618 )
@@ -343,7 +309,7 @@ mesh = SubResource( 43 )
 
 [node name="Safe2" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.6674, 1.14793, 7.38352 )
-password = "8008"
+password = "7314"
 
 [node name="StaticBody" type="StaticBody" parent="Safe2"]
 
@@ -458,7 +424,6 @@ script = ExtResource( 6 )
 [node name="Timer" type="Timer" parent="1 = 7"]
 wait_time = 3.0
 
-[connection signal="timeout" from="Table/MeshInstance/Timer" to="Table/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bookcases/StaticBody/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bookcases/StaticBody2/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bookcases/StaticBody2/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody2/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]

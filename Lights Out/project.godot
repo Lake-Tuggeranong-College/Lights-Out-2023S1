@@ -426,6 +426,11 @@ ui_menu={
  ]
 }
 
+[layer_names]
+
+3d_render/layer_1="Pause Menu"
+3d_render/layer_2="literally everyting else"
+
 [physics]
 
 common/enable_pause_aware_picking=true
