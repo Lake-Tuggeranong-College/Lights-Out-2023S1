@@ -77,7 +77,7 @@ depth = 0.845761
 [node name="Door" type="CSGBox" parent="Closet"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0146701, 1.78381 )
 use_collision = true
-width = 2.80359
+width = 4.58122
 height = 4.53641
 depth = 0.396887
 material = SubResource( 2 )

@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Maps/Map2/Card Reader.gd" type="Script" id=1]
+
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 20, 15 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0, 0, 1 )
@@ -13,23 +16,9 @@ extents = Vector3( 0.765975, 1.30749, 0.599432 )
 
 [node name="Lvl 3 Puzzle" type="Spatial"]
 
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55425, 0 )
-use_collision = true
-width = 12.9743
-height = 5.40731
-depth = 8.49096
-
-[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
-operation = 2
-width = 12.8849
-height = 5.27052
-depth = 7.77059
-
-[node name="CSGBox" type="CSGBox" parent="CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104484, 0, -4.35147 )
-operation = 2
-height = 3.84623
+[node name="CSGBox" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15565, 0 )
+mesh = SubResource( 4 )
 
 [node name="Table" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.164681, -1.25557 )
