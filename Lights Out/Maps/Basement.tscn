@@ -36,8 +36,6 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.309693, 0.224716, 0.266277 )
@@ -61,8 +59,6 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="DynamicFont" id=41]
 font_data = ExtResource( 1 )
@@ -71,8 +67,6 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=43]
 material = SubResource( 42 )
@@ -104,7 +98,7 @@ uniform float outline_strength = 1.0;
 
 void fragment() {
     ALBEDO = outline_color.rgb;
-    ALPHA = dot(NORMAL, vec3(0,0,1)) * outline_strength;
+    ALPHA = dot(NORMAL, vec3(0,1,0)) * outline_strength;
 }"
 
 [sub_resource type="ShaderMaterial" id=16]
@@ -132,8 +126,6 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="ShaderMaterial" id=23]
 
@@ -154,8 +146,6 @@ surfaces/0 = {
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="PhysicsMaterial" id=6]
 
@@ -170,8 +160,6 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=28]
 material = SubResource( 27 )
@@ -186,8 +174,6 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=31]
 material = SubResource( 30 )
@@ -202,8 +188,6 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=34]
 material = SubResource( 33 )
@@ -218,8 +202,6 @@ font_data = ExtResource( 1 )
 shader = ExtResource( 5 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
-shader_param/fade_offset = 0.1
-shader_param/clip_height = 0.0
 
 [sub_resource type="TextMesh" id=40]
 material = SubResource( 39 )
@@ -409,7 +391,7 @@ transform = Transform( 0.999991, -0.00387736, 0.00148474, 0.00387534, 0.999992, 
 visible = false
 mesh = SubResource( 24 )
 material/0 = SubResource( 25 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="Stairs2/CSGMesh/MeshInstance"]
 wait_time = 3.0
@@ -426,7 +408,7 @@ shape = SubResource( 7 )
 transform = Transform( -4.37114e-08, 0, -1, -0.763108, 0.64627, 3.33565e-08, 0.64627, 0.763108, -2.82494e-08, 0.0430739, 1.96568, 1.25202 )
 visible = false
 mesh = SubResource( 28 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="2 = 3"]
 wait_time = 3.0
@@ -435,7 +417,7 @@ wait_time = 3.0
 transform = Transform( -0.997449, -0.0688336, -0.0188967, -0.0687849, 0.997626, -0.00321652, 0.0190733, -0.00190853, -0.999816, -0.423915, 0.849618, 11.9797 )
 visible = false
 mesh = SubResource( 31 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="3"]
 wait_time = 3.0
@@ -444,7 +426,7 @@ wait_time = 3.0
 transform = Transform( -0.995916, 0, 0.0902851, 0, 1, 0, -0.0902851, 0, -0.995916, -1.88815, 0.845681, 11.7916 )
 visible = false
 mesh = SubResource( 34 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="= 1"]
 wait_time = 3.0
@@ -453,7 +435,7 @@ wait_time = 3.0
 transform = Transform( -0.0132467, 0, 0.999912, 0.404085, 0.914706, 0.00535325, -0.914626, 0.40412, -0.0121168, -11.5835, 1.70508, 3.34077 )
 visible = false
 mesh = SubResource( 40 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="1 = 7"]
 wait_time = 3.0
