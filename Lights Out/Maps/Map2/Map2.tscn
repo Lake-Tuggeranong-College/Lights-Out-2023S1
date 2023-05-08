@@ -18,7 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0763985, 2.58362, -7.10119 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0432, 26.7744, 32.9909 )
 
 [node name="Lvl 3 Puzzle" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1.134, 0, 0, 0, 1, 0, 0, 12.8787 )
+transform = Transform( 1, 0, 0, 0, 1.134, 0, 0, 0, 1, 0, -0.193628, 15.5126 )
 
 [node name="CSGBox" parent="Lvl 3 Puzzle" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.959 )
