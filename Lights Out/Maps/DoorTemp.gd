@@ -1,4 +1,4 @@
-extends CSGBox
+extends MeshInstance
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,3 +9,7 @@ func _on_Area_body_entered(body):
 		self.queue_free()
 		body.queue_free()
 		Global.hasClicker = true
+
+
+func _on_Area2_body_entered(body):
+	pass # Replace with function body.
