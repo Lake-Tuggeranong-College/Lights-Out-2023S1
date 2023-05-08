@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=2]
-
-[sub_resource type="PlaneMesh" id=1]
-size = Vector2( 6, 6 )
+[gd_scene format=2]
 
 [node name="Spatial" type="Spatial"]
 
@@ -12,7 +9,3 @@ light_energy = 7.312
 shadow_enabled = true
 spot_range = 2.94703
 spot_angle = 76.9035
-
-[node name="Floor" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154556, -0.0960573, -0.0519384 )
-mesh = SubResource( 1 )
