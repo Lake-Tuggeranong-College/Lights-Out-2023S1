@@ -65,7 +65,7 @@ margin_top = 373.0
 margin_right = 130.0
 margin_bottom = 404.0
 theme = ExtResource( 4 )
-text = "leave game"
+text = "Leave game"
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 margin_left = 579.0
