@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets/Shader/Outline2.tres" type="Shader" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 
