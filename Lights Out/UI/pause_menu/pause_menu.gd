@@ -20,8 +20,8 @@ func _on_resume_game_pressed():
 	get_tree().change_scene("res://Maps/Map1.tscn")
 
 func _on_quit_game_pressed():
-	#get_tree().quit()
-	get_tree().change_scene("res://Launcher.tscn")
+	get_tree().quit()
+	#get_tree().change_scene("res://Launcher.tscn")
 
 func _input (event):
 	if event.is_action_pressed("ui_cancel"):
