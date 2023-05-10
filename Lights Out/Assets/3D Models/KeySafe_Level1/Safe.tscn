@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/objects/Numpad.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Safe_Legs.material" type="Material" id=2]
@@ -229,7 +229,6 @@ mesh = SubResource( 1 )
 mesh = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="RootNode/Safe_MainBody/Safe_Door"]
-visible = false
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 script = ExtResource( 12 )
@@ -238,7 +237,6 @@ script = ExtResource( 12 )
 wait_time = 3.0
 
 [node name="MeshInstance" type="MeshInstance" parent="RootNode/Safe_MainBody"]
-visible = false
 mesh = SubResource( 8 )
 material/0 = SubResource( 9 )
 script = ExtResource( 12 )

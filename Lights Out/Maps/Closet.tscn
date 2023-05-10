@@ -90,7 +90,7 @@ initial_object = NodePath("../Pickable")
 transform = Transform( 2.09853, 0, 0, 0, 2.21968, 0, 0, 0, 0.241993, 0, 2.61403, 1.78381 )
 
 [node name="Area2" type="Area" parent="Door"]
-transform = Transform( 0.476524, 0, 0, 0, 0.450515, 0, 0, 0, 4.13235, 0, 0.0311714, 0 )
+transform = Transform( 0.476524, 0, 0, 0, 0.450515, 0, 0, 0, 4.13235, 0, 0.0311716, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Door/Area2"]
 shape = SubResource( 1 )
