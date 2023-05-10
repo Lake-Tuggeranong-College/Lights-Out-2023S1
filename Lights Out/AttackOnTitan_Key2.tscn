@@ -10,5 +10,5 @@ extents = Vector3( 0.256965, 0.207897, 0.242511 )
 [node name="RootNode" parent="." instance=ExtResource( 1 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.463519, 6.29246e-08, -2.75052e-15, 6.29246e-08, 1.90307, -6.29246e-08, -2.75052e-15, -6.29246e-08, 0.463519, 0, 0.235458, 0 )
+transform = Transform( 0.464, 0, 0, 0, 5.452, 0, 0, 0, 0.464, 0, 1.22871, 0 )
 shape = SubResource( 1 )
