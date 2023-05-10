@@ -4,10 +4,16 @@ onready var camera = $Pivot/Camera
 
 var gravity = -50
 var max_speed = 10
+var crouch_move_speed = 6
+var crouch_speed = 20
 var mouse_sensitivity = 0.005
 var velocity = Vector3()
 var isHolding = false
 
+var default_height = 3.187
+var crouch_height = 1.6
+
+onready var pcap = $CollisionShape #The crouch key is shift by the way. - Cam
 
 func _init():
 	VisualServer.set_debug_generate_wireframes(true)	
