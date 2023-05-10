@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/controller.gd" type="Script" id=2]
@@ -11,24 +11,6 @@
 [ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Maps/number_light.gd" type="Script" id=10]
 [ext_resource path="res://addons/godot-openxr/scenes/Pause Menu VR.gd" type="Script" id=11]
-[ext_resource path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" type="PackedScene" id=12]
-[ext_resource path="res://UI/pause_menu VR/pause_menu.tscn" type="PackedScene" id=13]
-
-[sub_resource type="QuadMesh" id=2]
-resource_local_to_scene = true
-size = Vector2( 3, 2 )
-
-[sub_resource type="ViewportTexture" id=6]
-flags = 4
-
-[sub_resource type="SpatialMaterial" id=7]
-flags_transparent = true
-params_cull_mode = 2
-albedo_texture = SubResource( 6 )
-
-[sub_resource type="BoxShape" id=5]
-resource_local_to_scene = true
-extents = Vector3( 1.5, 1, 0.01 )
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -48,19 +30,6 @@ current = true
 fov = 65.0
 near = 0.1
 far = 1000.0
-
-[node name="Viewport2Din3D" parent="ARVRCamera" groups=["vrPause"] instance=ExtResource( 12 )]
-pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.266596, -1.60875 )
-visible = false
-scene = ExtResource( 13 )
-
-[node name="Screen" parent="ARVRCamera/Viewport2Din3D" index="1"]
-mesh = SubResource( 2 )
-material/0 = SubResource( 7 )
-
-[node name="CollisionShape" parent="ARVRCamera/Viewport2Din3D/StaticBody" index="0"]
-shape = SubResource( 5 )
 
 [node name="LeftHandController" type="ARVRController" parent="."]
 pause_mode = 2
@@ -133,5 +102,3 @@ script = ExtResource( 10 )
 wait_time = 3.0
 
 [connection signal="timeout" from="OmniLight/Timer" to="OmniLight" method="_on_Timer_timeout"]
-
-[editable path="ARVRCamera/Viewport2Din3D"]

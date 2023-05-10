@@ -17,8 +17,8 @@ func _ready():
 
 
 func _on_Play_pressed():
-	#get_tree().change_scene("res://Maps/Map1.tscn")
-	get_tree().change_scene("res://UI/other/audiowarning.tscn")
+	get_tree().change_scene("res://Maps/Map1.tscn")
+	#get_tree().change_scene("res://UI/other/audiowarning.tscn")
 
 
 func _on_return_pressed():

@@ -34,18 +34,57 @@ margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
 
-[node name="to main menu" type="Button" parent="VBoxContainer"]
+[node name="sonar color" type="Button" parent="VBoxContainer"]
 margin_right = 119.0
 margin_bottom = 31.0
 theme = ExtResource( 1 )
-text = "back to main menu"
+text = "sonar color"
 
-[node name="sonar color" type="Button" parent="VBoxContainer"]
+[node name="to main menu" type="Button" parent="VBoxContainer"]
 margin_top = 35.0
 margin_right = 119.0
 margin_bottom = 66.0
 theme = ExtResource( 1 )
-text = "sonar color"
+text = "back to main menu"
 
-[connection signal="pressed" from="VBoxContainer/to main menu" to="." method="_on_Button_pressed"]
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="General" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Sonar" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Video" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Audio" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
 [connection signal="pressed" from="VBoxContainer/sonar color" to="." method="_on_sonar_color_pressed"]
+[connection signal="pressed" from="VBoxContainer/to main menu" to="." method="_on_Button_pressed"]
