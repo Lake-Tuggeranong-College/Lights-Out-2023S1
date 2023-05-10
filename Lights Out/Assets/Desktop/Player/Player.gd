@@ -11,7 +11,7 @@ var velocity = Vector3()
 var isHolding = false
 
 var default_height = 3.187
-var crouch_height = 1.6
+var crouch_height = 0.3
 
 onready var pcap = $CollisionShape #The crouch key is shift by the way. - Cam
 
@@ -62,7 +62,13 @@ func get_input():
 	input_dir = input_dir.normalized()
 	return input_dir
 	
-	
+func _process(delta):
+	if Input.is_action_pressed("crouch"):
+		pcap.shape.height -= crouch_speed * delta
+		max_speed = crouch_move_speed
+	else:
+		pcap.shape.height += crouch_speed * delta
+	pcap.shape.height = clamp(pcap.shape.height, crouch_height, default_height)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -81,7 +87,6 @@ func _physics_process(delta):
 		velocity = move_and_slide(velocity, Vector3.UP, true)
 	if Input.is_action_just_pressed("ui_menu"):
 		get_tree().change_scene("res://UI/pause_menu/pause_menu.tscn")
-
 
 func _on_Area_area_entered(area):
 	if area.name == "SafeArea":
