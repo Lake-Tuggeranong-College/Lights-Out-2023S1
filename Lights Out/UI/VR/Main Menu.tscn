@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Play.gd" type="Script" id=2]
@@ -7,35 +7,19 @@
 [ext_resource path="res://UI/VR/quit game.gd" type="Script" id=5]
 [ext_resource path="res://Assets/images/main image.png" type="Texture" id=6]
 
-[sub_resource type="QuadMesh" id=6]
-resource_local_to_scene = true
-size = Vector2( 3, 2 )
-
-[sub_resource type="ViewportTexture" id=10]
-flags = 4
-
-[sub_resource type="SpatialMaterial" id=11]
-flags_transparent = true
-params_cull_mode = 2
-albedo_texture = SubResource( 10 )
-
-[sub_resource type="BoxShape" id=9]
-resource_local_to_scene = true
-extents = Vector3( 1.5, 1, 0.01 )
-
 [sub_resource type="QuadMesh" id=1]
 resource_local_to_scene = true
 size = Vector2( 3, 2 )
 
 [sub_resource type="Skin" id=2]
 
-[sub_resource type="ViewportTexture" id=12]
+[sub_resource type="ViewportTexture" id=6]
 flags = 4
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
 params_cull_mode = 2
-albedo_texture = SubResource( 12 )
+albedo_texture = SubResource( 6 )
 
 [sub_resource type="BoxShape" id=5]
 resource_local_to_scene = true
@@ -46,13 +30,6 @@ pause_mode = 1
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
-
-[node name="Screen" parent="FPController/ARVRCamera/Viewport2Din3D" index="1"]
-mesh = SubResource( 6 )
-material/0 = SubResource( 11 )
-
-[node name="CollisionShape" parent="FPController/ARVRCamera/Viewport2Din3D/StaticBody" index="0"]
-shape = SubResource( 9 )
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
@@ -94,7 +71,7 @@ texture = ExtResource( 6 )
 [node name="Screen" parent="Viewport2Din3D" index="1"]
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
-material/0 = SubResource( 13 )
+material/0 = SubResource( 7 )
 
 [node name="CollisionShape" parent="Viewport2Din3D/StaticBody" index="0"]
 shape = SubResource( 5 )
@@ -103,5 +80,4 @@ shape = SubResource( 5 )
 [connection signal="pressed" from="Viewport2Din3D/Viewport/HBoxContainer/VBox/quitgame" to="Viewport2Din3D/Viewport/HBoxContainer/VBox/quitgame" method="_on_quitgame_pressed"]
 
 [editable path="FPController"]
-[editable path="FPController/ARVRCamera/Viewport2Din3D"]
 [editable path="Viewport2Din3D"]
