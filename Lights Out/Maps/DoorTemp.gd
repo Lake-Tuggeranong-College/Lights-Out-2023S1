@@ -6,7 +6,7 @@ func _ready():
 
 func _on_Area_body_entered(body):
 	if body.name == "AttackOnTitan_Key2" or body.name == "Pickable":
-		self.queue_free()
+		self.get_parent().queue_free()
 		body.queue_free()
 		Global.hasClicker = true
 
