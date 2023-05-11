@@ -272,8 +272,8 @@ transform = Transform( -8.74228e-08, 0, 0.5, 0, 9, 0, -2, 0, -2.18557e-08, 15.22
 height = 1.80192
 
 [node name="CSGBox6" type="CSGBox" parent="Main Room"]
-transform = Transform( -1.74846e-07, 0, 0.5, 0, 4, 0, -4, 0, -2.18557e-08, 15.2236, 4.94664, -7.80817 )
-height = 1.80192
+transform = Transform( -1.74846e-07, 0, 0.5, 0, 4, 0, -4, 0, -2.18557e-08, 15.2236, 4.86289, -7.80817 )
+height = 1.84645
 
 [node name="Table" type="MeshInstance" parent="."]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -11.0998, 1.30826, 7.34532 )
