@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://AttackOnTitan_Key2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Maps/Water.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AoT Key Model.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-xr-tools/objects/snap_zone.tscn" type="PackedScene" id=7]
@@ -41,12 +39,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13009, -1.38611, 0.556619 )
 width = 0.534119
 height = 0.323485
 depth = 0.845761
-
-[node name="Water" type="Spatial" parent="."]
-script = ExtResource( 3 )
-
-[node name="AudioStreamPlayer3D" parent="Water" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0974498, 0.26423, 0.0645215 )
 
 [node name="Pickable" parent="." groups=["pickup"] instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96246, 1.64233, -0.661092 )
