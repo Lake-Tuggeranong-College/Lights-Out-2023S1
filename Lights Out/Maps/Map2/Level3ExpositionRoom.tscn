@@ -3,7 +3,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="OmniLight" type="SpotLight" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.55482, 0.0199136, 0.012063 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.8986, 0.0199136, 0.612265 )
 light_color = Color( 0.886275, 0.627451, 0.129412, 1 )
 light_energy = 7.312
 shadow_enabled = true
