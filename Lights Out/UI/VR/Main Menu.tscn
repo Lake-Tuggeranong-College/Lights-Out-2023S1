@@ -76,6 +76,11 @@ material/0 = SubResource( 7 )
 [node name="CollisionShape" parent="Viewport2Din3D/StaticBody" index="0"]
 shape = SubResource( 5 )
 
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 6, 0, 1.11138, -2.90642 )
+invert_faces = true
+depth = 1.88133
+
 [connection signal="pressed" from="Viewport2Din3D/Viewport/HBoxContainer/VBox/Play" to="Viewport2Din3D/Viewport/HBoxContainer/VBox/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="Viewport2Din3D/Viewport/HBoxContainer/VBox/quitgame" to="Viewport2Din3D/Viewport/HBoxContainer/VBox/quitgame" method="_on_quitgame_pressed"]
 
