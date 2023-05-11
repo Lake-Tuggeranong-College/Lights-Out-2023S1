@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://AttackOnTitan_Key2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=2]
@@ -8,8 +8,6 @@
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AoT Key Model.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-xr-tools/objects/snap_zone.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Maps/Load Closet.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=9]
-[ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.0835361
@@ -17,28 +15,6 @@ height = 0.510955
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.00459, 1.00788, 0.997675 )
-
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 10 )
-
-[sub_resource type="ShaderMaterial" id=5]
-shader = ExtResource( 9 )
-shader_param/outline_color = Color( 1, 0, 0, 1 )
-shader_param/outline_strength = 100.0
-
-[sub_resource type="TextMesh" id=6]
-material = SubResource( 5 )
-text = "Where's the Key?"
-font = SubResource( 4 )
-
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 9 )
-shader_param/outline_color = Color( 1, 0, 0, 1 )
-shader_param/outline_strength = 100.0
-
-[sub_resource type="CubeMesh" id=8]
-material = SubResource( 7 )
-size = Vector3( 1, 1, 1 )
 
 [node name="Closet" type="Spatial"]
 script = ExtResource( 8 )
@@ -94,13 +70,5 @@ transform = Transform( 0.476524, 0, 0, 0, 0.450515, 0, 0, 0, 4.13235, 0, 0.03117
 
 [node name="CollisionShape" type="CollisionShape" parent="Door/Area2"]
 shape = SubResource( 1 )
-
-[node name="Where Key" type="MeshInstance" parent="."]
-transform = Transform( -1.69656, 1.0591, -3.01992e-07, 1.0591, 1.69656, 9.25893e-08, 3.05204e-07, -8.13778e-08, -2, -0.488496, 2.49911, 1.52452 )
-mesh = SubResource( 6 )
-
-[node name="Scratch (1)" type="MeshInstance" parent="."]
-transform = Transform( 0.545668, 0.0209668, 0, -0.22541, 0.050756, 0, 0, 0, 0.0847282, 1.2945, 1.97169, 1.51826 )
-mesh = SubResource( 8 )
 
 [connection signal="body_entered" from="Door/Area2" to="Door" method="_on_Area2_body_entered"]
