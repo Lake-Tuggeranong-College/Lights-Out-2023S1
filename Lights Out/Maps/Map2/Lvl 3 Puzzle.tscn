@@ -1,9 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Maps/Map2/Card Reader.gd" type="Script" id=1]
-
-[sub_resource type="PlaneMesh" id=4]
-size = Vector2( 20, 15 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0, 0, 1 )
@@ -16,12 +13,8 @@ extents = Vector3( 0.765975, 1.30749, 0.599432 )
 
 [node name="Lvl 3 Puzzle" type="Spatial"]
 
-[node name="CSGBox" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15565, 0 )
-mesh = SubResource( 4 )
-
 [node name="Table" type="CSGCylinder" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.164681, -1.25557 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59352, 0.164681, -0.448319 )
 use_collision = true
 radius = 1.81827
 height = 0.155016
@@ -29,7 +22,7 @@ sides = 20
 material = SubResource( 1 )
 
 [node name="Reader Platform" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83959, -0.174977, 3.31233 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07965, -0.174977, 6.40261 )
 use_collision = true
 width = 5.20229
 height = 1.78322
@@ -37,7 +30,8 @@ depth = 1.73666
 material = SubResource( 2 )
 
 [node name="Card Reader" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67684, 0.838801, 3.53523 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9169, 0.838801, 6.62551 )
+use_collision = true
 width = 1.06793
 height = 0.261576
 depth = 0.802325
@@ -49,6 +43,26 @@ transform = Transform( 1, 0, 0, 0, 1.022, 0, 0, 0, 1, -0.0469203, 0, -1.66211 )
 [node name="CollisionShape" type="CollisionShape" parent="Card Reader/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.398083, -0.276388 )
 shape = SubResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.00332, 0 )
+use_collision = true
+width = 20.0316
+height = 6.4002
+depth = 15.0791
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0033865, 0.00803328, -0.00821233 )
+operation = 2
+width = 19.4799
+height = 6.08899
+depth = 14.6154
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17963, -0.84724, -7.00033 )
+operation = 2
+width = 3.10969
+height = 4.34823
 
 [connection signal="area_entered" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_entered"]
 [connection signal="area_exited" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_exited"]
