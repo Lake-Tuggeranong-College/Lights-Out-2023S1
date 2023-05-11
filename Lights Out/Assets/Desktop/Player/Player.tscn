@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Desktop/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-xr-tools/objects/keyboard/Numpad_2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/godot-openxr/scenes/Flashlight.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Audio Files/SingleFootstep_SFX.wav" type="AudioStream" id=5]
 [ext_resource path="res://UI/pause_menu/pause_menu.tscn" type="PackedScene" id=6]
 
@@ -30,6 +31,13 @@ cast_to = Vector3( 0, -6.139, 0 )
 
 [node name="ObjectPlace" type="Spatial" parent="Pivot/Camera"]
 transform = Transform( 2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, 0, -1.07888 )
+
+[node name="SpotLight" type="SpotLight" parent="Pivot/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00961165, 0.0166776, -0.0296082 )
+visible = false
+spot_range = 4.7552
+spot_angle = 14.0625
+script = ExtResource( 4 )
 
 [node name="Area" type="Area" parent="."]
 

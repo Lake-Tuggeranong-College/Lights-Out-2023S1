@@ -15,6 +15,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Global.desktop:
+		desktopFlash()
+	else:
+		vrFlash()
+		
+func vrFlash():
 	if controller and controller.get_is_active() and controller.is_button_pressed(click_button) and !isButtonDown and !lightActive:
 		isButtonDown = true
 		lightActive = true
@@ -25,3 +31,12 @@ func _process(delta):
 		lightActive = false
 	if controller and controller.get_is_active() and !controller.is_button_pressed(click_button):
 		isButtonDown = false
+
+func desktopFlash():
+	if Input.is_action_just_pressed("flashlight") and !lightActive:
+		lightActive = true
+		self.visible = true
+		yield(get_tree().create_timer(5.0), "timeout")
+		self.visible = false
+		yield(get_tree().create_timer(5.0), "timeout")
+		lightActive = false
