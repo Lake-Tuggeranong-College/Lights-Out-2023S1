@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://AttackOnTitan_Key2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AttackOnTitan_Key3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AoT Key Model.tscn" type="PackedScene" id=6]
@@ -18,9 +18,6 @@ extents = Vector3( 0.135698, 0.110144, 0.385506 )
 
 [node name="Closet" type="Spatial"]
 script = ExtResource( 8 )
-
-[node name="AttackOnTitan_Key2" parent="." groups=["pickup"] instance=ExtResource( 1 )]
-transform = Transform( -0.0423353, 0.00193595, 0.361304, -0.383077, -0.000240506, -0.0448852, 0, -0.408028, 0.0021863, 2.02686, 1.56789, 1.0564 )
 
 [node name="Closet" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00127894, 2.69789, 0.00134259 )
@@ -70,7 +67,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.872063, -0.56731, -0.069308
 shape = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 4 )
+
+[node name="AttackOnTitan_Key3" parent="." groups=["pickup"] instance=ExtResource( 1 )]
+transform = Transform( -2.60627e-16, -5.96244e-09, -0.5, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, 5.96244e-09, 1.86246, 1.66391, 0.923249 )
 
 [connection signal="body_entered" from="StaticBody/Door/Area2" to="StaticBody/Door" method="_on_Area2_body_entered"]

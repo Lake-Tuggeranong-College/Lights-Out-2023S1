@@ -6,6 +6,8 @@ var in_area = false
 var hasClicker = false
 var cardReader = false
 var debugPrivelege = false
+var doorEntered = false
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
