@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.gd" type="Script" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/controller.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/function_pointer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_pickup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/godot-openxr/scenes/Flashlight.gd" type="Script" id=8]
+[ext_resource path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/pause_menu VR/pause_menu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://addons/godot-openxr/scenes/Pause Menu VR.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -28,6 +30,10 @@ current = true
 fov = 65.0
 near = 0.1
 far = 1000.0
+
+[node name="Viewport2Din3D" parent="ARVRCamera" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.321359, 1.30873 )
+scene = ExtResource( 10 )
 
 [node name="LeftHandController" type="ARVRController" parent="."]
 pause_mode = 2
