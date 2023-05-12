@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Sound Emitor/Sound Emmitor.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Maps/Outline.gd" type="Script" id=7]
 [ext_resource path="res://Assets/fonts/static/Oswald-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://AttackOnTitan_Key3.tscn" type="PackedScene" id=9]
 
 [sub_resource type="PlaneMesh" id=44]
 
@@ -412,6 +413,9 @@ script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="OminousText"]
 wait_time = 3.0
+
+[node name="AttackOnTitan_Key3" parent="." groups=["pickup"] instance=ExtResource( 9 )]
+transform = Transform( 9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, -9.16693, 1.56958, 5.66752 )
 
 [connection signal="timeout" from="Bookcases/StaticBody/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Bookcases/StaticBody2/CSGMesh2/MeshInstance/Timer" to="Bookcases/StaticBody/CSGMesh2/MeshInstance" method="_on_Timer_timeout"]
