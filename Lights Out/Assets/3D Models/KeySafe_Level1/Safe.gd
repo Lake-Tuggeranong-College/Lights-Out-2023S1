@@ -28,8 +28,6 @@ func open(enteredCode):
 		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/Safe_Unlock.wav")
 		$SafeArea.queue_free()
 		$RootNode/Keypad.queue_free()
-		print ("key visible")
-		$AttackOnTitan_Key.visible
 		return(true)
 	else:
 		return(false)

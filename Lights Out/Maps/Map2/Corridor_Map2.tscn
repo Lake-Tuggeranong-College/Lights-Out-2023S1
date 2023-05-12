@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Maps/Map2/Door.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Shader/Outline.gdshader" type="Shader" id=2]
@@ -20,6 +20,9 @@ surfaces/0 = {
 shader = ExtResource( 2 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/outline_strength = 100.0
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1, 1, 0.383801 )
 
 [sub_resource type="ArrayMesh" id=5]
 surfaces/0 = {
@@ -55,6 +58,12 @@ transform = Transform( 0.999998, 0.000588443, 0.00177329, -0.000598776, 0.999983
 visible = false
 mesh = SubResource( 8 )
 material/0 = SubResource( 9 )
+
+[node name="Area" type="Area" parent="Door"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Door/Area"]
+transform = Transform( 1, -1.42393e-11, 5.82077e-11, 1.32374e-11, 1, 1.16415e-10, 0, 0, 1, -9.16272e-05, -0.00021112, -0.528825 )
+shape = SubResource( 10 )
 
 [node name="MafiaDoor" type="CSGBox" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.8307, -24.4083, -34.2036 )
@@ -95,3 +104,6 @@ operation = 2
 width = 3.08828
 height = 4.47636
 depth = 0.574459
+
+[connection signal="area_entered" from="Door/Area" to="Door" method="_on_Area_area_entered"]
+[connection signal="area_exited" from="Door/Area" to="Door" method="_on_Area_area_exited"]
