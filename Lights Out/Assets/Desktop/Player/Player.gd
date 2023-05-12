@@ -19,9 +19,12 @@ func _init():
 	VisualServer.set_debug_generate_wireframes(true)	
 
 func _input(event):
-	if event is InputEventKey and Input.is_key_pressed(KEY_P):
-		var vp = get_viewport()
-		vp.debug_draw = (vp.debug_draw + 1 ) % 4
+	if Global.debugPrivelege == true:
+		if event is InputEventKey and Input.is_key_pressed(KEY_P):
+			var vp = get_viewport()
+			vp.debug_draw = (vp.debug_draw + 1 ) % 4
+	else:
+		pass
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
