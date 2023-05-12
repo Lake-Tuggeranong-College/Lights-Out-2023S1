@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/SectionDeleter.gd" type="Script" id=3]
 [ext_resource path="res://Maps/Map2/EndLevelDoor.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AttackOnTitan_Key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Maps/Closet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://BetterRat.tscn" type="PackedScene" id=7]
 
@@ -46,9 +45,6 @@ material = SubResource( 2 )
 
 [node name="EndLevel" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.0558, 4.70829, 1.33661 )
-
-[node name="AttackOnTitan_Key" parent="." groups=["pickup"] instance=ExtResource( 5 )]
-transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 2.11758e-22, 4.37114e-08, 1, -4.37114e-08, -2.59527, 1.48158, 2.85078 )
 
 [node name="RigidBody" parent="." groups=["pickup"] instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7084, 2.08627, 6.83122 )
