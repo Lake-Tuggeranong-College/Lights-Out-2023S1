@@ -24,35 +24,11 @@ margin_top = -20.0
 margin_right = 59.5
 margin_bottom = 20.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-
-[node name="sonar color" type="Button" parent="VBoxContainer"]
-margin_right = 119.0
-margin_bottom = 31.0
-theme = ExtResource( 1 )
-text = "sonar color"
-
-[node name="to main menu" type="Button" parent="VBoxContainer"]
-margin_top = 35.0
-margin_right = 119.0
-margin_bottom = 66.0
-theme = ExtResource( 1 )
-text = "back to main menu"
-
 [node name="TabContainer" type="TabContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="General" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -60,13 +36,28 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="Sonar" type="Tabs" parent="TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/General"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -438.0
+margin_top = -232.0
+margin_right = -251.0
+margin_bottom = -201.0
+
+[node name="to main menu" type="Button" parent="TabContainer/General/VBoxContainer"]
+margin_right = 187.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+text = "back to main menu"
+
+[node name="Debugger Option" type="CheckButton" parent="TabContainer/General/VBoxContainer"]
+margin_top = 35.0
+margin_right = 187.0
+margin_bottom = 73.0
+theme = ExtResource( 1 )
+text = "Debug Keybind"
 
 [node name="Video" type="Tabs" parent="TabContainer"]
 visible = false
@@ -77,6 +68,22 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
+[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Video"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -438.0
+margin_top = -232.0
+margin_right = -251.0
+margin_bottom = -201.0
+
+[node name="Fullscreen Checkbox" type="CheckButton" parent="TabContainer/Video/VBoxContainer3"]
+margin_right = 187.0
+margin_bottom = 38.0
+theme = ExtResource( 1 )
+text = "Windowed Mode"
+
 [node name="Audio" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
@@ -86,5 +93,16 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[connection signal="pressed" from="VBoxContainer/sonar color" to="." method="_on_sonar_color_pressed"]
-[connection signal="pressed" from="VBoxContainer/to main menu" to="." method="_on_Button_pressed"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="TabContainer/Audio"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -438.0
+margin_top = -232.0
+margin_right = -251.0
+margin_bottom = -201.0
+
+[connection signal="pressed" from="TabContainer/General/VBoxContainer/to main menu" to="." method="_on_Button_pressed"]
+[connection signal="toggled" from="TabContainer/General/VBoxContainer/Debugger Option" to="." method="_on_Debugger_Option_toggled"]
+[connection signal="toggled" from="TabContainer/Video/VBoxContainer3/Fullscreen Checkbox" to="." method="_on_Fullscreen_Checkbox_toggled"]
