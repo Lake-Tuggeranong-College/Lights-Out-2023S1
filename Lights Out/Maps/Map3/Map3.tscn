@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Maps/Map3/Map3_MainRoomPuzzle.tscn" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Spawn" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4623, 13.7687, 0 )
+
+[node name="MainRoom" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46243, 0.200282, -1.66743 )
