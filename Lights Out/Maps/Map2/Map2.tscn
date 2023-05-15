@@ -15,7 +15,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0763985, 2.58362, -7.10119 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9248, 26.6529, 32.2773 )
 
 [node name="ExpositionRoom" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.93843, -0.0671309, -1.42767 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.72109, 0.0947327, -1.42767 )
 
 [node name="Lvl 3 Puzzle" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22768, 1.12968, 16.7396 )
