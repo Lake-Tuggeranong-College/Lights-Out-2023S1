@@ -14,15 +14,17 @@ var is_paused = false setget set_is_paused
 func set_is_paused(value):
 	print("awww yeah changiun pasuye")
 	is_paused = value
+	if is_paused:
+		$"../../ARVRCamera/Viewport2Din3D".translation = Vector3(0,-0.321,-2.2)
+	else:
+		$"../../ARVRCamera/Viewport2Din3D".translation = Vector3(0,-0.321,1.768)
 	get_tree().paused = is_paused
-	$"../../ARVRCamera/Viewport2Din3D".visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if controller and controller.get_is_active() and controller.is_button_pressed(pause_button) and !isActive:
-		print("hel")
 		isActive = true
-		set_is_paused(true)
+		set_is_paused(!is_paused)
 		
 	if controller and controller.get_is_active() and !controller.is_button_pressed(pause_button) and isActive:
 		isActive = false
