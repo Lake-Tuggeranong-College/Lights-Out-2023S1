@@ -33,8 +33,6 @@ func get_input():
 	var input_dir = Vector3()
 	if Input.is_action_just_pressed("ui_]"):
 		get_tree().change_scene("res://Maps/Map2/Map2.tscn")
-	if Input.is_action_just_pressed("left_click") and Global.hasClicker:
-		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/UIconfirmationOptimistic_SFX.wav")
 	if Input.is_action_just_pressed("interact"):
 		if $Pivot/Camera/RayCast.is_colliding():
 			var raycastCollsions = $Pivot/Camera/RayCast.get_collider()
@@ -71,7 +69,7 @@ func _process(delta):
 		max_speed = crouch_move_speed
 	else:
 		pcap.shape.height += crouch_speed * delta
-	pcap.shape.height = clamp(pcap.shape.height, crouch_height, default_height)
+		pcap.shape.height = clamp(pcap.shape.height, crouch_height, default_height)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
