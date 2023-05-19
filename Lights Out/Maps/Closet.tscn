@@ -1,11 +1,23 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://AttackOnTitan_Key3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Textures/wood.jpeg" type="Texture" id=3]
 [ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/3D Models/AttackOnTitan_Key/AoT Key Model.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/godot-xr-tools/objects/snap_zone.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Maps/Load Closet.gd" type="Script" id=8]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 3, 3, 3 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 3, 3, 3 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 3 )
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.0835361
@@ -25,6 +37,7 @@ use_collision = true
 width = 4.74112
 height = 5.0
 depth = 3.63666
+material = SubResource( 5 )
 
 [node name="Inside" type="CSGBox" parent="Closet"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.262737 )
@@ -32,12 +45,14 @@ operation = 2
 width = 4.29608
 height = 4.86732
 depth = 3.12742
+material = SubResource( 6 )
 
 [node name="CSGBox" type="CSGBox" parent="Closet"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13009, -1.38611, 0.556619 )
 width = 0.534119
 height = 0.323485
 depth = 0.845761
+material = SubResource( 7 )
 
 [node name="Pickable" parent="." groups=["pickup"] instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96246, 1.64233, -0.661092 )
@@ -63,13 +78,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( 0.476524, 0, 0, 0, 0.450515, 0, 0, 0, 4.13235, 0, 0.0311717, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody/Door/Area2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.872063, -0.56731, -0.0693083 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.872063, -0.56731, -0.0693084 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 4 )
 
 [node name="AttackOnTitan_Key3" parent="." groups=["pickup"] instance=ExtResource( 1 )]
-transform = Transform( -2.60627e-16, -5.96244e-09, -0.5, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, 5.96244e-09, 1.86246, 1.66391, 0.923249 )
+transform = Transform( -2.60627e-16, -5.96244e-09, -0.5, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, 5.96244e-09, 1.97739, 1.66391, 0.717262 )
 
 [connection signal="body_entered" from="StaticBody/Door/Area2" to="StaticBody/Door" method="_on_Area2_body_entered"]
