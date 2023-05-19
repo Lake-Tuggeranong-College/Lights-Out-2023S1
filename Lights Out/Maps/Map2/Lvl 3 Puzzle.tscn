@@ -1,7 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Maps/Map2/Card Reader.gd" type="Script" id=1]
-[ext_resource path="res://Maps/Map2/True Card.gd" type="Script" id=2]
+[ext_resource path="res://Card_Model.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0, 0, 1 )
@@ -12,14 +13,11 @@ albedo_color = Color( 0.0313726, 1, 0, 1 )
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.765975, 1.30749, 0.599432 )
 
-[sub_resource type="CubeMesh" id=4]
-size = Vector3( 0.065, 0.261, 0.495 )
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.19121, 0.305555, 0.0593221 )
 
-[sub_resource type="SpatialMaterial" id=7]
-albedo_color = Color( 0.266667, 0, 1, 1 )
-
-[sub_resource type="BoxShape" id=6]
-extents = Vector3( 0.0380822, 0.153451, 0.252471 )
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.247326, 0.121552, 0.254961 )
 
 [node name="Lvl 3 Puzzle" type="Spatial"]
 
@@ -74,19 +72,18 @@ operation = 2
 width = 3.10969
 height = 4.34823
 
-[node name="RigidBody" type="RigidBody" parent="." groups=["pickup"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62126, 0.540296, 0 )
+[node name="trueCard" parent="." groups=["pickup"] instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.61857, 0.34628, -1.10648 )
 
-[node name="True Card" type="MeshInstance" parent="RigidBody"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.20759, 1.29513, -0.891726 )
-mesh = SubResource( 4 )
-skeleton = NodePath("../..")
-material/0 = SubResource( 7 )
-script = ExtResource( 2 )
+[node name="RootNode" parent="trueCard" instance=ExtResource( 2 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.20759, 1.29513, -0.891726 )
-shape = SubResource( 6 )
+[node name="CollisionShape2" type="CollisionShape" parent="trueCard"]
+shape = SubResource( 4 )
+
+[node name="amongus" type="Area" parent="trueCard" groups=["trueCard"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="trueCard/amongus"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 5 )
 
 [connection signal="area_entered" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_entered"]
-[connection signal="area_exited" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_exited"]

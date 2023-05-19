@@ -20,6 +20,8 @@ func _init():
 
 func _input(event):
 	if Global.debugPrivelege == true:
+		if Input.is_action_just_pressed("ui_]"):
+			get_tree().change_scene("res://Maps/Map2/Map2.tscn")
 		if event is InputEventKey and Input.is_key_pressed(KEY_P):
 			var vp = get_viewport()
 			vp.debug_draw = (vp.debug_draw + 1 ) % 4
@@ -31,8 +33,6 @@ func _ready():
 
 func get_input():
 	var input_dir = Vector3()
-	if Input.is_action_just_pressed("ui_]"):
-		get_tree().change_scene("res://Maps/Map2/Map2.tscn")
 	if Input.is_action_just_pressed("interact"):
 		if $Pivot/Camera/RayCast.is_colliding():
 			var raycastCollsions = $Pivot/Camera/RayCast.get_collider()
