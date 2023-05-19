@@ -6,6 +6,9 @@ extends SpotLight
 # var b = "text"
 var isButtonDown = false
 var lightActive = false
+var coneOfLight = 15
+var lightRange = 5
+var flashlightOnTime = 0
 onready var controller := ARVRHelpers.get_arvr_controller(self)
 export (XRTools.Buttons) var click_button : int = XRTools.Buttons.VR_TRIGGER
 # Called when the node enters the scene tree for the first time.
@@ -19,24 +22,30 @@ func _process(delta):
 		desktopFlash()
 	else:
 		vrFlash()
+	flashLight(delta)
+
 		
 func vrFlash():
-	if controller and controller.get_is_active() and controller.is_button_pressed(click_button) and !isButtonDown and !lightActive:
+	if controller and controller.get_is_active() and controller.is_button_pressed(click_button) and !isButtonDown:
 		isButtonDown = true
-		lightActive = true
-		self.visible = true
-		yield(get_tree().create_timer(5.0), "timeout")
-		self.visible = false
-		yield(get_tree().create_timer(5.0), "timeout")
-		lightActive = false
+		lightActive = !lightActive
 	if controller and controller.get_is_active() and !controller.is_button_pressed(click_button):
 		isButtonDown = false
 
 func desktopFlash():
-	if Input.is_action_just_pressed("flashlight") and !lightActive:
-		lightActive = true
+	if Input.is_action_just_pressed("flashlight"):
 		self.visible = true
-		yield(get_tree().create_timer(5.0), "timeout")
-		self.visible = false
-		yield(get_tree().create_timer(5.0), "timeout")
-		lightActive = false
+		lightActive != lightActive
+
+
+
+
+func flashLight(delta):
+	if lightActive:
+		flashlightOnTime += delta
+		$Tween.interpolate_property($".","spot_angle",30.0,10.0,10.0,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		$Tween2.interpolate_property($".","spot_range",100.0,50.0,10.0,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		$Tween.start()
+		$Tween2.start()
+	else:
+		pass
