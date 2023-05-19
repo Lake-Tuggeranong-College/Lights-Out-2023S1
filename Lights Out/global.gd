@@ -5,6 +5,9 @@ var desktop = false
 var in_area = false
 var hasClicker = false
 var debugPrivelege = false
+var battries = 1
+var battryLifeTime = 7
+
 
 # Declare member variables here. Examples:
 # var a = 2

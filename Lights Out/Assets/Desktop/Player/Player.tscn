@@ -38,6 +38,10 @@ spot_range = 4.7552
 spot_angle = 14.0625
 script = ExtResource( 4 )
 
+[node name="Tween" type="Tween" parent="Pivot/Camera/SpotLight"]
+
+[node name="Tween2" type="Tween" parent="Pivot/Camera/SpotLight"]
+
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
