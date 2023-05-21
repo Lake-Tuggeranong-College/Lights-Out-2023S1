@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
@@ -12,11 +12,6 @@
 [ext_resource path="res://Assets/Textures/woodbutdarker.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Textures/brown-leather_albedo.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Textures/Concrete.jpg" type="Texture" id=14]
-
-[sub_resource type="PlaneMesh" id=44]
-
-[sub_resource type="SpatialMaterial" id=45]
-albedo_texture = ExtResource( 14 )
 
 [sub_resource type="CubeMesh" id=46]
 
@@ -42,6 +37,9 @@ uv1_scale = Vector3( 0.75, 2, 2 )
 
 [sub_resource type="SpatialMaterial" id=56]
 albedo_texture = ExtResource( 11 )
+
+[sub_resource type="SpatialMaterial" id=60]
+albedo_texture = ExtResource( 14 )
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.309693, 0.224716, 0.266277 )
@@ -130,11 +128,6 @@ width = 3.61026
 height = 7.41369
 depth = 5.25468
 
-[node name="CSGMesh" type="CSGMesh" parent="Main Room"]
-transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 17, -0.845232, -7.73023, 0 )
-mesh = SubResource( 44 )
-material = SubResource( 45 )
-
 [node name="CSGMesh2" type="CSGMesh" parent="Main Room"]
 transform = Transform( 16, 0, 0, 0, 10, 0, 0, 0, 16, -0.079237, 2.43019, -0.592657 )
 operation = 2
@@ -177,6 +170,13 @@ transform = Transform( -1.74846e-07, 0, 0.5, 0, 4, 0, -4, 0, -2.18557e-08, 15.22
 width = 1.53468
 height = 1.84645
 material = SubResource( 56 )
+
+[node name="CSGBox-Floor" type="CSGBox" parent="Main Room"]
+transform = Transform( 16, 0, 0, 0, 9, 0, 0, 0, 1, -0.924483, -7.77477, -1.32013 )
+width = 2.09358
+height = 0.109401
+depth = 39.3064
+material = SubResource( 60 )
 
 [node name="Books" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7416, 1.90355, 7.43502 )

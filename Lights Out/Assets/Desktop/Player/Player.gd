@@ -4,14 +4,14 @@ onready var camera = $Pivot/Camera
 
 var gravity = -50
 var max_speed = 10
-var crouch_move_speed = 6
+var crouch_move_speed = 4
 var crouch_speed = 20
 var mouse_sensitivity = 0.005
 var velocity = Vector3()
 var isHolding = false
 
 var default_height = 3.187
-var crouch_height = 0.3
+var crouch_height = 1.187
 
 onready var pcap = $CollisionShape #The crouch key is shift by the way. - Cam
 
@@ -64,12 +64,19 @@ func get_input():
 	return input_dir
 	
 func _process(delta):
+	# gets a counter of the current framerate connected to the player's sight
+	$Pivot/Camera/FPS_COUNTER.text = str(Engine.get_frames_per_second())
+	if Global.fpsCounterActive == true:
+		$Pivot/Camera/FPS_COUNTER.visible = true
+	
 	if Input.is_action_pressed("crouch"):
-		pcap.shape.height -= crouch_speed * delta
+		pcap.shape.height == crouch_height
+		camera.transform.origin.y == 0.002
 		max_speed = crouch_move_speed
 	else:
-		pcap.shape.height += crouch_speed * delta
-		pcap.shape.height = clamp(pcap.shape.height, crouch_height, default_height)
+		pcap.shape.height == default_height
+		camera.transform.origin.y == 0.006
+		max_speed = 10
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
