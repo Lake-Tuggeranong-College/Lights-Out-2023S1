@@ -7,6 +7,7 @@ var hasClicker = false
 var debugPrivelege = false
 var battries = 1
 var battryLifeTime = 7
+var fpsCounterActive = false
 
 
 # Declare member variables here. Examples:

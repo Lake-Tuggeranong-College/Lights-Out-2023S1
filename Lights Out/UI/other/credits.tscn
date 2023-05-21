@@ -36,16 +36,15 @@ margin_right = 860.0
 margin_bottom = 440.0
 rect_min_size = Vector2( 850, 430 )
 theme = SubResource( 1 )
-text = "Lights out credits 
+text = "\"Lights Out\" Credits
 
 
 
-
-Project manager - Sam ALLEN
-Developers -  Dylan PARSONS, Bailey VELO, Blake WISCOMBE
-Audio lad -  Cameron BLACK
-Map disingers -  Matthew SEEBOHM and Baliey VELO 
-UI - Joel ROSA
+Project Manager - Sam ALLEN
+Main Developers -  Dylan PARSONS, Bailey VELO, Blake WISCOMBE
+Accessibility Designer -  Cameron BLACK
+Map / Puzzle Designers -  Matthew SEEBOHM and Baliey VELO 
+User Interface - Joel ROSA
 
 "
 align = 1

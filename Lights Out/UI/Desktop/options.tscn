@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/Desktop/options.gd" type="Script" id=2]
+[ext_resource path="res://UI/Fonts/Arial/arial.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Audio Files/UIconfirmationOptimistic_SFX.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 17
+extra_spacing_top = 5
+font_data = ExtResource( 3 )
 
 [node name="options" type="Control"]
 anchor_left = 0.5
@@ -29,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="General" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -45,19 +53,60 @@ margin_left = -438.0
 margin_top = -232.0
 margin_right = -251.0
 margin_bottom = -201.0
+custom_constants/separation = 15
 
 [node name="to main menu" type="Button" parent="TabContainer/General/VBoxContainer"]
 margin_right = 187.0
 margin_bottom = 31.0
 theme = ExtResource( 1 )
-text = "back to main menu"
+text = "Back to Main Menu."
 
 [node name="Debugger Option" type="CheckButton" parent="TabContainer/General/VBoxContainer"]
-margin_top = 35.0
+margin_top = 46.0
 margin_right = 187.0
-margin_bottom = 73.0
+margin_bottom = 84.0
 theme = ExtResource( 1 )
 text = "Debug Keybind"
+align = 1
+
+[node name="V-Sync Option" type="CheckButton" parent="TabContainer/General/VBoxContainer"]
+margin_top = 99.0
+margin_right = 187.0
+margin_bottom = 137.0
+theme = ExtResource( 1 )
+text = "V-Sync"
+align = 1
+
+[node name="VBoxContainer-Text" type="VBoxContainer" parent="TabContainer/General"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -232.0
+margin_right = 148.0
+margin_bottom = -97.0
+custom_constants/separation = 25
+
+[node name="MainMenuLabel" type="Label" parent="TabContainer/General/VBoxContainer-Text"]
+margin_right = 650.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
+text = "Returns to Main Menu scene."
+
+[node name="DebugLabel" type="Label" parent="TabContainer/General/VBoxContainer-Text"]
+margin_top = 50.0
+margin_right = 650.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+text = "Enables Developer Keybinds for Debug Purposes."
+
+[node name="VsyncLabel" type="Label" parent="TabContainer/General/VBoxContainer-Text"]
+margin_top = 100.0
+margin_right = 650.0
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 1 )
+text = "Disables V-Sync, which eliminates screen-tearing, which may increase your framerate."
 
 [node name="Video" type="Tabs" parent="TabContainer"]
 visible = false
@@ -77,15 +126,48 @@ margin_left = -438.0
 margin_top = -232.0
 margin_right = -251.0
 margin_bottom = -201.0
+custom_constants/separation = 15
 
 [node name="Fullscreen Checkbox" type="CheckButton" parent="TabContainer/Video/VBoxContainer3"]
 margin_right = 187.0
 margin_bottom = 38.0
 theme = ExtResource( 1 )
 text = "Windowed Mode"
+align = 1
+
+[node name="FramerateCounter" type="CheckButton" parent="TabContainer/Video/VBoxContainer3"]
+margin_top = 53.0
+margin_right = 187.0
+margin_bottom = 91.0
+theme = ExtResource( 1 )
+text = "Framerate Counter"
+align = 1
+
+[node name="VBoxContainer-Text2" type="VBoxContainer" parent="TabContainer/Video"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -232.0
+margin_right = 422.0
+margin_bottom = -97.0
+custom_constants/separation = 25
+
+[node name="MainMenuLabel" type="Label" parent="TabContainer/Video/VBoxContainer-Text2"]
+margin_right = 650.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 1 )
+text = "Enables windowed mode (Includes border)."
+
+[node name="DebugLabel" type="Label" parent="TabContainer/Video/VBoxContainer-Text2"]
+margin_top = 50.0
+margin_right = 650.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+text = "Enables a visible framerate counter in the top left of the screen (DEBUG)."
 
 [node name="Audio" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -102,7 +184,53 @@ margin_left = -438.0
 margin_top = -232.0
 margin_right = -251.0
 margin_bottom = -201.0
+custom_constants/separation = 20
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/VBoxContainer4"]
+margin_right = 187.0
+margin_bottom = 16.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="Test_Sound" type="Button" parent="TabContainer/Audio/VBoxContainer4"]
+margin_top = 36.0
+margin_right = 187.0
+margin_bottom = 67.0
+theme = ExtResource( 1 )
+text = "Test Sound Volume"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TabContainer/Audio/VBoxContainer4"]
+stream = ExtResource( 4 )
+
+[node name="VBoxContainer-Text3" type="VBoxContainer" parent="TabContainer/Audio"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -228.0
+margin_top = -254.0
+margin_right = 422.0
+margin_bottom = -119.0
+custom_constants/separation = 15
+
+[node name="SliderLabel" type="Label" parent="TabContainer/Audio/VBoxContainer-Text3"]
+margin_right = 650.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "Adjusting the slider will change the volume of the program.
+(Left is lowest value, Right is highest value)."
+
+[node name="TestSoundLabel" type="Label" parent="TabContainer/Audio/VBoxContainer-Text3"]
+margin_top = 68.0
+margin_right = 650.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 1 )
+text = "Plays a short sound, used for testing the user's audio."
 
 [connection signal="pressed" from="TabContainer/General/VBoxContainer/to main menu" to="." method="_on_Button_pressed"]
 [connection signal="toggled" from="TabContainer/General/VBoxContainer/Debugger Option" to="." method="_on_Debugger_Option_toggled"]
+[connection signal="toggled" from="TabContainer/General/VBoxContainer/V-Sync Option" to="." method="_on_VSync_Option_toggled"]
 [connection signal="toggled" from="TabContainer/Video/VBoxContainer3/Fullscreen Checkbox" to="." method="_on_Fullscreen_Checkbox_toggled"]
+[connection signal="toggled" from="TabContainer/Video/VBoxContainer3/FramerateCounter" to="." method="_on_FramerateCounter_toggled"]
+[connection signal="value_changed" from="TabContainer/Audio/VBoxContainer4/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="TabContainer/Audio/VBoxContainer4/Test_Sound" to="." method="_on_Test_Sound_pressed"]
