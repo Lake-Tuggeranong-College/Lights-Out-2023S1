@@ -94,7 +94,8 @@ func _physics_process(delta):
 		velocity.z = desired_velocity.z
 		velocity = move_and_slide(velocity, Vector3.UP, true)
 	if Input.is_action_just_pressed("ui_menu"):
-		get_tree().change_scene("res://UI/pause_menu/pause_menu.tscn")
+		#get_tree().change_scene("res://UI/pause_menu/pause_menu.tscn")
+		get_tree().paused = true
 
 func _on_Area_area_entered(area):
 	if area.name == "SafeArea":

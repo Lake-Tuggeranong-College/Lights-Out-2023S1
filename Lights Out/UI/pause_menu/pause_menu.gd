@@ -7,6 +7,7 @@ var mouseDelta : Vector2 = Vector2()
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_menu"):
 		self.is_paused = !is_paused
+		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func set_is_paused(value):
@@ -17,7 +18,8 @@ func set_is_paused(value):
 func _on_resume_game_pressed():
 	self.is_paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	get_tree().change_scene("res://Maps/Map1.tscn")
+	#get_tree().change_scene("res://Maps/Map1.tscn")
+	get_tree().paused = false
 
 func _on_quit_game_pressed():
 	get_tree().quit()
