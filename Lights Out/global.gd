@@ -8,6 +8,8 @@ var debugPrivelege = false
 var battries = 1
 var battryLifeTime = 7
 var fpsCounterActive = false
+var vsync = true
+var fullscreenMode = true
 
 
 # Declare member variables here. Examples:

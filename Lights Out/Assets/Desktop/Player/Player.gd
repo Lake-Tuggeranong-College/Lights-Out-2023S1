@@ -71,11 +71,11 @@ func _process(delta):
 	
 	if Input.is_action_pressed("crouch"):
 		pcap.shape.height == crouch_height
-		$Pivot/Camera.translation.y = 10
+		$Pivot/Camera.translation.y = -1.006
 		max_speed = crouch_move_speed
 	else:
 		pcap.shape.height == default_height
-		$Pivot/Camera.translation.y = 0
+		$Pivot/Camera.translation.y = 0.006
 		max_speed = 10
 
 func _unhandled_input(event):

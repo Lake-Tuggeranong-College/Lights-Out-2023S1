@@ -15,11 +15,6 @@ func _ready():
 	for button in buttons.get_children():
 		button.connect("pressed", self ,"onButton_Pressed", [button.button_function])
 	
-		
-	
-	
-	
-	
 func onButton_Pressed(button_function):
 	if button_function == "Backspace":
 		currentInput.pop_back()
