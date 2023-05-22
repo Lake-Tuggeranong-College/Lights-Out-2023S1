@@ -218,6 +218,7 @@ mesh = SubResource( 43 )
 [node name="Safe2" parent="." instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7699, 4.65263, 0.863104 )
 password = "7314"
+scene_to_load = "res://Maps/Map2/Map2.tscn"
 
 [node name="StaticBody" type="StaticBody" parent="Safe2"]
 
