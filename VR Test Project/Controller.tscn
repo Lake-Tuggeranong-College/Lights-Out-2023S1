@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://HTC_Vive_controller Better.obj" type="ArrayMesh" id=2]
-
-[node name="Spatial" type="Spatial"]
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 0.0524494, 0, 0, 0, 0.0466058, 0, 0, 0, 0.0616122, 0.338687, -0.0142161, -0.0227343 )
-mesh = ExtResource( 2 )
