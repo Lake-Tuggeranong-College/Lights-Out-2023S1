@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/SectionDeleter.gd" type="Script" id=3]
-[ext_resource path="res://Maps/Map2/EndLevelDoor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Textures/wood.jpeg" type="Texture" id=5]
 [ext_resource path="res://Maps/Closet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://BetterRat.tscn" type="PackedScene" id=7]
@@ -44,9 +43,6 @@ width = 0.85349
 height = 4.61595
 depth = 2.90016
 material = SubResource( 2 )
-
-[node name="EndLevel" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.0558, 4.70829, 1.33661 )
 
 [node name="RigidBody" parent="." groups=["pickup"] instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50641, 5.73562, 11.8471 )

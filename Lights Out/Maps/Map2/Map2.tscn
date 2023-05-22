@@ -9,7 +9,7 @@
 script = ExtResource( 2 )
 
 [node name="Spawn" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23812, 2.58362, 12.3184 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54643, 0.485942, -11.6562 )
 
 [node name="Corridor_Map2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9248, 26.6529, 32.2773 )

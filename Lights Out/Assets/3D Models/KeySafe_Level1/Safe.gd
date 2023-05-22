@@ -1,7 +1,7 @@
 extends Spatial
 export(String) var password
 var opened = false
-
+export(String) var scene_to_load
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -22,12 +22,7 @@ func open(enteredCode):
 	print(password)
 	print(enteredCode)
 	if enteredCode == password:
-		$RootNode/Safe_MainBody/Safe_Door.queue_free()
-		$VirtualKeyboard.queue_free()
-		opened = true
-		$AudioStreamPlayer3D.emmit_sound("res://Assets/Audio Files/Safe_Unlock.wav")
-		$SafeArea.queue_free()
-		$RootNode/Keypad.queue_free()
+		get_tree().change_scene(scene_to_load)
 		return(true)
 	else:
 		return(false)
