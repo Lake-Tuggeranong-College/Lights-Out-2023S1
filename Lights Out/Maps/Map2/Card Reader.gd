@@ -1,25 +1,16 @@
 extends CSGBox
 
-
-
-#func _on_Area_area_entered(area):	
-#	if cardTrue == true:
-#		if area.name == ("trueCard"):
-#			get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
-#	print ("true")
-
-#func _process(delta):
-#	if cardReader == true:
-#		if Input.is_action_just_pressed("left_click"):
-#			var cardTrue = true
-#			print ("input available")
-
-#func _on_Area_area_exited(area):
-#	cardReader = false
-#	print ("false")
+func _process(delta):
+	if Global.cardReader == 4:
+		get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_Area_area_entered(area):
 	if area.is_in_group("trueCard"):
 		if Input.is_action_pressed("left_click"):
-			get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			area.remove_from_group("trueCard")
+			Global.cardReader += 1
+			print (Global.cardReader)
+	if area.is_in_group("falseCard"):
+		Global.cardReader = 0
+		print (Global.cardReader)
