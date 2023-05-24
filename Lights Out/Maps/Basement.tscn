@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://UI/Fonts/baby doll/Baby Doll.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/3D Models/bookshelf/source/SM_Bookshelf.obj" type="ArrayMesh" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Assets/3D Models/KeySafe_Level1/Keypad.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Maps/Stairs2.gd" type="Script" id=5]
 [ext_resource path="res://Maps/Outline.gd" type="Script" id=7]
-[ext_resource path="res://AttackOnTitan_Key3.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Textures/wood.jpeg" type="Texture" id=10]
 [ext_resource path="res://Assets/Textures/redbricks2b-albedo.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Textures/woodbutdarker.png" type="Texture" id=12]
@@ -185,10 +184,12 @@ depth = 39.3064
 material = SubResource( 60 )
 
 [node name="Books" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7416, 1.90355, 7.43502 )
+transform = Transform( -5.21253e-16, -4.37114e-08, 1, -1, 1.19249e-08, 0, -1.19249e-08, -1, -4.37114e-08, -5.16906, 2.12716, 11.042 )
 
 [node name="RigidBody" type="RigidBody" parent="Books"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.116618 )
+mode = 1
+gravity_scale = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Books/RigidBody"]
 transform = Transform( 1, 0, 0, 0, 0.577, 0, 0, 0, 1, 0.145321, -0.0669267, -0.222005 )
@@ -201,6 +202,8 @@ material/0 = SubResource( 57 )
 
 [node name="RigidBody2" type="RigidBody" parent="Books"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.454299 )
+mode = 1
+gravity_scale = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="Books/RigidBody2"]
 transform = Transform( 1, 0, 0, 0, 0.577, 0, 0, 0, 1, 0.145321, -0.0669267, -0.222005 )
@@ -291,9 +294,6 @@ script = ExtResource( 7 )
 transform = Transform( -0.0132467, 0, 0.999912, 0.404085, 0.914706, 0.00535325, -0.914626, 0.40412, -0.0121168, -11.5835, 1.70508, 3.34077 )
 mesh = SubResource( 40 )
 script = ExtResource( 7 )
-
-[node name="AttackOnTitan_Key3" parent="." groups=["pickup"] instance=ExtResource( 9 )]
-transform = Transform( 9.55343e-16, 2.18557e-08, 0.5, 0.5, -2.18557e-08, 0, 2.18557e-08, 0.5, -2.18557e-08, -9.16693, 1.56958, 5.66752 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7142, 4.9141, 1.21755 )
