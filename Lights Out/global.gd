@@ -10,6 +10,7 @@ var battryLifeTime = 7
 var fpsCounterActive = false
 var vsync = true
 var fullscreenMode = true
+var cardReader = 0
 
 
 # Declare member variables here. Examples:
