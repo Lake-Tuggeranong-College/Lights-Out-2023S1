@@ -3,7 +3,7 @@ extends Control
 var testSound = preload("res://Assets/Audio Files/UIconfirmationOptimistic_SFX.wav")
 # BACK TO MAIN MENU
 
-func _ready():
+func _process(delta):
 	$TabContainer/General/VBoxContainer/Debugger_Option.pressed = Global.debugPrivelege
 	$TabContainer/Video/VBoxContainer3/FramerateCounter.pressed = Global.fpsCounterActive
 	$TabContainer/General/VBoxContainer/V_Sync_Option.pressed = Global.vsync

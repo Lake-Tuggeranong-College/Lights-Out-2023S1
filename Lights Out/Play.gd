@@ -30,7 +30,8 @@ func _on_options_pressed():
 
 
 func _on_Button_pressed():
-		get_tree().change_scene("res://UI/other/credits.tscn")
+	get_tree().change_scene("res://UI/other/credits.tscn")
 
 
-
+func _on_creativeCommonsButton_pressed():
+	pass # Replace with function body.
