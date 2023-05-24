@@ -72,7 +72,7 @@ initial_object = NodePath("../Pickable")
 transform = Transform( 2.09853, 0, 0, 0, 2.21968, 0, 0, 0, 0.241993, 0, 2.61403, 1.78381 )
 
 [node name="Door" parent="StaticBody" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.88528 )
 
 [node name="Area2" type="Area" parent="StaticBody/Door"]
 transform = Transform( 0.476524, 0, 0, 0, 0.450515, 0, 0, 0, 4.13235, 0, 0.0311717, 0 )

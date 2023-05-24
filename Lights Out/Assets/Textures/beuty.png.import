@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wrinkled-paper-ao.png-62e852a37e83e77c69a870f71757b573.s3tc.stex"
-path.etc2="res://.import/wrinkled-paper-ao.png-62e852a37e83e77c69a870f71757b573.etc2.stex"
+path.s3tc="res://.import/beuty.png-4f340f9d0033ddf7a946677cf82da68d.s3tc.stex"
+path.etc2="res://.import/beuty.png-4f340f9d0033ddf7a946677cf82da68d.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/wrinkled-paper-ao.png"
-dest_files=[ "res://.import/wrinkled-paper-ao.png-62e852a37e83e77c69a870f71757b573.s3tc.stex", "res://.import/wrinkled-paper-ao.png-62e852a37e83e77c69a870f71757b573.etc2.stex" ]
+source_file="res://Assets/Textures/beuty.png"
+dest_files=[ "res://.import/beuty.png-4f340f9d0033ddf7a946677cf82da68d.s3tc.stex", "res://.import/beuty.png-4f340f9d0033ddf7a946677cf82da68d.etc2.stex" ]
 
 [params]
 
