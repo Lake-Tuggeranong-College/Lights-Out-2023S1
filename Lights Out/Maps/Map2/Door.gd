@@ -11,5 +11,5 @@ func _on_Area_area_exited(area):
 func _process(delta):
 	if doorEntered == true:
 		print (doorEntered)
-		if Input.is_action_pressed("left_click"):
+		if Input.is_action_pressed("interact"):
 			queue_free()
