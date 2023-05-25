@@ -6,8 +6,8 @@ extends SpotLight
 # var b = "text"
 var isButtonDown = false
 var lightActive = false
-var coneOfLight = 15
-var lightRange = 5
+var coneOfLight = 27
+var lightRange = 6
 var flashlightOnTime = 0
 onready var controller := ARVRHelpers.get_arvr_controller(self)
 export (XRTools.Buttons) var click_button : int = XRTools.Buttons.VR_TRIGGER
@@ -22,7 +22,10 @@ func _process(delta):
 		desktopFlash()
 	else:
 		vrFlash()
-	flashLight(delta)
+	if lightActive:
+		flashlightOnTime += delta
+		coneOfLight = spot_angle
+		lightRange = spot_range
 
 		
 func vrFlash():
@@ -34,17 +37,19 @@ func vrFlash():
 
 func desktopFlash():
 	if Input.is_action_just_pressed("flashlight"):
-		self.visible = true
-		lightActive != lightActive
+		lightActive = !lightActive
+		self.visible = lightActive
+		flashLight()
 
 
 
 
-func flashLight(delta):
+func flashLight():
 	if lightActive:
-		flashlightOnTime += delta
-		$Tween.interpolate_property($".","spot_angle",30.0,10.0,10.0,Tween.TRANS_LINEAR,Tween.EASE_OUT)
-		$Tween2.interpolate_property($".","spot_range",100.0,50.0,10.0,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		var remainingFlashLightTime = (Global.battries * Global.battryLifeTime) - flashlightOnTime
+		print(remainingFlashLightTime)
+		$Tween.interpolate_property($".","spot_angle",coneOfLight,15.0,remainingFlashLightTime,Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		$Tween2.interpolate_property($".","spot_range",lightRange,50.0,remainingFlashLightTime,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 		$Tween.start()
 		$Tween2.start()
 	else:

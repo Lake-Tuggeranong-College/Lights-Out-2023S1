@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@ extents = Vector3( 6.1607, 0.19804, 6.71094 )
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 4 )
 uv1_scale = Vector3( 5, 5, 5 )
+
+[sub_resource type="Environment" id=3]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17111, 0, -6.63111 )
@@ -46,3 +48,6 @@ material = SubResource( 2 )
 
 [node name="RigidBody2" parent="." groups=["pickup"] instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84947, 1.07488, 3.5063 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
