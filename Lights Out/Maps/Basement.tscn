@@ -177,9 +177,9 @@ height = 1.84645
 material = SubResource( 56 )
 
 [node name="CSGBox-Floor" type="CSGBox" parent="Main Room"]
-transform = Transform( 16, 0, 0, 0, 9, 0, 0, 0, 1, -0.924483, -7.77477, -1.32013 )
+transform = Transform( 16, 0, 0, 0, 9, 0, 0, 0, 1, -0.924483, -9.58681, -1.32013 )
 width = 2.09358
-height = 0.109401
+height = 0.495227
 depth = 39.3064
 material = SubResource( 60 )
 
