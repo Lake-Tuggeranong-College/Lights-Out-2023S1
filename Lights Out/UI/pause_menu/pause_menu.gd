@@ -2,22 +2,28 @@ extends Control
 
 export(String) var scene_to_load
 
-var is_paused = false setget set_is_paused
+var is_paused = false
 var mouseDelta : Vector2 = Vector2()
-func _unhandled_input(event):
+#
+#func _unhandled_input(event):
+#	if event.is_action_pressed("ui_menu"):
+#		self.is_paused = !is_paused
+		
+func _input (event):
 	if event.is_action_pressed("ui_menu"):
-		self.is_paused = !is_paused
-		get_tree().paused = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		set_is_paused(!is_paused)
 
 func set_is_paused(value):
+	if value:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	is_paused = value
 	get_tree().paused = is_paused
 	visible = is_paused
 
 func _on_resume_game_pressed():
 	self.is_paused = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#get_tree().change_scene("res://Maps/Map1.tscn")
 	get_tree().paused = false
 
@@ -25,13 +31,6 @@ func _on_quit_game_pressed():
 	get_tree().quit()
 	#get_tree().change_scene("res://Launcher.tscn")
 
-func _input (event):
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#Did the mouse move?
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			mouseDelta = event.relative
 
 func _on_Main_Menu_Button_pressed():
 	get_tree().change_scene(scene_to_load)
