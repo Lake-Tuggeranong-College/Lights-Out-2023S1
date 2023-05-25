@@ -45,8 +45,6 @@ func get_input():
 					isHolding = true
 					reparent(raycastCollsions,$Pivot/Camera/ObjectPlace)
 					raycastCollsions.global_transform.origin = $Pivot/Camera/ObjectPlace.global_transform.origin
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_pressed("ui_forward"):
 		input_dir += -global_transform.basis.z
 		footstepSound()
@@ -93,9 +91,7 @@ func _physics_process(delta):
 		velocity.x = desired_velocity.x
 		velocity.z = desired_velocity.z
 		velocity = move_and_slide(velocity, Vector3.UP, true)
-	if Input.is_action_just_pressed("ui_menu"):
-		#get_tree().change_scene("res://UI/pause_menu/pause_menu.tscn")
-		get_tree().paused = true
+
 
 func _on_Area_area_entered(area):
 	if area.name == "SafeArea":
