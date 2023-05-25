@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/scuffed-plastic2-alb.png-a88e74ea0e742ac7fbc807c198a33c40.s3tc.stex"
-path.etc2="res://.import/scuffed-plastic2-alb.png-a88e74ea0e742ac7fbc807c198a33c40.etc2.stex"
+path.s3tc="res://.import/fiber-textured-wall1_albedo.png-26687bca11be39b733ae82e460e9d97c.s3tc.stex"
+path.etc2="res://.import/fiber-textured-wall1_albedo.png-26687bca11be39b733ae82e460e9d97c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/scuffed-plastic2-alb.png"
-dest_files=[ "res://.import/scuffed-plastic2-alb.png-a88e74ea0e742ac7fbc807c198a33c40.s3tc.stex", "res://.import/scuffed-plastic2-alb.png-a88e74ea0e742ac7fbc807c198a33c40.etc2.stex" ]
+source_file="res://Assets/Textures/fiber-textured-wall1_albedo.png"
+dest_files=[ "res://.import/fiber-textured-wall1_albedo.png-26687bca11be39b733ae82e460e9d97c.s3tc.stex", "res://.import/fiber-textured-wall1_albedo.png-26687bca11be39b733ae82e460e9d97c.etc2.stex" ]
 
 [params]
 
