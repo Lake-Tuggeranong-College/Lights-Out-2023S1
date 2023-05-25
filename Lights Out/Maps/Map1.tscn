@@ -4,8 +4,8 @@
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/SectionDeleter.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Textures/wood-veneer1-albedo.png" type="Texture" id=4]
+[ext_resource path="res://testRat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Maps/Closet.tscn" type="PackedScene" id=6]
-[ext_resource path="res://BetterRat.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 6.1607, 0.19804, 6.71094 )
@@ -44,5 +44,5 @@ height = 4.61595
 depth = 2.90016
 material = SubResource( 2 )
 
-[node name="RigidBody" parent="." groups=["pickup"] instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41437, 1.60857, 10.9849 )
+[node name="RigidBody2" parent="." groups=["pickup"] instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84947, 1.07488, 3.5063 )
