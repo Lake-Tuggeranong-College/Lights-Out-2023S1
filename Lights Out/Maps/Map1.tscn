@@ -38,6 +38,7 @@ shape = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="Basement/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85166, 1.80048, 1.56523 )
+visible = false
 width = 0.85349
 height = 4.61595
 depth = 2.90016
