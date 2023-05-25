@@ -33,22 +33,6 @@ func _input (event):
 		if event is InputEventMouseMotion:
 			mouseDelta = event.relative
 
-
-
-#func _on_resume_game_pressed():
-		#get_tree().change_scene("res://Maps/Map1.tscn")
-		#var player = load("res://Assets/Desktop/Player/Player.tscn").instance()
-		#add_child(player)
-		#player.global_translation = $Spawn.global_translation
-			
-
-
-#func _on_quit_game_pressed():
-	#get_tree().change_scene("res://Launcher.tscn")
-
-
-#func _on_resume_game_pressed():
-	#pass # Replace with function body.
-
-
-
+func _on_Main_Menu_Button_pressed():
+	get_tree().change_scene(scene_to_load)
+	get_tree().paused = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Maps/Map2/Card Reader.gd" type="Script" id=1]
 [ext_resource path="res://Card_Model.tscn" type="PackedScene" id=2]
@@ -12,13 +12,16 @@ albedo_color = Color( 1, 0, 0, 1 )
 albedo_color = Color( 0.0313726, 1, 0, 1 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.765975, 1.30749, 0.599432 )
+extents = Vector3( 0.765975, 0.333119, 0.245069 )
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.19121, 0.305555, 0.0593221 )
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.247326, 0.121552, 0.254961 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.212458, 0.333539, 0.0689419 )
 
 [node name="Lvl 3 Puzzle" type="Spatial"]
 
@@ -50,7 +53,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1.022, 0, 0, 0, 1, -0.0469203, 0, -1.66211 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Card Reader/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.398083, -0.276388 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333713, 0.875399 )
 shape = SubResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="."]
@@ -96,7 +99,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 0, 0 )
 [node name="CollisionShape2" type="CollisionShape" parent="falseCard"]
 shape = SubResource( 4 )
 
-[node name="falseCard2" parent="." groups=["pickup"] instance=ExtResource( 3 )]
+[node name="Sussus" type="Area" parent="falseCard" groups=["falseCard"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="falseCard/Sussus"]
+shape = SubResource( 6 )
+
+[node name="falseCard2" parent="." groups=["falseCard", "pickup"] instance=ExtResource( 3 )]
 transform = Transform( 0.140608, -0.990065, 4.32771e-08, 0, -4.37114e-08, -1, 0.990065, 0.140608, -6.14615e-09, 2.78146, 0.34628, -0.401809 )
 
 [node name="RootNode" parent="falseCard2" instance=ExtResource( 4 )]
@@ -104,5 +112,52 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 0, 0 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="falseCard2"]
 shape = SubResource( 4 )
+
+[node name="Sussus" type="Area" parent="falseCard2" groups=["falseCard"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="falseCard2/Sussus"]
+shape = SubResource( 6 )
+
+[node name="trueCard2" parent="." groups=["pickup"] instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.698319, 1.45276, -0.7602 )
+
+[node name="RootNode" parent="trueCard2" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2" type="CollisionShape" parent="trueCard2"]
+shape = SubResource( 4 )
+
+[node name="amongus" type="Area" parent="trueCard2" groups=["trueCard"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="trueCard2/amongus"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="trueCard3" parent="." groups=["pickup"] instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 2.31689, 1.10648, 0.34628 )
+
+[node name="RootNode" parent="trueCard3" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2" type="CollisionShape" parent="trueCard3"]
+shape = SubResource( 4 )
+
+[node name="amongus" type="Area" parent="trueCard3" groups=["trueCard"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="trueCard3/amongus"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="trueCard4" parent="." groups=["pickup"] instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0.436054, 0.799494, -5.96046e-08 )
+
+[node name="RootNode" parent="trueCard4" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2" type="CollisionShape" parent="trueCard4"]
+shape = SubResource( 4 )
+
+[node name="amongus" type="Area" parent="trueCard4" groups=["trueCard"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="trueCard4/amongus"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 5 )
 
 [connection signal="area_entered" from="Card Reader/Area" to="Card Reader" method="_on_Area_area_entered"]

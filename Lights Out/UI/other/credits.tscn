@@ -38,8 +38,6 @@ rect_min_size = Vector2( 850, 430 )
 theme = SubResource( 1 )
 text = "\"Lights Out\" Credits
 
-
-
 Project Manager - Sam ALLEN
 Main Developers -  Dylan PARSONS, Bailey VELO, Blake WISCOMBE
 Accessibility Designer -  Cameron BLACK
