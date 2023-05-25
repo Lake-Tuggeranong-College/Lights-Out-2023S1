@@ -45,4 +45,4 @@ depth = 2.90016
 material = SubResource( 2 )
 
 [node name="RigidBody2" parent="." groups=["pickup"] instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84947, 1.07488, 3.5063 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47454, 3.89324, 11.1848 )
