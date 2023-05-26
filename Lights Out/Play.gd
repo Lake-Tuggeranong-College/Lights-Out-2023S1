@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://Maps/Map1.tscn")
+	get_tree().change_scene("res://TutorialScreen.tscn")
 	#get_tree().change_scene("res://UI/other/audiowarning.tscn")
 
 
@@ -34,4 +34,4 @@ func _on_Button_pressed():
 
 
 func _on_creativeCommonsButton_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://CreativeCommonsReferences.tscn")
