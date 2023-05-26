@@ -9,8 +9,6 @@ func _process(delta):
 	$TabContainer/General/VBoxContainer/V_Sync_Option.pressed = Global.vsync
 	$TabContainer/Video/VBoxContainer3/FullscreenCheckbox.pressed = Global.fullscreenMode
 	
-
-	
 func _on_Button_pressed():
 	get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
 

@@ -1,49 +1,89 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/fonts/Oswald-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=2]
+[ext_resource path="res://CreativeCommonsReferences.gd" type="Script" id=3]
 
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="DynamicFont" id=2]
-size = 14
 font_data = ExtResource( 1 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="outline" type="ColorRect" parent="."]
-margin_left = 30.0
-margin_top = 40.0
-margin_right = 70.0
-margin_bottom = 80.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_min_size = Vector2( 950, 500 )
 color = Color( 0.0941176, 0.0588235, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="ColorRect" type="ColorRect" parent="outline"]
-margin_left = 30.0
-margin_top = 23.0
-margin_right = 930.0
-margin_bottom = 473.0
+anchor_left = 0.0292969
+anchor_top = 0.0383333
+anchor_right = 0.981445
+anchor_bottom = 0.963333
 color = Color( 0.392157, 0.317647, 0.376471, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Label" type="Label" parent="outline/ColorRect"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 860.0
-margin_bottom = 440.0
+anchor_left = 0.0666667
+anchor_top = 0.018018
+anchor_right = 0.938462
+anchor_bottom = 0.792793
 rect_min_size = Vector2( 850, 430 )
 theme = SubResource( 1 )
 text = "REFERENCES - Creative Commons Assets used:"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="References" type="Label" parent="outline/ColorRect"]
-margin_left = 23.0
-margin_top = 33.0
-margin_right = 1038.0
-margin_bottom = 105.0
-rect_scale = Vector2( 0.854, 1 )
+anchor_left = 0.0235897
+anchor_top = 0.0594595
+anchor_right = 0.78359
+anchor_bottom = 0.76036
+margin_right = -102.0
+margin_bottom = -42.0
 custom_fonts/font = SubResource( 2 )
-text = "serkanmert. (2016). htc vive controller [3D Model]. Sketchfab. https://sketchfab.com/3d-models/htc-vive-controller-f9cc5f021c044a25b2c89029448d9602 CC BY 4.0.
-Aerin. (2021). Attack on Titan (Eren's Basement Key) [3D Model]. Sketchfab. https://sketchfab.com/3d-models/attack-on-titan-erens-basement-key-a5849aab036a4c88903681fe1a1caa85 CC BY 4.0
-Steiner, K. (2019). Bookshelf [3D Model]. Sketchfab. https://sketchfab.com/3d-models/bookshelf-1bcdd7c9c4544e27bcf9a31e47e60803 CC BY 4.0
-Seier+seier. (2010). Seier+seier free concrete texture, seamless libeskind judische museum, seier+seier [Photograph]. Flickr. https://www.flickr.com/photos/seier/4338268272 CC BY 2.0. 
-Azusa. (2018). Old Stairs [3D Model]. Sketchfab. https://sketchfab.com/3d-models/old-stairs-0e6262f70f09499780c5383a37c80606 CC BY 4.0"
+text = "serkanmert. (2016). htc vive controller [3D Model]. Sketchfab. 
+https://sketchfab.com/3d-models/htc-vive-controller-f9cc5f021c044a25b2c89029448d9602 CC BY 4.0.
+
+Aerin. (2021). Attack on Titan (Eren's Basement Key) [3D Model]. Sketchfab. 
+https://sketchfab.com/3d-models/attack-on-titan-erens-basement-key-a5849aab036a4c88903681fe1a1caa85 CC BY 4.0
+
+Steiner, K. (2019). Bookshelf [3D Model]. Sketchfab. 
+https://sketchfab.com/3d-models/bookshelf-1bcdd7c9c4544e27bcf9a31e47e60803 CC BY 4.0
+
+Seier+seier. (2010). Seier+seier free concrete texture, seamless libeskind judische museum, seier+seier [Photograph]. Flickr. 
+https://www.flickr.com/photos/seier/4338268272 CC BY 2.0. 
+
+Azusa. (2018). Old Stairs [3D Model]. Sketchfab. 
+https://sketchfab.com/3d-models/old-stairs-0e6262f70f09499780c5383a37c80606 CC BY 4.0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.0195312
+anchor_top = 0.02
+anchor_right = 0.152344
+anchor_bottom = 0.0716667
+theme = ExtResource( 2 )
+text = "  Back to Main Menu  "
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

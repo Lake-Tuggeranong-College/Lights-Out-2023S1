@@ -1,0 +1,195 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/Fonts/Ink Free/Inkfree.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Fonts/Arial/arialbd.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Fonts/baby doll/Baby Doll.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=4]
+[ext_resource path="res://TutorialScreen.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 3
+outline_color = Color( 0.117647, 0.0980392, 0.0980392, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 21
+font_data = ExtResource( 3 )
+
+[node name="TutorialScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.231373, 0.203922, 0.203922, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.181641
+anchor_top = 0.0816667
+anchor_right = 0.854492
+anchor_bottom = 0.418333
+custom_colors/font_color = Color( 0.87451, 0.745098, 0.745098, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "\"I've seen the horrors of crime on the people of today,
+but I've turned my eye against the truth.
+
+My only goal is escaping this labyrinth, as
+I am now one of those taken.\""
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKey_E" type="ColorRect" parent="."]
+anchor_left = 0.0810547
+anchor_top = 0.573333
+anchor_right = 0.119141
+anchor_bottom = 0.643333
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKey_E_Label" type="Label" parent="PhysicalKey_E"]
+margin_top = 6.0
+margin_right = 40.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "E"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="PhysicalKey_E"]
+anchor_left = 2.0
+anchor_top = 0.238095
+anchor_right = 10.6154
+anchor_bottom = 0.714286
+margin_right = -3.05176e-05
+custom_fonts/font = SubResource( 3 )
+text = "Press \"E\" to interact with objects."
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKeys_Movement" type="ColorRect" parent="."]
+anchor_left = 0.537109
+anchor_top = 0.573333
+anchor_right = 0.575195
+anchor_bottom = 0.635
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKey_W_Label" type="Label" parent="PhysicalKeys_Movement"]
+anchor_top = 0.162162
+anchor_right = 1.02564
+anchor_bottom = 0.918919
+custom_fonts/font = SubResource( 2 )
+text = "W"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="PhysicalKeys_Movement"]
+anchor_left = 3.35897
+anchor_top = 0.72973
+anchor_right = 11.9744
+anchor_bottom = 1.27027
+custom_fonts/font = SubResource( 3 )
+text = "Press WASD to move around."
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKeys_Movement2" type="ColorRect" parent="."]
+anchor_left = 0.537109
+anchor_top = 0.651667
+anchor_right = 0.576172
+anchor_bottom = 0.716667
+margin_bottom = 3.05176e-05
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKey_S_Label" type="Label" parent="PhysicalKeys_Movement2"]
+margin_top = 6.0
+margin_right = 40.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "S"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKeys_Movement3" type="ColorRect" parent="."]
+anchor_left = 0.491211
+anchor_top = 0.651667
+anchor_right = 0.527344
+anchor_bottom = 0.716667
+margin_bottom = 3.05176e-05
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKey_A_Label" type="Label" parent="PhysicalKeys_Movement3"]
+margin_top = 6.0
+margin_right = 40.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "A"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKeys_Movement4" type="ColorRect" parent="."]
+anchor_left = 0.583008
+anchor_top = 0.651667
+anchor_right = 0.623047
+anchor_bottom = 0.716667
+margin_bottom = 3.05176e-05
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PhysicalKey_D_Label" type="Label" parent="PhysicalKeys_Movement4"]
+margin_top = 6.0
+margin_right = 40.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "D"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StartGameButton" type="Button" parent="."]
+anchor_left = 0.448242
+anchor_top = 0.851667
+anchor_right = 0.543945
+anchor_bottom = 0.948333
+theme = ExtResource( 4 )
+text = "   Start Game   "
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="StartGameButton" to="." method="_on_StartGameButton_pressed"]
