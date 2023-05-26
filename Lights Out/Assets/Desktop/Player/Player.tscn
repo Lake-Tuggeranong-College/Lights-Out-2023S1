@@ -38,6 +38,7 @@ transform = Transform( 2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, 0, -1.
 
 [node name="SpotLight" type="SpotLight" parent="Pivot/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00961165, 0.0166776, -0.0296082 )
+visible = false
 light_energy = 2.0
 spot_range = 6.0
 spot_angle = 27.0
