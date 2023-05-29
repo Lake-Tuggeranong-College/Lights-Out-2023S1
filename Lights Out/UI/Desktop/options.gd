@@ -8,6 +8,7 @@ func _process(delta):
 	$TabContainer/Video/VBoxContainer3/FramerateCounter.pressed = Global.fpsCounterActive
 	$TabContainer/General/VBoxContainer/V_Sync_Option.pressed = Global.vsync
 	$TabContainer/Video/VBoxContainer3/FullscreenCheckbox.pressed = Global.fullscreenMode
+	$TabContainer/General/VBoxContainer/TutorialSkip.pressed = Global.tutorialSkip
 	
 func _on_Button_pressed():
 	get_tree().change_scene("res://UI/Desktop/Main Menu.tscn")
@@ -36,3 +37,10 @@ func _on_HSlider_value_changed(value):
 
 func _on_Test_Sound_pressed():
 	$TabContainer/Audio/VBoxContainer4/AudioStreamPlayer.play()
+
+func _on_TutorialSkip_toggled(button_pressed):
+	Global.tutorialSkip = true
+	Global.tutorialSkip = button_pressed
+	
+func _on_ControlsButton_pressed():
+	get_tree().change_scene("res://InputMenu.tscn")

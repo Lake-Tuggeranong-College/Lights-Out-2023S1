@@ -17,7 +17,10 @@ func _ready():
 
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://TutorialScreen.tscn")
+	if Global.tutorialSkip == false:
+		get_tree().change_scene("res://TutorialScreen.tscn")
+	if Global.tutorialSkip == true:
+		get_tree().change_scene("res://Maps/Map1.tscn")
 	#get_tree().change_scene("res://UI/other/audiowarning.tscn")
 
 

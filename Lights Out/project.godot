@@ -364,6 +364,7 @@ config/icon="res://icon.png"
 
 Global="*res://global.gd"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+SceneTransition="*res://UI/ending scenes/TransitionScreen.tscn"
 
 [editor_plugins]
 

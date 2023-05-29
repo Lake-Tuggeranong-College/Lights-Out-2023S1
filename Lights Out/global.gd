@@ -11,6 +11,7 @@ var fpsCounterActive = false
 var vsync = true
 var fullscreenMode = OS.window_fullscreen
 var cardReader = 0
+var tutorialSkip = false
 
 
 # Declare member variables here. Examples:
