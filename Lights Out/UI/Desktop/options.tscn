@@ -44,25 +44,26 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/General"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -438.0
-margin_top = -232.0
-margin_right = -251.0
-margin_bottom = -201.0
+anchor_left = 0.0688976
+anchor_top = 0.0886525
+anchor_right = 0.274606
+anchor_bottom = 0.507092
+margin_right = -22.0
+margin_bottom = -205.0
 custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="to main menu" type="Button" parent="TabContainer/General/VBoxContainer"]
-margin_right = 187.0
+margin_right = 209.0
 margin_bottom = 31.0
 theme = ExtResource( 1 )
 text = "Back to Main Menu."
 
 [node name="Debugger_Option" type="CheckButton" parent="TabContainer/General/VBoxContainer"]
 margin_top = 46.0
-margin_right = 187.0
+margin_right = 209.0
 margin_bottom = 84.0
 theme = ExtResource( 1 )
 text = "Debug Keybind"
@@ -70,22 +71,36 @@ align = 1
 
 [node name="V_Sync_Option" type="CheckButton" parent="TabContainer/General/VBoxContainer"]
 margin_top = 99.0
-margin_right = 187.0
+margin_right = 209.0
 margin_bottom = 137.0
 theme = ExtResource( 1 )
 text = "V-Sync"
 align = 1
 
+[node name="TutorialSkip" type="CheckButton" parent="TabContainer/General/VBoxContainer"]
+margin_top = 152.0
+margin_right = 209.0
+margin_bottom = 190.0
+theme = ExtResource( 1 )
+text = "  Skip Tutorial Screen  "
+
+[node name="ControlsButton" type="Button" parent="TabContainer/General/VBoxContainer"]
+margin_top = 205.0
+margin_right = 209.0
+margin_bottom = 236.0
+theme = ExtResource( 1 )
+text = "Controls Setting Menu"
+
 [node name="VBoxContainer-Text" type="VBoxContainer" parent="TabContainer/General"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -228.0
-margin_top = -232.0
-margin_right = 148.0
-margin_bottom = -97.0
-custom_constants/separation = 25
+anchor_left = 0.295276
+anchor_top = 0.0886525
+anchor_right = 0.935039
+anchor_bottom = 0.409574
+margin_bottom = -46.0
+custom_constants/separation = 27
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="MainMenuLabel" type="Label" parent="TabContainer/General/VBoxContainer-Text"]
 margin_right = 650.0
@@ -94,18 +109,25 @@ custom_fonts/font = SubResource( 1 )
 text = "Returns to Main Menu scene."
 
 [node name="DebugLabel" type="Label" parent="TabContainer/General/VBoxContainer-Text"]
-margin_top = 50.0
+margin_top = 52.0
 margin_right = 650.0
-margin_bottom = 75.0
+margin_bottom = 77.0
 custom_fonts/font = SubResource( 1 )
 text = "Enables Developer Keybinds for Debug Purposes."
 
 [node name="VsyncLabel" type="Label" parent="TabContainer/General/VBoxContainer-Text"]
-margin_top = 100.0
+margin_top = 104.0
 margin_right = 650.0
-margin_bottom = 125.0
+margin_bottom = 129.0
 custom_fonts/font = SubResource( 1 )
 text = "Disables V-Sync, which eliminates screen-tearing, which may increase your framerate."
+
+[node name="VsyncLabel2" type="Label" parent="TabContainer/General/VBoxContainer-Text"]
+margin_top = 156.0
+margin_right = 650.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 1 )
+text = "Disables the tutorial screen (for experienced players)."
 
 [node name="Video" type="Tabs" parent="TabContainer"]
 visible = false
@@ -230,6 +252,8 @@ text = "Plays a short sound, used for testing the user's audio."
 [connection signal="pressed" from="TabContainer/General/VBoxContainer/to main menu" to="." method="_on_Button_pressed"]
 [connection signal="toggled" from="TabContainer/General/VBoxContainer/Debugger_Option" to="." method="_on_Debugger_Option_toggled"]
 [connection signal="toggled" from="TabContainer/General/VBoxContainer/V_Sync_Option" to="." method="_on_VSync_Option_toggled"]
+[connection signal="toggled" from="TabContainer/General/VBoxContainer/TutorialSkip" to="." method="_on_TutorialSkip_toggled"]
+[connection signal="pressed" from="TabContainer/General/VBoxContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]
 [connection signal="toggled" from="TabContainer/Video/VBoxContainer3/FullscreenCheckbox" to="." method="_on_Fullscreen_Checkbox_toggled"]
 [connection signal="toggled" from="TabContainer/Video/VBoxContainer3/FramerateCounter" to="." method="_on_FramerateCounter_toggled"]
 [connection signal="value_changed" from="TabContainer/Audio/VBoxContainer4/HSlider" to="." method="_on_HSlider_value_changed"]

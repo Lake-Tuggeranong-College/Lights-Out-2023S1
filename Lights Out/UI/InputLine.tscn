@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Textures/colour theme.tres" type="Theme" id=1]
+[ext_resource path="res://InputLine.gd" type="Script" id=2]
+
+[node name="InputLine" type="HBoxContainer"]
+anchor_left = 0.000976563
+anchor_top = 0.436667
+anchor_right = 0.99707
+anchor_bottom = 0.503333
+custom_constants/separation = 430
+alignment = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Action" type="Label" parent="."]
+margin_left = 15.0
+margin_top = 13.0
+margin_right = 33.0
+margin_bottom = 27.0
+text = "Up"
+
+[node name="Key" type="Label" parent="."]
+margin_left = 463.0
+margin_top = 13.0
+margin_right = 503.0
+margin_bottom = 27.0
+text = "W Key"
+
+[node name="ChangeButton" type="Button" parent="."]
+margin_left = 933.0
+margin_right = 1004.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+text = "  CHANGE  "
+
+[connection signal="pressed" from="ChangeButton" to="." method="_on_ChangeButton_pressed"]
