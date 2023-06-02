@@ -77,6 +77,10 @@ spot_range = 4.7552
 spot_angle = 14.0625
 script = ExtResource( 8 )
 
+[node name="Tween" type="Tween" parent="RightHandController/SpotLight"]
+
+[node name="Tween2" type="Tween" parent="RightHandController/SpotLight"]
+
 [node name="FunctionPickup" parent="RightHandController" instance=ExtResource( 7 )]
 
 [node name="Pause Menu Handerler" type="Spatial" parent="RightHandController"]
@@ -94,3 +98,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.047739, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.12079, 0 )
 shape = SubResource( 1 )
+
+[connection signal="tween_all_completed" from="RightHandController/SpotLight/Tween" to="RightHandController/SpotLight" method="_on_Tween_tween_all_completed"]
+[connection signal="tween_all_completed" from="RightHandController/SpotLight/Tween2" to="RightHandController/SpotLight" method="_on_Tween2_tween_all_completed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Maps/LoadPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Maps/Basement.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Textures/wood-veneer1-albedo.png" type="Texture" id=4]
 [ext_resource path="res://testRat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Maps/Closet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/3D Models/Battery/Battery.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 6.1607, 0.19804, 6.71094 )
@@ -13,6 +14,8 @@ extents = Vector3( 6.1607, 0.19804, 6.71094 )
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 4 )
 uv1_scale = Vector3( 5, 5, 5 )
+
+[sub_resource type="Environment" id=3]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17111, 0, -6.63111 )
@@ -46,3 +49,18 @@ material = SubResource( 2 )
 
 [node name="RigidBody2" parent="." groups=["pickup"] instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47454, 3.89324, 11.1848 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="Battery" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -6.50447, 0.901932, 11.6713 )
+
+[node name="Battery2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -12.0395, 0.901932, 0.498489 )
+
+[node name="Battery3" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.0659509, 0.901932, 11.9032 )
+
+[node name="Battery4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.960531, 0.840331, 5.10864 )
