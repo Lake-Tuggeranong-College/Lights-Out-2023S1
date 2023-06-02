@@ -29,7 +29,6 @@ extents = Vector3( 1.5, 1, 0.01 )
 pause_mode = 1
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
-pause_mode = 2
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
