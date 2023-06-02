@@ -45,6 +45,17 @@ func get_input():
 					isHolding = true
 					reparent(raycastCollsions,$Pivot/Camera/ObjectPlace)
 					raycastCollsions.global_transform.origin = $Pivot/Camera/ObjectPlace.global_transform.origin
+			elif raycastCollsions.is_in_group("battery"):
+				raycastCollsions.get_parent().queue_free()
+				$Pivot/Camera/SpotLight.lightActive = false
+				$Pivot/Camera/SpotLight.visible = false
+				$Pivot/Camera/SpotLight.flashLight()
+				Global.battries += 1
+				$Pivot/Camera/SpotLight.coneOfLight = 27
+				$Pivot/Camera/SpotLight.lightRange = 6
+				$Pivot/Camera/SpotLight.lightActive = true
+				$Pivot/Camera/SpotLight.visible = true
+				$Pivot/Camera/SpotLight.flashLight()
 	if Input.is_action_pressed("ui_forward"):
 		input_dir += -global_transform.basis.z
 		footstepSound()
@@ -58,6 +69,7 @@ func get_input():
 	if Input.is_action_pressed("ui_strafe_right"):
 		input_dir += global_transform.basis.x
 		footstepSound()
+
 	input_dir = input_dir.normalized()
 	return input_dir
 	

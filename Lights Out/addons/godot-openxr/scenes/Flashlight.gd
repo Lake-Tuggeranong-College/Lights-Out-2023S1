@@ -4,6 +4,8 @@ extends SpotLight
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var recharging = false
+
 var isButtonDown = false
 var lightActive = false
 var coneOfLight = 27
@@ -53,4 +55,5 @@ func flashLight():
 		$Tween.start()
 		$Tween2.start()
 	else:
-		pass
+		$Tween.stop_all()
+		$Tween2.stop_all()
