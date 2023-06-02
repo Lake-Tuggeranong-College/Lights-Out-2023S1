@@ -17,7 +17,10 @@ func _ready():
 
 
 func _on_Play_pressed():
-	if Global.tutorialSkip == false:
+	if Global.vr:
+		print("vr")
+		get_tree().change_scene("res://Maps/Map1.tscn")
+	if Global.tutorialSkip == false and !Global.vr:
 		get_tree().change_scene("res://TutorialScreen.tscn")
 	if Global.tutorialSkip == true:
 		get_tree().change_scene("res://Maps/Map1.tscn")

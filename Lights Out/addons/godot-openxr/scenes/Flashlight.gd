@@ -33,7 +33,9 @@ func _process(delta):
 func vrFlash():
 	if controller and controller.get_is_active() and controller.is_button_pressed(click_button) and !isButtonDown:
 		isButtonDown = true
+		self.visible = lightActive
 		lightActive = !lightActive
+		flashLight()
 	if controller and controller.get_is_active() and !controller.is_button_pressed(click_button):
 		isButtonDown = false
 
