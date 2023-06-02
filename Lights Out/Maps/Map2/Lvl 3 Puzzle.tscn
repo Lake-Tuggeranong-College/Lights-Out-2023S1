@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Maps/Map2/Card Reader.gd" type="Script" id=1]
 [ext_resource path="res://Card_Model.tscn" type="PackedScene" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://Assets/Textures/streaked-metal1-albedo.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Textures/carpet.jpg" type="Texture" id=8]
 [ext_resource path="res://Assets/Textures/fiber-textured-wall1_albedo.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/card 4h.jpeg" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/card 7d.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/card as.jpeg" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/card kc.jpg" type="Texture" id=13]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 5 )
@@ -113,6 +117,10 @@ shape = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 5 )
 
+[node name="Sprite3D" type="Sprite3D" parent="trueCard"]
+transform = Transform( 0.197304, 0, 0, 0, 0.218272, 3.41704e-08, 0, 3.41704e-08, 1, 0, 0, 0 )
+texture = ExtResource( 10 )
+
 [node name="falseCard" parent="." groups=["pickup"] instance=ExtResource( 3 )]
 transform = Transform( 0.715742, -0.698365, 3.05265e-08, 0, -4.37114e-08, -1, 0.698365, 0.715742, -3.12861e-08, 2.37732, 0.34628, -1.10648 )
 
@@ -155,6 +163,10 @@ shape = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 5 )
 
+[node name="Sprite3D" type="Sprite3D" parent="trueCard2"]
+transform = Transform( -0.0303303, 0, 0, 0, -0.0382579, 9.07674e-08, 0, 9.07674e-08, 1, 0, 0, 0.0132344 )
+texture = ExtResource( 11 )
+
 [node name="trueCard3" parent="." groups=["pickup"] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 2.31689, 1.10648, 0.34628 )
 
@@ -169,6 +181,10 @@ shape = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 5 )
 
+[node name="Sprite3D" type="Sprite3D" parent="trueCard3"]
+transform = Transform( 0.192447, 0, 0, 0, 0.22013, 1.02268e-07, 0, 1.02268e-07, 1, 0, 0, -0.0187082 )
+texture = ExtResource( 12 )
+
 [node name="trueCard4" parent="." groups=["pickup"] instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0.436054, 0.799494, -5.96046e-08 )
 
@@ -182,6 +198,10 @@ shape = SubResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="trueCard4/amongus"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="trueCard4"]
+transform = Transform( 0.056632, 0, 0, 0, 0.0645711, 1.63556e-07, 0, 1.63556e-07, 1, 0, 0, -0.0148225 )
+texture = ExtResource( 13 )
 
 [node name="CSGBox4" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.27116, 1.27346, -7.46062 )
